@@ -1,0 +1,21 @@
+$text-color: #fff;
+$accent-color: #007fff;
+
+.footer {
+  width: 100%;
+  background-color: #0e1621;
+  padding: 58px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.text {
+  font-family: "Gilroy-Regular";
+  font-weight: 500;
+  font-size: calc(16px + 4 * (100vw / 1920));
+  color: $text-color;
+  text-decoration-color: $text-color;
+}

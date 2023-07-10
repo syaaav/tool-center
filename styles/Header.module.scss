@@ -1,0 +1,46 @@
+$text-color: #fff;
+$accent-color: #007fff;
+
+.header {
+  width: 100%;
+}
+
+.title {
+  margin-bottom: 6px;
+  font-family: "Gilroy-Bold";
+  font-weight: 800;
+  font-size: calc(24px + 24 * (100vw / 1920));
+  color: $text-color;
+}
+
+.text {
+  margin-bottom: 77px;
+  font-family: "Gilroy-Regular";
+  font-weight: 400;
+  font-size: calc(20px + 4 * (100vw / 1920));
+  color: $text-color;
+}
+
+.button {
+  padding: 15px 30px;
+  background: linear-gradient(180deg, #26a4ff 0.01%, #0055f9 100%);
+  box-shadow: 0px 4px 40px rgba(57, 153, 223, 0.3);
+  border: none;
+  border-radius: 4px;
+  font-family: "Gilroy-Bold";
+  font-weight: 700;
+  font-size: calc(14px + 4 * (100vw / 1920));
+  text-transform: capitalize;
+}
+
+.link {
+  text-decoration: none;
+  font-family: "Gilroy-Regular";
+  font-weight: 500;
+  font-size: calc(16px + 4 * (100vw / 1920));
+  color: $text-color;
+}
+
+.arrow {
+  animation: myAnim 1.5s infinite linear;
+}

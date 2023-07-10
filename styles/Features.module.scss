@@ -1,0 +1,27 @@
+$text-color: #fff;
+$accent-color: #007fff;
+
+.tabPanel {
+  padding: 30px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  color: $text-color;
+}
+
+.title {
+  margin-bottom: 8px;
+  font-family: "Gilroy-Bold";
+  font-weight: 800;
+  font-size: calc(24px + 16 * (100vw / 1920));
+  color: $text-color;
+}
+
+.text {
+  font-family: "Gilroy-Regular";
+  font-weight: 400;
+  font-size: calc(16px + 4 * (100vw / 1920));
+  color: $text-color;
+}
