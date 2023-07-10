@@ -7,6 +7,7 @@ import Planned from "../components/planned";
 import Demo from "../components/demo";
 import Footer from "../components/footer";
 import styles from "../styles/Home.module.scss";
+import SwipeableTextMobileStepper from "../components/main";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav></Nav>
+      <SwipeableTextMobileStepper></SwipeableTextMobileStepper>
       <Header></Header>
       <Benefits></Benefits>
       <Features></Features>
