@@ -22,7 +22,7 @@ export default function Header() {
           marginBottom: "18px",
         }}
       >
-        <Box
+        {/* <Box
           sx={{
             width: "100%",
             height: "100%",
@@ -34,7 +34,7 @@ export default function Header() {
             transform: "skewY(-15deg)",
             transformOrigin: "0% 0% 0",
           }}
-        />
+        /> */}
         <Box
           sx={{
             paddingLeft: "25%",

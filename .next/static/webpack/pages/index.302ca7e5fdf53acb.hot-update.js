@@ -1,0 +1,95 @@
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+self["webpackHotUpdate_N_E"]("pages/index",{
+
+/***/ "./components/about.tsx":
+/*!******************************!*\
+  !*** ./components/about.tsx ***!
+  \******************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+
+
+;
+    // Wrapped in an IIFE to avoid polluting the global scope
+    ;
+    (function () {
+        var _a, _b;
+        // Legacy CSS implementations will `eval` browser code in a Node.js context
+        // to extract CSS. For backwards compatibility, we need to check we're in a
+        // browser context before continuing.
+        if (typeof self !== 'undefined' &&
+            // AMP / No-JS mode does not inject these helpers:
+            '$RefreshHelpers$' in self) {
+            // @ts-ignore __webpack_module__ is global
+            var currentExports = module.exports;
+            // @ts-ignore __webpack_module__ is global
+            var prevExports = (_b = (_a = module.hot.data) === null || _a === void 0 ? void 0 : _a.prevExports) !== null && _b !== void 0 ? _b : null;
+            // This cannot happen in MainTemplate because the exports mismatch between
+            // templating and execution.
+            self.$RefreshHelpers$.registerExportsForReactRefresh(currentExports, module.id);
+            // A module can be accepted automatically based on its exports, e.g. when
+            // it is a Refresh Boundary.
+            if (self.$RefreshHelpers$.isReactRefreshBoundary(currentExports)) {
+                // Save the previous exports on update so we can compare the boundary
+                // signatures.
+                module.hot.dispose(function (data) {
+                    data.prevExports = currentExports;
+                });
+                // Unconditionally accept an update to this module, we'll check if it's
+                // still a Refresh Boundary later.
+                // @ts-ignore importMeta is replaced in the loader
+                module.hot.accept();
+                // This field is set when the previous version of this module was a
+                // Refresh Boundary, letting us know we need to check for invalidation or
+                // enqueue an update.
+                if (prevExports !== null) {
+                    // A boundary can become ineligible if its exports are incompatible
+                    // with the previous exports.
+                    //
+                    // For example, if you add/remove/change exports, we'll want to
+                    // re-execute the importing modules, and force those components to
+                    // re-render. Similarly, if you convert a class component to a
+                    // function, we want to invalidate the boundary.
+                    if (self.$RefreshHelpers$.shouldInvalidateReactRefreshBoundary(prevExports, currentExports)) {
+                        module.hot.invalidate();
+                    }
+                    else {
+                        self.$RefreshHelpers$.scheduleUpdate();
+                    }
+                }
+            }
+            else {
+                // Since we just executed the code for the module, it's possible that the
+                // new exports made it ineligible for being a boundary.
+                // We only care about the case when we were _previously_ a boundary,
+                // because we already accepted this update (accidental side effect).
+                var isNoLongerABoundary = prevExports !== null;
+                if (isNoLongerABoundary) {
+                    module.hot.invalidate();
+                }
+            }
+        }
+    })();
+
+
+/***/ }),
+
+/***/ "./pages/index.tsx":
+/*!*************************!*\
+  !*** ./pages/index.tsx ***!
+  \*************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval(__webpack_require__.ts("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ Home; }\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"./node_modules/react/jsx-dev-runtime.js\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ \"./node_modules/next/head.js\");\n/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _components_nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/nav */ \"./components/nav.tsx\");\n/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/header */ \"./components/header.tsx\");\n/* harmony import */ var _components_benefits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/benefits */ \"./components/benefits.tsx\");\n/* harmony import */ var _components_features__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/features */ \"./components/features.tsx\");\n/* harmony import */ var _components_planned__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/planned */ \"./components/planned.tsx\");\n/* harmony import */ var _components_demo__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/demo */ \"./components/demo.tsx\");\n/* harmony import */ var _components_footer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/footer */ \"./components/footer.tsx\");\n/* harmony import */ var _styles_Home_module_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../styles/Home.module.scss */ \"./styles/Home.module.scss\");\n/* harmony import */ var _styles_Home_module_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_styles_Home_module_scss__WEBPACK_IMPORTED_MODULE_10__);\n/* harmony import */ var _components_about__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/about */ \"./components/about.tsx\");\n/* harmony import */ var _components_about__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_components_about__WEBPACK_IMPORTED_MODULE_9__);\n\n\n\n\n\n\n\n\n\n\n\nfunction Home() {\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        className: (_styles_Home_module_scss__WEBPACK_IMPORTED_MODULE_10___default().container),\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {\n                children: [\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"title\", {\n                        children: \"ИнструментЦентр\"\n                    }, void 0, false, {\n                        fileName: \"/Users/sevinch/Desktop/tool-center/pages/index.tsx\",\n                        lineNumber: 16,\n                        columnNumber: 9\n                    }, this),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"meta\", {\n                        name: \"description\",\n                        content: \"Generated by create next app\"\n                    }, void 0, false, {\n                        fileName: \"/Users/sevinch/Desktop/tool-center/pages/index.tsx\",\n                        lineNumber: 17,\n                        columnNumber: 9\n                    }, this),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"link\", {\n                        rel: \"icon\",\n                        href: \"/favicon.ico\"\n                    }, void 0, false, {\n                        fileName: \"/Users/sevinch/Desktop/tool-center/pages/index.tsx\",\n                        lineNumber: 18,\n                        columnNumber: 9\n                    }, this)\n                ]\n            }, void 0, true, {\n                fileName: \"/Users/sevinch/Desktop/tool-center/pages/index.tsx\",\n                lineNumber: 15,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)((_components_about__WEBPACK_IMPORTED_MODULE_9___default()), {}, void 0, false, {\n                fileName: \"/Users/sevinch/Desktop/tool-center/pages/index.tsx\",\n                lineNumber: 20,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_nav__WEBPACK_IMPORTED_MODULE_2__[\"default\"], {}, void 0, false, {\n                fileName: \"/Users/sevinch/Desktop/tool-center/pages/index.tsx\",\n                lineNumber: 21,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_header__WEBPACK_IMPORTED_MODULE_3__[\"default\"], {}, void 0, false, {\n                fileName: \"/Users/sevinch/Desktop/tool-center/pages/index.tsx\",\n                lineNumber: 22,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_benefits__WEBPACK_IMPORTED_MODULE_4__[\"default\"], {}, void 0, false, {\n                fileName: \"/Users/sevinch/Desktop/tool-center/pages/index.tsx\",\n                lineNumber: 23,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_features__WEBPACK_IMPORTED_MODULE_5__[\"default\"], {}, void 0, false, {\n                fileName: \"/Users/sevinch/Desktop/tool-center/pages/index.tsx\",\n                lineNumber: 24,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_planned__WEBPACK_IMPORTED_MODULE_6__[\"default\"], {}, void 0, false, {\n                fileName: \"/Users/sevinch/Desktop/tool-center/pages/index.tsx\",\n                lineNumber: 25,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_demo__WEBPACK_IMPORTED_MODULE_7__[\"default\"], {}, void 0, false, {\n                fileName: \"/Users/sevinch/Desktop/tool-center/pages/index.tsx\",\n                lineNumber: 26,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_footer__WEBPACK_IMPORTED_MODULE_8__[\"default\"], {}, void 0, false, {\n                fileName: \"/Users/sevinch/Desktop/tool-center/pages/index.tsx\",\n                lineNumber: 27,\n                columnNumber: 7\n            }, this)\n        ]\n    }, void 0, true, {\n        fileName: \"/Users/sevinch/Desktop/tool-center/pages/index.tsx\",\n        lineNumber: 14,\n        columnNumber: 5\n    }, this);\n};\n_c = Home;\nvar _c;\n$RefreshReg$(_c, \"Home\");\n\n\n;\n    // Wrapped in an IIFE to avoid polluting the global scope\n    ;\n    (function () {\n        var _a, _b;\n        // Legacy CSS implementations will `eval` browser code in a Node.js context\n        // to extract CSS. For backwards compatibility, we need to check we're in a\n        // browser context before continuing.\n        if (typeof self !== 'undefined' &&\n            // AMP / No-JS mode does not inject these helpers:\n            '$RefreshHelpers$' in self) {\n            // @ts-ignore __webpack_module__ is global\n            var currentExports = module.exports;\n            // @ts-ignore __webpack_module__ is global\n            var prevExports = (_b = (_a = module.hot.data) === null || _a === void 0 ? void 0 : _a.prevExports) !== null && _b !== void 0 ? _b : null;\n            // This cannot happen in MainTemplate because the exports mismatch between\n            // templating and execution.\n            self.$RefreshHelpers$.registerExportsForReactRefresh(currentExports, module.id);\n            // A module can be accepted automatically based on its exports, e.g. when\n            // it is a Refresh Boundary.\n            if (self.$RefreshHelpers$.isReactRefreshBoundary(currentExports)) {\n                // Save the previous exports on update so we can compare the boundary\n                // signatures.\n                module.hot.dispose(function (data) {\n                    data.prevExports = currentExports;\n                });\n                // Unconditionally accept an update to this module, we'll check if it's\n                // still a Refresh Boundary later.\n                // @ts-ignore importMeta is replaced in the loader\n                module.hot.accept();\n                // This field is set when the previous version of this module was a\n                // Refresh Boundary, letting us know we need to check for invalidation or\n                // enqueue an update.\n                if (prevExports !== null) {\n                    // A boundary can become ineligible if its exports are incompatible\n                    // with the previous exports.\n                    //\n                    // For example, if you add/remove/change exports, we'll want to\n                    // re-execute the importing modules, and force those components to\n                    // re-render. Similarly, if you convert a class component to a\n                    // function, we want to invalidate the boundary.\n                    if (self.$RefreshHelpers$.shouldInvalidateReactRefreshBoundary(prevExports, currentExports)) {\n                        module.hot.invalidate();\n                    }\n                    else {\n                        self.$RefreshHelpers$.scheduleUpdate();\n                    }\n                }\n            }\n            else {\n                // Since we just executed the code for the module, it's possible that the\n                // new exports made it ineligible for being a boundary.\n                // We only care about the case when we were _previously_ a boundary,\n                // because we already accepted this update (accidental side effect).\n                var isNoLongerABoundary = prevExports !== null;\n                if (isNoLongerABoundary) {\n                    module.hot.invalidate();\n                }\n            }\n        }\n    })();\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9wYWdlcy9pbmRleC50c3guanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBO0FBQTZCO0FBQ087QUFDTTtBQUNJO0FBQ0E7QUFDRjtBQUNOO0FBQ0k7QUFDTTtBQUNSO0FBRXpCLFNBQVNVLElBQUksR0FBRztJQUM3QixxQkFDRSw4REFBQ0MsS0FBRztRQUFDQyxTQUFTLEVBQUVKLDRFQUFnQjs7MEJBQzlCLDhEQUFDUixrREFBSTs7a0NBQ0gsOERBQUNjLE9BQUs7a0NBQUMsaUJBQWU7Ozs7OzRCQUFRO2tDQUM5Qiw4REFBQ0MsTUFBSTt3QkFBQ0MsSUFBSSxFQUFDLGFBQWE7d0JBQUNDLE9BQU8sRUFBQyw4QkFBOEI7Ozs7OzRCQUFHO2tDQUNsRSw4REFBQ0MsTUFBSTt3QkFBQ0MsR0FBRyxFQUFDLE1BQU07d0JBQUNDLElBQUksRUFBQyxjQUFjOzs7Ozs0QkFBRzs7Ozs7O29CQUNsQzswQkFDUCw4REFBQ1gsMERBQUs7Ozs7b0JBQVM7MEJBQ2YsOERBQUNSLHVEQUFHOzs7O29CQUFPOzBCQUNYLDhEQUFDQywwREFBTTs7OztvQkFBVTswQkFDakIsOERBQUNDLDREQUFROzs7O29CQUFZOzBCQUNyQiw4REFBQ0MsNERBQVE7Ozs7b0JBQVk7MEJBQ3JCLDhEQUFDQywyREFBTzs7OztvQkFBVzswQkFDbkIsOERBQUNDLHdEQUFJOzs7O29CQUFROzBCQUNiLDhEQUFDQywwREFBTTs7OztvQkFBVTs7Ozs7O1lBQ2IsQ0FDTjtDQUNIO0FBbEJ1QkcsS0FBQUEsSUFBSSIsInNvdXJjZXMiOlsid2VicGFjazovL19OX0UvLi9wYWdlcy9pbmRleC50c3g/MDdmZiJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgSGVhZCBmcm9tIFwibmV4dC9oZWFkXCI7XG5pbXBvcnQgTmF2IGZyb20gXCIuLi9jb21wb25lbnRzL25hdlwiO1xuaW1wb3J0IEhlYWRlciBmcm9tIFwiLi4vY29tcG9uZW50cy9oZWFkZXJcIjtcbmltcG9ydCBCZW5lZml0cyBmcm9tIFwiLi4vY29tcG9uZW50cy9iZW5lZml0c1wiO1xuaW1wb3J0IEZlYXR1cmVzIGZyb20gXCIuLi9jb21wb25lbnRzL2ZlYXR1cmVzXCI7XG5pbXBvcnQgUGxhbm5lZCBmcm9tIFwiLi4vY29tcG9uZW50cy9wbGFubmVkXCI7XG5pbXBvcnQgRGVtbyBmcm9tIFwiLi4vY29tcG9uZW50cy9kZW1vXCI7XG5pbXBvcnQgRm9vdGVyIGZyb20gXCIuLi9jb21wb25lbnRzL2Zvb3RlclwiO1xuaW1wb3J0IHN0eWxlcyBmcm9tIFwiLi4vc3R5bGVzL0hvbWUubW9kdWxlLnNjc3NcIjtcbmltcG9ydCBBYm91dCBmcm9tIFwiLi4vY29tcG9uZW50cy9hYm91dFwiO1xuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBIb21lKCkge1xuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPXtzdHlsZXMuY29udGFpbmVyfT5cbiAgICAgIDxIZWFkPlxuICAgICAgICA8dGl0bGU+0JjQvdGB0YLRgNGD0LzQtdC90YLQptC10L3RgtGAPC90aXRsZT5cbiAgICAgICAgPG1ldGEgbmFtZT1cImRlc2NyaXB0aW9uXCIgY29udGVudD1cIkdlbmVyYXRlZCBieSBjcmVhdGUgbmV4dCBhcHBcIiAvPlxuICAgICAgICA8bGluayByZWw9XCJpY29uXCIgaHJlZj1cIi9mYXZpY29uLmljb1wiIC8+XG4gICAgICA8L0hlYWQ+XG4gICAgICA8QWJvdXQ+PC9BYm91dD5cbiAgICAgIDxOYXY+PC9OYXY+XG4gICAgICA8SGVhZGVyPjwvSGVhZGVyPlxuICAgICAgPEJlbmVmaXRzPjwvQmVuZWZpdHM+XG4gICAgICA8RmVhdHVyZXM+PC9GZWF0dXJlcz5cbiAgICAgIDxQbGFubmVkPjwvUGxhbm5lZD5cbiAgICAgIDxEZW1vPjwvRGVtbz5cbiAgICAgIDxGb290ZXI+PC9Gb290ZXI+XG4gICAgPC9kaXY+XG4gICk7XG59XG4iXSwibmFtZXMiOlsiSGVhZCIsIk5hdiIsIkhlYWRlciIsIkJlbmVmaXRzIiwiRmVhdHVyZXMiLCJQbGFubmVkIiwiRGVtbyIsIkZvb3RlciIsInN0eWxlcyIsIkFib3V0IiwiSG9tZSIsImRpdiIsImNsYXNzTmFtZSIsImNvbnRhaW5lciIsInRpdGxlIiwibWV0YSIsIm5hbWUiLCJjb250ZW50IiwibGluayIsInJlbCIsImhyZWYiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./pages/index.tsx\n"));
+
+/***/ })
+
+});

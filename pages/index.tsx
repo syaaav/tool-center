@@ -7,7 +7,10 @@ import Planned from "../components/planned";
 import Demo from "../components/demo";
 import Footer from "../components/footer";
 import styles from "../styles/Home.module.scss";
-import SwipeableTextMobileStepper from "../components/main";
+import About from "../components/about";
+import Principles from "../components/principles";
+import Projects from "../components/projects";
+import Clients from "../components/clients";
 
 export default function Home() {
   return (
@@ -18,13 +21,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav></Nav>
-      <SwipeableTextMobileStepper></SwipeableTextMobileStepper>
-      <Header></Header>
+      <About></About>
+      <Principles></Principles>
+      <Projects></Projects>
+      <Clients></Clients>
+
+      {/* <Header></Header>
       <Benefits></Benefits>
       <Features></Features>
       <Planned></Planned>
       <Demo></Demo>
-      <Footer></Footer>
+      <Footer></Footer> */}
     </div>
   );
 }
