@@ -5,16 +5,30 @@ $accent-color: #007fff;
   width: 100%;
 }
 
+.divider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  color: #fff;
+
+  &_circle {
+    width: 13px;
+    height: 13px;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+}
+
 .title {
   margin-bottom: 6px;
-  // font-family: "Dela-Gothic-One";
   font-weight: 800;
-  font-size: calc(24px + 24 * (100vw / 1920));
+  font-size: calc(24px + 51 * (100vw - 320px) / 1600);
   color: $text-color;
 }
 
 .text {
-  margin-bottom: 77px;
+  // margin-bottom: 77px;
   // font-family: "Dela-Gothic-One";
   font-weight: 400;
   font-size: calc(20px + 4 * (100vw / 1920));
