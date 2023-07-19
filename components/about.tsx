@@ -12,6 +12,7 @@ export default function About() {
     <div className={styles.header}>
       <Box
         sx={{
+          padding: "100px 15px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -26,16 +27,18 @@ export default function About() {
           <span>+</span>
           <hr />
         </Box>
-        <Typography variant="h5" className={styles.text}>
-          «ИНСТРУМЕНТ ЦЕНТР» С 2012 года осуществляет полный комплекс услуг по
-          проектированию, монтажу и техническому обслуживанию инженерных систем
-          на объектах коммерческой и жилой недвижимости.
-        </Typography>
-        <Typography variant="h5" className={styles.text}>
-          Миссия нашей компании - обеспечить клиентам комфорт и безопасность с
-          помощью применения новейших технологий и современный инженерных
-          решений.
-        </Typography>
+        <Box sx={{ width: "55%" }}>
+          <Typography className={styles.text}>
+            «ИНСТРУМЕНТ ЦЕНТР» С 2012 года осуществляет полный комплекс услуг по
+            проектированию, монтажу и техническому обслуживанию инженерных
+            систем на объектах коммерческой и жилой недвижимости.
+          </Typography>
+          <Typography className={styles.text}>
+            Миссия нашей компании - обеспечить клиентам комфорт и безопасность с
+            помощью применения новейших технологий и современный инженерных
+            решений.
+          </Typography>
+        </Box>
       </Box>
 
       <Box

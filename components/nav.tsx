@@ -4,13 +4,20 @@ import styles from "../styles/Nav.module.scss";
 import Logo from "../public/logo";
 
 const NavTabs = styled(Tabs)({
+  minHeight: "35px",
   borderBottom: "1px solid #fff",
   backgroundColor: "transparent",
   color: "#fff",
+
+  "& .MuiTabs-flexContainer": {
+    gap: "50px",
+  },
   "& .MuiTabs-indicator": {
     backgroundColor: "#fff",
   },
   "& .MuiTab-root": {
+    minHeight: "35px",
+    padding: "10px",
     textTransform: "none",
     color: "rgba(255, 255, 255, 0.7)",
   },
@@ -29,7 +36,8 @@ export default function Nav() {
 
   return (
     <div className={styles.navigation}>
-      <Logo />
+      <Logo></Logo>
+
       <Box
         sx={{
           display: "flex",

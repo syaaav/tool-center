@@ -4,11 +4,11 @@ $text-color: #fff;
 $accent-color: #007fff;
 
 .navigation {
-  width: 100%;
-  max-height: 82px;
+  width: calc(100% - 200px);
+  // max-height: 82px;
   position: fixed;
   // background-color: #0e143c;
-  padding: 15px 10%;
+  padding: 30px 15px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

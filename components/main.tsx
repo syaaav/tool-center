@@ -14,10 +14,10 @@ import { autoPlay } from "react-swipeable-views-utils";
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
-  {
-    label: "San Francisco – Oakland Bay Bridge, United States",
-    imgPath: "../public/1.png",
-  },
+  // {
+  //   label: "San Francisco – Oakland Bay Bridge, United States",
+  //   imgPath: "../public/1.png",
+  // },
   {
     label: "Bird",
     imgPath:
