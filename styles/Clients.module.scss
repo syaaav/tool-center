@@ -1,0 +1,27 @@
+$text-color: #fff;
+
+.clients {
+  height: auto;
+  width: 100%;
+  max-width: 1720px;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 6px;
+  font-weight: 800;
+  font-size: calc(24px + 51 * (100vw - 320px) / 1600);
+  color: $text-color;
+}
+.item {
+  padding: 30px;
+  border-radius: 20px;
+  background-color: #fff;
+}
