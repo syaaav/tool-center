@@ -11,6 +11,7 @@ import Principles from "../components/principles";
 import Projects from "../components/projects";
 import Clients from "../components/clients";
 import SwipeableTextMobileStepper from "../components/main";
+import Why from "../components/why";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
       <div className={styles.wrapper}>
         <Nav></Nav>
         <About></About>
+        <Why></Why>
         <Principles></Principles>
         <Projects></Projects>
         <Clients></Clients>

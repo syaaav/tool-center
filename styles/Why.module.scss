@@ -1,0 +1,33 @@
+$text-color: #fff;
+$accent-color: #bb3633;
+
+.title {
+  text-align: center;
+  // font-family: "Gilroy-Bold";
+  margin-bottom: 6px;
+  font-weight: 800;
+  font-size: calc(24px + 51 * (100vw - 320px) / 1600);
+  color: $text-color;
+  text-transform: uppercase;
+}
+
+.accent {
+  color: $accent-color;
+}
+
+.summary {
+  // font-family: "Gilroy-Bold";
+  font-weight: 600;
+  font-size: calc(18px + 17 * (100vw / 1920));
+  color: $text-color;
+  text-transform: uppercase;
+}
+
+.details {
+  padding: 16px 0px 0px 43px;
+  text-align: left;
+  // font-family: "Gilroy-Bold";
+  font-weight: 400;
+  font-size: calc(14px + 6 * (100vw / 1920));
+  color: $text-color;
+}

@@ -1,5 +1,5 @@
 $text-color: #fff;
-$accent-color: #007fff;
+$accent-color: #bb3633;
 
 .header {
   width: 100%;
@@ -25,6 +25,10 @@ $accent-color: #007fff;
   font-weight: 800;
   font-size: calc(24px + 51 * (100vw - 320px) / 1600);
   color: $text-color;
+}
+
+.accent {
+  color: $accent-color;
 }
 
 .text {
