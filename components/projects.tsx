@@ -17,6 +17,7 @@ export default function Projects() {
           justifyContent: "center",
           alignItems: "flex-start",
           gap: "9px",
+          paddingTop: "800px",
         }}
       >
         <Typography variant="h1" className={styles.title}>

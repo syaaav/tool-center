@@ -1,74 +1,142 @@
-import { Box, Grid, Typography, Stack } from "@mui/material";
-import styles from "../styles/Benefits.module.scss";
+import {
+  Box,
+  Grid,
+  Typography,
+  Divider,
+  Stack,
+  Collapse,
+  styled,
+} from "@mui/material";
+import styles from "../styles/Principles.module.scss";
+import Image from "next/image";
+
+const DividerLine = styled(Divider)({
+  width: "calc(100% - 13px)",
+  border: "0.5px solid #ffffff",
+});
 
 export default function Principles() {
+  const checked = true;
   return (
-    <div className={styles.benefits}>
+    <div className={styles.principles}>
       <Box
         sx={{
+          padding: "100px 0px",
           display: "flex",
           flexDirection: "column",
           flexWrap: "wrap",
           justifyContent: "center",
           alignItems: "center",
-          gap: "22px",
+          gap: "35px",
         }}
       >
-        <Typography variant="h1" className={styles.title}>
-          принципы нашей работы
-        </Typography>
-        <Grid
-          container
-          rowSpacing={1}
-          columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-          sx={{ color: "white" }}
-        >
+        <Stack>
+          <Typography className={styles.accent_title}>принципы</Typography>
+          <Typography className={styles.title}>нашей работы</Typography>
+        </Stack>
+
+        <Grid container rowSpacing={5} columnSpacing={{ xs: 1, sm: 5, md: 10 }}>
           <Grid item xs={6}>
-            <Typography>ДОЛГОСРОЧНОЕ СОТРУДНИЧЕСТВО</Typography>
-            <Stack direction="row" spacing={2}>
-              <div>PHOTO</div>
-              <Typography>
-                Доверие в работе строится не только на честности, порядочности и
-                взаимной ответственности, но и на желании длительного и
-                перспективного сотрудничества, которым мы очень дорожим. Мы
-                делаем все, чтобы наше сотрудничество не прекращалось.
-              </Typography>
-            </Stack>
+            <Typography className={styles.summary}>
+              ДОЛГОСРОЧНОЕ СОТРУДНИЧЕСТВО
+            </Typography>
+            <Collapse in={checked}>
+              <Box>
+                <Stack
+                  className={styles.details}
+                  sx={{
+                    left: "-100px",
+                  }}
+                >
+                  <div
+                    className={styles.circle}
+                    style={{ right: "-6px" }}
+                  ></div>
+                  <Image
+                    src="/cooperation.jpg"
+                    alt="ДОЛГОСРОЧНОЕ СОТРУДНИЧЕСТВО"
+                    width="303"
+                    height="249"
+                  />
+                  <Typography className={styles.details_text}>
+                    Доверие в работе строится не только на честности,
+                    порядочности и взаимной ответственности, но и на желании
+                    длительного и перспективного сотрудничества, которым мы
+                    очень дорожим. Мы делаем все, чтобы наше сотрудничество не
+                    прекращалось.
+                  </Typography>
+                </Stack>
+              </Box>
+            </Collapse>
           </Grid>
           <Grid item xs={6}>
-            <Typography>КОМПЛЕКСНЫЙ ПОДХОД</Typography>
-            <Stack direction="row" spacing={2}>
-              <Typography>
-                Все системы жизнеобеспечения здания связаны между собой,
-                вмешиваясь в одну из них, важно понимать, как это отразится на
-                остальных. Наши специалисты знают, чему следует уделить особое
-                внимание при интеграции систем.
-              </Typography>
-              <div>PHOTO</div>
-            </Stack>
-          </Grid>
-          <Grid item xs={6}>
-            <Typography>Профессионализм</Typography>
-            <Stack direction="row" spacing={2}>
-              <div>PHOTO</div>
-              <Typography>
+            <Typography className={styles.summary}>Профессионализм</Typography>
+            <Stack className={styles.details}>
+              <div className={styles.circle} style={{ left: "-6px" }}></div>
+              <Typography
+                className={styles.details_text}
+                sx={{ textAlign: "right" }}
+              >
                 Проводим тщательный отбор сотрудников, постоянно повышаем
                 квалификацию, стимулируем личностный и профессиональный рост.
                 Профессионализм работников — основа стабильности и благополучия
                 компании, а также причина повторных обращений наших клиентов.
               </Typography>
+              <Image
+                src="/cooperation.jpg"
+                alt="ДОЛГОСРОЧНОЕ СОТРУДНИЧЕСТВО"
+                width="303"
+                height="249"
+              />
             </Stack>
           </Grid>
           <Grid item xs={6}>
-            <Typography>ПРОЗРАЧНОЕ ПАРТНЕРСТВО</Typography>
-            <Stack direction="row" spacing={2}>
-              <Typography>
+            <Typography className={styles.summary}>
+              КОМПЛЕКСНЫЙ ПОДХОД
+            </Typography>
+
+            <Stack
+              className={styles.details}
+              sx={{
+                left: "-100px",
+              }}
+            >
+              <div className={styles.circle} style={{ right: "-6px" }}></div>
+              <Image
+                src="/cooperation.jpg"
+                alt="ДОЛГОСРОЧНОЕ СОТРУДНИЧЕСТВО"
+                width="303"
+                height="249"
+              />
+              <Typography className={styles.details_text}>
+                Все системы жизнеобеспечения здания связаны между собой,
+                вмешиваясь в одну из них, важно понимать, как это отразится на
+                остальных. Наши специалисты знают, чему следует уделить особое
+                внимание при интеграции систем.
+              </Typography>
+            </Stack>
+          </Grid>
+          <Grid item xs={6}>
+            <Typography className={styles.summary}>
+              ПРОЗРАЧНОЕ ПАРТНЕРСТВО
+            </Typography>
+            <Stack className={styles.details}>
+              <div className={styles.circle} style={{ left: "-6px" }}></div>
+              <Typography
+                className={styles.details_text}
+                sx={{ textAlign: "right" }}
+              >
                 На этапе переговоров предоставляем полную информацию о составе
                 необходимых работ и услуг, который впоследствии не
                 увеличивается. Мы не занижаем объемы работ, чтобы показать
                 «привлекательные» низкие цены.
               </Typography>
-              <div>PHOTO</div>
+              <Image
+                src="/cooperation.jpg"
+                alt="ДОЛГОСРОЧНОЕ СОТРУДНИЧЕСТВО"
+                width="303"
+                height="249"
+              />
             </Stack>
           </Grid>
         </Grid>
