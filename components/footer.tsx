@@ -1,90 +1,199 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
+import { Box, Stack } from "@mui/material";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import styles from "../styles/Footer.module.scss";
-import WhatsApp from "../public/whatsapp";
-import GitHub from "../public/github";
-import Instagram from "../public/instagram";
-import VK from "../public/vk";
-import Email from "../public/email";
 
 export default function Footer() {
   return (
     <div className={styles.footer}>
-      <Box
-        sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          flexDirection: "row",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "100px",
-        }}
-      >
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "20px",
-          }}
+      <Box className={styles.wrapper}>
+        <svg
+          width="201"
+          height="60"
+          viewBox="0 0 201 60"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <WhatsApp />
-          <GitHub />
-          <Instagram />
-          <VK />
-        </Box>
+          <g clip-path="url(#clip0_59_129)">
+            <path
+              d="M83.3957 15.8096V23.6872L89.4289 15.8096H90.7758V26.0614H89.3216V18.1297L83.2341 26.0074H81.8872V15.8096H83.3957Z"
+              fill="white"
+            />
+            <path
+              d="M104.19 15.8096V26.0614H102.736V21.4751H96.8634V26.0614H95.4092V15.8096H96.8634V20.234H102.736V15.8096H104.19Z"
+              fill="white"
+            />
+            <path
+              d="M108.015 20.9355C108.015 17.9139 110.331 15.7017 113.456 15.7017C115.018 15.7017 116.42 16.2413 117.335 17.3204L116.365 18.2377C115.557 17.4283 114.588 16.9966 113.51 16.9966C111.194 16.9966 109.47 18.6693 109.47 20.9355C109.47 23.2017 111.194 24.8744 113.51 24.8744C114.642 24.8744 115.611 24.4966 116.365 23.6333L117.335 24.5506C116.42 25.6297 115.018 26.1693 113.456 26.1693C110.331 26.1693 108.015 23.9571 108.015 20.9355Z"
+              fill="white"
+            />
+            <path
+              d="M127.679 17.0503H124.177V26.0071H122.722V17.0503H119.221V15.7554H127.679V17.0503Z"
+              fill="white"
+            />
+            <path
+              d="M139.208 19.3705C139.208 21.5827 137.591 22.9316 134.952 22.9316H132.42V26.0071H130.965V15.7554H134.952C137.591 15.8093 139.208 17.1582 139.208 19.3705ZM137.753 19.3705C137.753 17.9136 136.783 17.0503 134.898 17.0503H132.42V21.6367H134.898C136.73 21.6367 137.753 20.8273 137.753 19.3705Z"
+              fill="white"
+            />
+            <path
+              d="M150.844 15.8093L146.319 24.2266C145.565 25.5755 144.541 26.223 143.463 26.223C143.032 26.223 142.548 26.115 142.116 25.8992L142.494 24.7122C142.817 24.8201 143.14 24.928 143.463 24.928C144.056 24.928 144.595 24.6582 145.08 23.9029L145.295 23.5251L141.201 15.7554H142.763L146.104 22.2301L149.497 15.7554H150.844V15.8093Z"
+              fill="white"
+            />
+            <path
+              d="M163.289 26.0614V18.6153L159.572 24.8203H158.925L155.208 18.6692V26.0614H153.807V15.8096H154.992L159.248 22.9858L163.451 15.8096H164.636V26.0614H163.289Z"
+              fill="white"
+            />
+            <path
+              d="M176.757 24.7664V26.0614H169.323V15.8096H176.542V17.1045H170.777V20.234H175.895V21.4751H170.777V24.7664H176.757Z"
+              fill="white"
+            />
+            <path
+              d="M189.31 15.8096V26.0614H187.855V21.4751H181.983V26.0614H180.528V15.8096H181.983V20.234H187.855V15.8096H189.31Z"
+              fill="white"
+            />
+            <path
+              d="M201 17.0503H197.498V26.0071H196.044V17.0503H192.542V15.7554H200.947V17.0503H201Z"
+              fill="white"
+            />
+            <path
+              d="M92.0691 41.6546V45.2698H90.7222V42.9496H81.8872V32.6978H83.3414V41.6546H89.0521V32.6978H90.5069V41.6546H92.0691Z"
+              fill="white"
+            />
+            <path
+              d="M102.897 41.6546V42.9496H95.4629V32.6978H102.682V33.9927H96.9714V37.1223H102.089V38.3632H96.9714V41.6546H102.897Z"
+              fill="white"
+            />
+            <path
+              d="M115.45 32.6978V42.9496H113.996V38.3632H108.123V42.9496H106.668V32.6978H108.123V37.1223H113.996V32.6978H115.45Z"
+              fill="white"
+            />
+            <path
+              d="M127.14 33.939H123.638V42.8958H122.184V33.939H118.683V32.644H127.14V33.939Z"
+              fill="white"
+            />
+            <path
+              d="M138.615 36.2591C138.615 38.4714 136.998 39.8203 134.359 39.8203H131.827V42.8958H130.373V32.644H134.359C136.998 32.698 138.615 34.0469 138.615 36.2591ZM137.161 36.2591C137.161 34.8023 136.191 33.939 134.305 33.939H131.827V38.5253H134.305C136.191 38.5253 137.161 37.716 137.161 36.2591Z"
+              fill="white"
+            />
+            <path
+              d="M40.5663 18.3454L31.5695 12.9496L22.6267 18.2914V44.2986L8.99679 36.4748V10.4137L17.9936 5.23381L8.88905 0L0 5.1259V41.6546L31.5695 60V23.5252L40.5663 18.3454Z"
+              fill="white"
+            />
+            <path
+              d="M45.0379 5.23381V31.295L40.5664 33.9388V44.3525L54.0885 36.5827V10.5216L63.0314 5.23381L54.0346 0.10791L45.0379 5.23381Z"
+              fill="white"
+            />
+            <path
+              d="M63.0312 20.8271V31.3487L72.082 26.1689L63.0312 20.8271Z"
+              fill="white"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_59_129">
+              <rect width="201" height="60" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
 
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "20px",
-          }}
-        >
-          <Link href="#" className={styles.text} underline="always">
-            {"Политика конфиденциальности"}
-          </Link>
-          <Link href="#" className={styles.text} underline="always">
-            {"Пользовательское соглашение"}
-          </Link>
-        </Box>
-
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "flex-start",
-            gap: "15px",
-          }}
-        >
-          <Typography className={styles.text}>Задать вопрос:</Typography>
-          <Box
-            sx={{
-              padding: "16px",
-              backgroundColor: "#182533",
-              borderRadius: "4px",
-              color: "#fff",
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "12px",
-            }}
-          >
-            <Typography className={styles.text}>
-              Email: 11lfybzh@gmail.com
+        <Box className={styles.info}>
+          <Stack gap={1}>
+            <Typography className={styles.info_title}>Адрес</Typography>
+            <Typography className={styles.info_text}>
+              127474, Москва, Дмитровское шоссе, дом 60, офис 423
             </Typography>
-            <Email />
-          </Box>
+          </Stack>
+
+          <Stack gap={1}>
+            <Typography className={styles.info_title}>Телефон</Typography>
+            <Typography className={styles.info_text}>
+              ‭+7 (495) 748-88-47‬
+            </Typography>
+          </Stack>
+
+          <Stack gap={1}>
+            <Typography className={styles.info_title}>E-mail</Typography>
+            <Typography className={styles.info_text}>
+              info@inscenter.ru
+            </Typography>
+          </Stack>
         </Box>
       </Box>
+
+      <Stack justifyContent="space-between" gap={1}>
+        <Stack>
+          <Typography className={styles.author}>design by</Typography>
+          <Box className={styles.inst}>
+            <svg
+              width="16"
+              height="17"
+              viewBox="0 0 16 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.99992 11.1668C8.70716 11.1668 9.38544 10.8859 9.88554 10.3858C10.3856 9.88568 10.6666 9.20741 10.6666 8.50016C10.6666 7.79292 10.3856 7.11464 9.88554 6.61454C9.38544 6.11445 8.70716 5.8335 7.99992 5.8335C7.29267 5.8335 6.6144 6.11445 6.1143 6.61454C5.6142 7.11464 5.33325 7.79292 5.33325 8.50016C5.33325 9.20741 5.6142 9.88568 6.1143 10.3858C6.6144 10.8859 7.29267 11.1668 7.99992 11.1668Z"
+                stroke="white"
+                stroke-opacity="0.6"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2 11.1667V5.83333C2 4.94928 2.35119 4.10143 2.97631 3.47631C3.60143 2.85119 4.44928 2.5 5.33333 2.5H10.6667C11.5507 2.5 12.3986 2.85119 13.0237 3.47631C13.6488 4.10143 14 4.94928 14 5.83333V11.1667C14 12.0507 13.6488 12.8986 13.0237 13.5237C12.3986 14.1488 11.5507 14.5 10.6667 14.5H5.33333C4.44928 14.5 3.60143 14.1488 2.97631 13.5237C2.35119 12.8986 2 12.0507 2 11.1667Z"
+                stroke="white"
+                stroke-opacity="0.6"
+                stroke-width="1.5"
+              />
+              <path
+                d="M11.6667 4.84152L11.6749 4.83252"
+                stroke="white"
+                stroke-opacity="0.6"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            nk_designit
+          </Box>
+        </Stack>
+        <Stack>
+          <Typography className={styles.author}>developed by</Typography>
+          <Box className={styles.inst}>
+            <svg
+              width="16"
+              height="17"
+              viewBox="0 0 16 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.99992 11.1668C8.70716 11.1668 9.38544 10.8859 9.88554 10.3858C10.3856 9.88568 10.6666 9.20741 10.6666 8.50016C10.6666 7.79292 10.3856 7.11464 9.88554 6.61454C9.38544 6.11445 8.70716 5.8335 7.99992 5.8335C7.29267 5.8335 6.6144 6.11445 6.1143 6.61454C5.6142 7.11464 5.33325 7.79292 5.33325 8.50016C5.33325 9.20741 5.6142 9.88568 6.1143 10.3858C6.6144 10.8859 7.29267 11.1668 7.99992 11.1668Z"
+                stroke="white"
+                stroke-opacity="0.6"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2 11.1667V5.83333C2 4.94928 2.35119 4.10143 2.97631 3.47631C3.60143 2.85119 4.44928 2.5 5.33333 2.5H10.6667C11.5507 2.5 12.3986 2.85119 13.0237 3.47631C13.6488 4.10143 14 4.94928 14 5.83333V11.1667C14 12.0507 13.6488 12.8986 13.0237 13.5237C12.3986 14.1488 11.5507 14.5 10.6667 14.5H5.33333C4.44928 14.5 3.60143 14.1488 2.97631 13.5237C2.35119 12.8986 2 12.0507 2 11.1667Z"
+                stroke="white"
+                stroke-opacity="0.6"
+                stroke-width="1.5"
+              />
+              <path
+                d="M11.6667 4.84152L11.6749 4.83252"
+                stroke="white"
+                stroke-opacity="0.6"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            del.it.ful
+          </Box>
+        </Stack>
+      </Stack>
     </div>
   );
 }

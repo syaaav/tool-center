@@ -1,8 +1,6 @@
 import styles from "../styles/Projects.module.scss";
 import { Box, Typography, Stack, Grid } from "@mui/material";
-
 import React, { useState } from "react";
-
 import { useTheme } from "@mui/material/styles";
 import MobileStepper from "@mui/material/MobileStepper";
 import Button from "@mui/material/Button";
