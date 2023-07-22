@@ -83,8 +83,8 @@ export default function Principles() {
                 компании, а также причина повторных обращений наших клиентов.
               </Typography>
               <Image
-                src="/cooperation.jpg"
-                alt="ДОЛГОСРОЧНОЕ СОТРУДНИЧЕСТВО"
+                src="/professionalism.jpg"
+                alt="Профессионализм"
                 width="303"
                 height="249"
               />
@@ -103,8 +103,8 @@ export default function Principles() {
             >
               <div className={styles.circle} style={{ right: "-6px" }}></div>
               <Image
-                src="/cooperation.jpg"
-                alt="ДОЛГОСРОЧНОЕ СОТРУДНИЧЕСТВО"
+                src="/approach.jpg"
+                alt="КОМПЛЕКСНЫЙ ПОДХОД"
                 width="303"
                 height="249"
               />
@@ -132,8 +132,8 @@ export default function Principles() {
                 «привлекательные» низкие цены.
               </Typography>
               <Image
-                src="/cooperation.jpg"
-                alt="ДОЛГОСРОЧНОЕ СОТРУДНИЧЕСТВО"
+                src="/partnership.jpg"
+                alt="ПРОЗРАЧНОЕ ПАРТНЕРСТВО"
                 width="303"
                 height="249"
               />

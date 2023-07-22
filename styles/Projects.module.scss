@@ -1,0 +1,123 @@
+$text-color: #fff;
+$accent-color: #bb3633;
+
+ul.sample {
+  list-style-image: url("../public/waiting.png");
+}
+
+.projects {
+  width: 100%;
+  max-width: 1720px;
+  background-image: url(../public/background-lines.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.container {
+  width: 100%;
+}
+.title {
+  margin-bottom: 6px;
+  font-weight: 800;
+  font-size: calc(24px + 51 * (100vw - 320px) / 1600);
+  color: $text-color;
+}
+
+.wrapper {
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.object {
+  justify-content: flex-start;
+
+  &_image {
+  }
+  &_name {
+    max-width: 870px;
+    // font-family: Montserrat;
+    padding: 25px 0px 10px 15px;
+    font-size: 35px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $text-color;
+
+    &_full {
+      max-width: 870px;
+      padding: 0px 0px 25px 15px;
+      color: $text-color;
+    }
+  }
+  &_address {
+    color: $text-color;
+  }
+}
+
+.info {
+  justify-content: flex-start;
+
+  &_number {
+    padding-left: 30px;
+    width: fit-content;
+    position: relative;
+    text-align: left;
+    color: $accent-color;
+    // font-size: calc(100px + 100 * (100vw - 320px) / 1600);
+    font-size: 80px;
+    // font-family: "Gilroy-Bold";
+    font-weight: 700;
+  }
+
+  &_measure {
+    position: absolute;
+    bottom: 0px;
+    right: -7%;
+    text-align: right;
+    color: $text-color;
+    font-size: 25px;
+    // font-family: "Gilroy-Bold";
+    font-weight: 700;
+  }
+
+  &_title {
+    // font-family: Montserrat;
+    max-width: 760px;
+    padding: 30px 20px 20px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $text-color;
+  }
+
+  &_list {
+    padding: 0px 20px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    color: $text-color;
+  }
+}
+
+.stepper {
+  width: inherit;
+  background-color: transparent;
+  color: $text-color;
+
+  button {
+    color: $text-color;
+  }
+
+  button:disabled,
+  button[disabled] {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
