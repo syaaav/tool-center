@@ -1,29 +1,12 @@
-@import "fonts.scss";
-
-@keyframes myAnim {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(0, 30%);
-  }
-}
-
-$text-color: #fff;
-$accent-color: #007fff;
-
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  // background: linear-gradient(180deg, #0e1621 0%, #000813 100%);
-  // background-color: #0e143c;
 }
 
 .wrapper {
   height: max-content;
+  width: 100%;
   max-width: 1720px;
-  // margin: 0px 100px;
   background-color: #0e143c;
 }

@@ -1,10 +1,6 @@
 $text-color: #fff;
 $accent-color: #bb3633;
 
-ul.sample {
-  list-style-image: url("../public/waiting.png");
-}
-
 .projects {
   width: 100%;
   max-width: 1720px;
@@ -24,9 +20,11 @@ ul.sample {
 }
 .title {
   margin-bottom: 6px;
-  font-weight: 800;
-  font-size: calc(24px + 51 * (100vw - 320px) / 1600);
-  color: $text-color;
+  font-family: "GoshaSans";
+  font-size: calc(35px + 65 * (100vw - 320px) / 1600);
+  color: transparent;
+  -webkit-text-stroke: 3.5px $text-color;
+  text-stroke: 3.5px $text-color;
 }
 
 .wrapper {
@@ -39,13 +37,11 @@ ul.sample {
 .object {
   justify-content: flex-start;
 
-  &_image {
-  }
   &_name {
     max-width: 870px;
-    // font-family: Montserrat;
     padding: 25px 0px 10px 15px;
-    font-size: 35px;
+    font-family: "Montserrat";
+    font-size: calc(20px + 15 * (100vw - 320px) / 1600);
     font-weight: 600;
     text-transform: uppercase;
     color: $text-color;
@@ -53,10 +49,17 @@ ul.sample {
     &_full {
       max-width: 870px;
       padding: 0px 0px 25px 15px;
+      font-family: "Montserrat";
+      font-size: calc(15px + 10 * (100vw - 320px) / 1600);
+      font-weight: 300;
+      text-transform: uppercase;
       color: $text-color;
     }
   }
   &_address {
+    font-family: "HelveticaNeueCyr";
+    font-size: calc(15px + 5 * (100vw - 320px) / 1600);
+    font-weight: 300;
     color: $text-color;
   }
 }
@@ -69,11 +72,11 @@ ul.sample {
     width: fit-content;
     position: relative;
     text-align: left;
+    font-family: "GoshaSans";
     color: $accent-color;
-    // font-size: calc(100px + 100 * (100vw - 320px) / 1600);
-    font-size: 80px;
-    // font-family: "Gilroy-Bold";
+    font-size: calc(100px + 100 * (100vw - 320px) / 1600);
     font-weight: 700;
+    line-height: 1;
   }
 
   &_measure {
@@ -81,17 +84,17 @@ ul.sample {
     bottom: 0px;
     right: -7%;
     text-align: right;
+    font-family: "GoshaSans";
     color: $text-color;
     font-size: 25px;
-    // font-family: "Gilroy-Bold";
     font-weight: 700;
   }
 
   &_title {
-    // font-family: Montserrat;
     max-width: 760px;
     padding: 30px 20px 20px 20px;
-    font-size: 20px;
+    font-family: "Montserrat";
+    font-size: calc(15px + 10 * (100vw - 320px) / 1600);
     font-weight: 600;
     text-transform: uppercase;
     color: $text-color;
@@ -99,11 +102,15 @@ ul.sample {
 
   &_list {
     padding: 0px 20px;
-    font-size: 20px;
-    font-style: normal;
+    font-family: "HelveticaNeueCyr";
+    font-size: calc(15px + 5 * (100vw - 320px) / 1600);
     font-weight: 400;
-    line-height: 32px;
+    line-height: 1.5;
     color: $text-color;
+
+    p {
+      margin: 0;
+    }
   }
 }
 

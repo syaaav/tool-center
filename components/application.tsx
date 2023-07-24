@@ -1,14 +1,172 @@
 import styles from "../styles/Application.module.scss";
-import { Box, Typography, Stack } from "@mui/material";
+import { Box, Typography, Stack, styled, TextField } from "@mui/material";
+
+// import Select from "react-select";
+import { useForm, Controller, SubmitHandler } from "react-hook-form";
+// import Input from "@material-ui/core/Input";
+
+const CssTextField = styled(TextField)({
+  width: "100%",
+
+  "& label": {
+    color: "rgba(255, 255, 255, 0.60);",
+  },
+  "& label.Mui-focused": {
+    color: "rgba(255, 255, 255)",
+  },
+  "& .MuiInput-underline:after": {
+    borderBottomColor: "rgba(255, 255, 255, 0.60)",
+  },
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "rgba(255, 255, 255, 0.60)",
+    },
+    "&:hover fieldset": {
+      borderColor: "rgba(255, 255, 255, 0.60)",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "rgba(255, 255, 255)",
+    },
+  },
+  "& .MuiInput-input": {
+    color: "#ffffff",
+    fontSize: "25px",
+    fontWeight: "300",
+
+    "&:before ": {
+      borderBottom: "1 px solid #fff",
+    },
+  },
+  "& .MuiInput-root:before": {
+    borderBottom: "1px solid rgba(255, 255, 255, 0.60)",
+  },
+  "& .MuiInput-root:hover:not(.Mui-disabled):before": {
+    borderBottom: "1px solid #ffffff",
+  },
+});
+
+interface IFormInput {
+  fullName: string;
+  phone: string;
+  email: string;
+}
 
 export default function Application() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
+  console.log(errors);
+
   return (
     <Box className={styles.application}>
       <Typography variant="h1" className={styles.title}>
-        ОСТАВЬТЕ ЗАЯВКУ И МЫ С ВАМИ СВЯЖЕМСЯ
+        <span className={styles.title_transparent}>ОСТАВЬТЕ</span> ЗАЯВКУ <br />
+        <span className={styles.title_transparent}>И МЫ С ВАМИ СВЯЖЕМСЯ</span>
       </Typography>
       <Stack direction="row" className={styles.wrapper}>
-        <Box>Заявка</Box>
+        {/* <form className={styles.form} onSubmit={handleSubmit(onSubmit)}> */}
+        {/* <Controller
+            name="fullName"
+            // control={register}
+            render={({ field }) => (
+              <CssTextField
+                id="name"
+                label="Введите Ваше ФИО"
+                variant="standard"
+                {...field}
+              />
+            )}
+          /> */}
+
+        {/* <CssTextField
+            id="name"
+            label="Введите Ваше ФИО"
+            variant="standard"
+            {...register("fullName", { required: true, maxLength: 20 })}
+          /> */}
+
+        {/* <Controller
+            name="phone"
+            // control={register}
+            render={({ field }) => (
+              <CssTextField
+                id="phone"
+                type="tel"
+                label="Номер телефона"
+                variant="standard"
+                {...field}
+                {...register("phone", {
+                  pattern: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{(2, 4)}$/i,
+                })}
+              />
+            )}
+          /> */}
+
+        {/* <CssTextField
+            id="phone"
+            type="tel"
+            label="Номер телефона"
+            variant="standard"
+            {...register("phone", {
+              pattern: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{(2, 4)}$/i,
+            })}
+          /> */}
+
+        {/* <Controller
+            name="email"
+            // register={register}
+            render={({ field }) => (
+              <CssTextField
+                id="email"
+                label="E-mail"
+                variant="standard"
+                {...field}
+              />
+            )}
+          /> */}
+
+        {/* <CssTextField
+            id="email"
+            label="E-mail"
+            variant="standard"
+            {...register("email", {
+              pattern: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{(2, 4)}$/i,
+            })}
+          />
+          <input
+            type="submit"
+            className={styles.submit}
+            value="Отправить заявку"
+          /> */}
+        {/* </form> */}
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <input
+            type="text"
+            placeholder="First name"
+            {...register("First name", { required: true, maxLength: 80 })}
+          />
+
+          <input
+            type="text"
+            placeholder="Email"
+            {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
+          />
+          <input
+            type="tel"
+            placeholder="Mobile number"
+            {...register("Mobile number", {
+              required: true,
+              minLength: 6,
+              maxLength: 12,
+            })}
+          />
+
+          <input type="submit" />
+        </form>
+
         <svg
           width="785"
           height="693"

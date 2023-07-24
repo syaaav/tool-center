@@ -18,6 +18,7 @@ const NavTabs = styled(Tabs)({
   "& .MuiTab-root": {
     minHeight: "35px",
     padding: "10px",
+    fontFamily: "Helvetica Neue",
     textTransform: "none",
     color: "rgba(255, 255, 255, 0.7)",
   },

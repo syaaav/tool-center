@@ -16,8 +16,9 @@ $text-color: #fff;
   width: 100%;
   text-align: center;
   margin-bottom: 6px;
-  font-weight: 800;
-  font-size: calc(24px + 51 * (100vw - 320px) / 1600);
+  font-family: "GoshaSans";
+  font-weight: 700;
+  font-size: calc(35px + 65 * (100vw - 320px) / 1600);
   color: $text-color;
 }
 .item {

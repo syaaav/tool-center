@@ -1,19 +1,6 @@
-import {
-  Box,
-  Grid,
-  Typography,
-  Divider,
-  Stack,
-  Collapse,
-  styled,
-} from "@mui/material";
+import { Box, Grid, Typography, Stack, Collapse } from "@mui/material";
 import styles from "../styles/Principles.module.scss";
 import Image from "next/image";
-
-const DividerLine = styled(Divider)({
-  width: "calc(100% - 13px)",
-  border: "0.5px solid #ffffff",
-});
 
 export default function Principles() {
   const checked = true;

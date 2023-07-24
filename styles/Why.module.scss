@@ -3,7 +3,7 @@ $accent-color: #bb3633;
 
 .title {
   text-align: center;
-  // font-family: "Gilroy-Bold";
+  font-family: "GoshaSans";
   margin-bottom: 6px;
   font-weight: 800;
   font-size: calc(24px + 51 * (100vw - 320px) / 1600);
@@ -16,9 +16,10 @@ $accent-color: #bb3633;
 }
 
 .summary {
-  // font-family: "Gilroy-Bold";
+  font-family: "Montserrat";
+  text-align: left;
   font-weight: 600;
-  font-size: calc(18px + 17 * (100vw / 1920));
+  font-size: calc(20px + 15 * (100vw - 320px) / 1600);
   color: $text-color;
   text-transform: uppercase;
 }
@@ -26,8 +27,8 @@ $accent-color: #bb3633;
 .details {
   padding: 16px 0px 0px 43px;
   text-align: left;
-  // font-family: "Gilroy-Bold";
+  font-family: "HelveticaNeueCyr";
   font-weight: 400;
-  font-size: calc(14px + 6 * (100vw / 1920));
+  font-size: calc(15px + 5 * (100vw - 320px) / 1600);
   color: $text-color;
 }

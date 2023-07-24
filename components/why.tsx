@@ -1,5 +1,5 @@
 import styles from "../styles/Why.module.scss";
-import { Box, Stack, Typography, Grid, Divider, styled } from "@mui/material";
+import { Box, Stack, Typography, Grid } from "@mui/material";
 import Triangle from "../public/triangle";
 
 export default function Why() {
@@ -22,7 +22,7 @@ export default function Why() {
         <Grid
           container
           rowSpacing={9}
-          columnSpacing={{ xs: 1, sm: 4, md: 19 }}
+          columnSpacing={{ xs: 1, sm: 4, md: 10 }}
           sx={{ color: "white" }}
         >
           <Grid item xs={6}>

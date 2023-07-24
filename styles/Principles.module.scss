@@ -11,9 +11,9 @@ $accent-color: #bb3633;
 
 .accent_title {
   text-align: center;
-  // font-family: "Gilroy-Bold";
+  font-family: "GoshaSans";
   font-weight: 700;
-  font-size: calc(35px + 95 * (100vw - 320px) / 1600);
+  font-size: calc(45px + 85 * (100vw - 320px) / 1600);
   line-height: 1;
   color: $accent-color;
   text-transform: uppercase;
@@ -21,17 +21,18 @@ $accent-color: #bb3633;
 
 .title {
   text-align: center;
-  // font-family: "Gilroy-Bold";
+  font-family: "GoshaSans";
   font-weight: 700;
   line-height: 1;
-  font-size: calc(30px + 45 * (100vw - 320px) / 1600);
+  font-size: calc(35px + 40 * (100vw - 320px) / 1600);
   color: $text-color;
   text-transform: uppercase;
 }
 
 .summary {
   padding: 0px 20px 10px;
-  font-size: calc(16px + 20 * (100vw - 320px) / 1600);
+  font-family: "Montserrat";
+  font-size: calc(20px + 15 * (100vw - 320px) / 1600);
   color: $text-color;
   font-weight: 600;
   text-transform: uppercase;
@@ -42,7 +43,7 @@ $accent-color: #bb3633;
   top: -6px;
   width: 13px;
   height: 13px;
-  background-color: #fff;
+  background-color: $text-color;
   border-radius: 50%;
 }
 
@@ -51,12 +52,12 @@ $accent-color: #bb3633;
   width: calc(100% + 100px);
   flex-direction: row;
   gap: 16px;
-  border-top: 1px solid #ffffff;
+  border-top: 1px solid $text-color;
 
   &_text {
     padding: 10px 20px 0px;
-    font-size: calc(14px + 6 * (100vw - 320px) / 1600);
+    font-family: "HelveticaNeueCyr";
+    font-size: calc(15px + 5 * (100vw - 320px) / 1600);
     color: $text-color;
-    font-weight: 400;
   }
 }

@@ -1,13 +1,12 @@
 @import "fonts.scss";
 
-$text-color: #fff;
-$accent-color: #007fff;
-
 .navigation {
-  width: calc(100% - 200px);
-  // max-height: 82px;
+  width: 100%;
+  max-width: 1720px;
   position: fixed;
   // background-color: #0e143c;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
   padding: 30px 15px;
   display: flex;
   flex-direction: row;
@@ -15,44 +14,9 @@ $accent-color: #007fff;
   justify-content: flex-start;
   align-items: center;
   gap: 40px;
-  font-family: "Gilroy-Regular";
+  font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 500;
   font-size: calc(14px + 4 * (100vw / 1920));
   z-index: 10;
-}
-
-.name {
-  font-family: "Gilroy-Bold";
-  font-weight: 700;
-  font-size: calc(14px + 4 * (100vw / 1920));
-  color: $text-color;
-}
-
-.logIn {
-  padding: 10px 15px;
-  color: $text-color;
-  border: 2px solid #ffffff;
-  border-radius: 3px;
-  font-family: "Gilroy-Bold";
-  font-weight: 700;
-  font-size: calc(14px + 4 * (100vw / 1920));
-  text-transform: capitalize;
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border: 2px solid transparent;
-  }
-}
-
-.signUp {
-  padding: 10px 15px;
-  background-color: $accent-color;
-  border-radius: 0px;
-  font-family: "Gilroy-Bold";
-  font-weight: 700;
-  font-size: calc(14px + 4 * (100vw / 1920));
-  text-transform: capitalize;
-  &:hover {
-    background-color: #004bdd;
-  }
 }

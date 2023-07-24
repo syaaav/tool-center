@@ -18,7 +18,37 @@ $text-color: #fff;
 
 .title {
   margin-bottom: 6px;
+  font-family: "GoshaSans";
   font-weight: 800;
-  font-size: calc(24px + 51 * (100vw - 320px) / 1600);
+  font-size: calc(35px + 65 * (100vw - 320px) / 1600);
   color: $text-color;
+  letter-spacing: 5px;
+
+  &_transparent {
+    color: transparent;
+    -webkit-text-stroke: 3.5px $text-color;
+    text-stroke: 3.5px $text-color;
+  }
+}
+
+.form {
+  width: 40%;
+  padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.submit {
+  margin-top: 20px;
+  border: 0.5px solid #0e143c;
+  background: rgba(192, 197, 228, 0.3);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-family: "Helvetica Neue";
+  font-size: 25px;
+  font-weight: 700;
+  padding: 30px 60px;
 }
