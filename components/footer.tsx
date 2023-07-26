@@ -15,7 +15,7 @@ export default function Footer() {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_59_129)">
+          <g clipPath="url(#clip0_59_129)">
             <path
               d="M83.3957 15.8096V23.6872L89.4289 15.8096H90.7758V26.0614H89.3216V18.1297L83.2341 26.0074H81.8872V15.8096H83.3957Z"
               fill="white"
@@ -134,24 +134,24 @@ export default function Footer() {
               <path
                 d="M7.99992 11.1668C8.70716 11.1668 9.38544 10.8859 9.88554 10.3858C10.3856 9.88568 10.6666 9.20741 10.6666 8.50016C10.6666 7.79292 10.3856 7.11464 9.88554 6.61454C9.38544 6.11445 8.70716 5.8335 7.99992 5.8335C7.29267 5.8335 6.6144 6.11445 6.1143 6.61454C5.6142 7.11464 5.33325 7.79292 5.33325 8.50016C5.33325 9.20741 5.6142 9.88568 6.1143 10.3858C6.6144 10.8859 7.29267 11.1668 7.99992 11.1668Z"
                 stroke="white"
-                stroke-opacity="0.6"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeOpacity="0.6"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M2 11.1667V5.83333C2 4.94928 2.35119 4.10143 2.97631 3.47631C3.60143 2.85119 4.44928 2.5 5.33333 2.5H10.6667C11.5507 2.5 12.3986 2.85119 13.0237 3.47631C13.6488 4.10143 14 4.94928 14 5.83333V11.1667C14 12.0507 13.6488 12.8986 13.0237 13.5237C12.3986 14.1488 11.5507 14.5 10.6667 14.5H5.33333C4.44928 14.5 3.60143 14.1488 2.97631 13.5237C2.35119 12.8986 2 12.0507 2 11.1667Z"
                 stroke="white"
-                stroke-opacity="0.6"
-                stroke-width="1.5"
+                strokeOpacity="0.6"
+                strokeWidth="1.5"
               />
               <path
                 d="M11.6667 4.84152L11.6749 4.83252"
                 stroke="white"
-                stroke-opacity="0.6"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeOpacity="0.6"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
             nk_designit
@@ -170,24 +170,24 @@ export default function Footer() {
               <path
                 d="M7.99992 11.1668C8.70716 11.1668 9.38544 10.8859 9.88554 10.3858C10.3856 9.88568 10.6666 9.20741 10.6666 8.50016C10.6666 7.79292 10.3856 7.11464 9.88554 6.61454C9.38544 6.11445 8.70716 5.8335 7.99992 5.8335C7.29267 5.8335 6.6144 6.11445 6.1143 6.61454C5.6142 7.11464 5.33325 7.79292 5.33325 8.50016C5.33325 9.20741 5.6142 9.88568 6.1143 10.3858C6.6144 10.8859 7.29267 11.1668 7.99992 11.1668Z"
                 stroke="white"
-                stroke-opacity="0.6"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeOpacity="0.6"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M2 11.1667V5.83333C2 4.94928 2.35119 4.10143 2.97631 3.47631C3.60143 2.85119 4.44928 2.5 5.33333 2.5H10.6667C11.5507 2.5 12.3986 2.85119 13.0237 3.47631C13.6488 4.10143 14 4.94928 14 5.83333V11.1667C14 12.0507 13.6488 12.8986 13.0237 13.5237C12.3986 14.1488 11.5507 14.5 10.6667 14.5H5.33333C4.44928 14.5 3.60143 14.1488 2.97631 13.5237C2.35119 12.8986 2 12.0507 2 11.1667Z"
                 stroke="white"
-                stroke-opacity="0.6"
-                stroke-width="1.5"
+                strokeOpacity="0.6"
+                strokeWidth="1.5"
               />
               <path
                 d="M11.6667 4.84152L11.6749 4.83252"
                 stroke="white"
-                stroke-opacity="0.6"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeOpacity="0.6"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
             del.it.ful

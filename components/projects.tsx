@@ -57,13 +57,14 @@ const images = [
       "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250",
     number: "18 463",
     measure: "площадь м²",
-    title:
-      "Комплексная реконструкция систем с последующим техническим обслуживанием и организацией диспетчерской службы:",
+    title: ["Обслуживаем:", "монтажные работы"],
     list: [
-      "автоматическая пожарная сигнализация",
-      "оповещение и управление эвакуацией людей при пожаре",
-      "противодымная вентиляция",
-      "автоматическая установка газового пожаротушения",
+      ["электроустановки РУ 0,4 кВ", "ВРУ", "щитовое оборудование"],
+      [
+        "реконструкция РП 0,4 кВ",
+        "реконструкция РУ 0,4 кВ трансформаторной подстанции и восстановление вводной группы ГРЩ",
+        "монтаж линий заземления ГРЩ и ДГУ",
+      ],
     ],
   },
   {
@@ -83,6 +84,7 @@ const images = [
       "противодымная вентиляция",
       "автоматическая установка газового пожаротушения",
     ],
+    extra: "орагнизация диспетчерской службы на объекте",
   },
 ];
 
@@ -113,7 +115,7 @@ export default function Projects() {
           index={activeStep}
           onChangeIndex={handleStepChange}
           enableMouseEvents
-          interval={4000}
+          interval={70000}
         >
           {images.map((step, index) => (
             <div key={step.imgPath}>
@@ -139,7 +141,7 @@ export default function Projects() {
                       {images[activeStep].name}
                     </Typography>
                     <Stack direction="row" spacing={4} paddingLeft="15px">
-                      <Stack direction="row" spacing={1}>
+                      <Stack direction="row" spacing={1.5} alignItems="center">
                         <svg
                           width="22"
                           height="22"
@@ -153,7 +155,7 @@ export default function Projects() {
                           {images[activeStep].time}
                         </Typography>
                       </Stack>
-                      <Stack direction="row" spacing={1}>
+                      <Stack direction="row" spacing={1} alignItems="center">
                         <svg
                           width="28"
                           height="34"
@@ -175,10 +177,10 @@ export default function Projects() {
                               width="28"
                               height="33.8335"
                               filterUnits="userSpaceOnUse"
-                              color-interpolation-filters="sRGB"
+                              colorInterpolationFilters="sRGB"
                             >
                               <feFlood
-                                flood-opacity="0"
+                                floodOpacity="0"
                                 result="BackgroundImageFix"
                               />
                               <feColorMatrix
@@ -216,23 +218,77 @@ export default function Projects() {
                     </Stack>
                   </Stack>
                   <Stack className={styles.info}>
-                    <Box className={styles.info_number}>
-                      {images[activeStep].number}
+                    <Box className={styles.info_number_field}>
+                      <Typography className={styles.info_number}>
+                        {images[activeStep].number}
+                      </Typography>
                       <Typography className={styles.info_measure}>
                         {images[activeStep].measure}
                       </Typography>
                     </Box>
 
-                    <Typography className={styles.info_title}>
-                      {images[activeStep].title}
-                    </Typography>
-                    {
-                      <ul className={styles.info_list}>
-                        {images[activeStep].list.map((item) => (
-                          <p key={item}>— {item}</p>
-                        ))}
-                      </ul>
-                    }
+                    {Array.isArray(images[activeStep].title) ? (
+                      images[activeStep].title.map((title, index) => (
+                        <Stack key={title}>
+                          <Typography className={styles.info_title}>
+                            {images[activeStep].title[index]}
+                          </Typography>
+                          <ul className={styles.info_list}>
+                            {images[activeStep].list[index].map((item) => (
+                              <Stack
+                                key={item}
+                                direction="row"
+                                spacing={1}
+                                alignItems="flex-start"
+                              >
+                                <p>— </p>
+                                <p>{item}</p>
+                              </Stack>
+                            ))}
+                          </ul>
+                        </Stack>
+                      ))
+                    ) : (
+                      <Stack>
+                        <Typography className={styles.info_title}>
+                          {images[activeStep].title}
+                        </Typography>
+                        <ul className={styles.info_list}>
+                          {images[activeStep].list.map((item) => (
+                            <Stack
+                              direction="row"
+                              spacing={1}
+                              alignItems="center"
+                            >
+                              <p>— </p>
+                              <p key={item}>{item}</p>
+                            </Stack>
+                          ))}
+                        </ul>
+                      </Stack>
+                    )}
+
+                    {images[activeStep].extra && (
+                      <Stack
+                        direction="row"
+                        spacing={1.5}
+                        alignItems="center"
+                        sx={{ marginTop: "20px" }}
+                      >
+                        <svg
+                          width="22"
+                          height="22"
+                          viewBox="0 0 22 22"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle cx="11" cy="11" r="11" fill="#BB3633" />
+                        </svg>
+                        <Typography className={styles.object_address}>
+                          {images[activeStep].extra}
+                        </Typography>
+                      </Stack>
+                    )}
                   </Stack>
                 </Box>
               ) : null}
