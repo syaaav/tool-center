@@ -12,6 +12,7 @@ import Principles from "../components/principles";
 import Projects from "../components/projects";
 import Clients from "../components/clients";
 import Why from "../components/why";
+import Services from "../components/services";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
         <About></About>
         <Why></Why>
         <Principles></Principles>
+        <Services></Services>
         <Projects></Projects>
         <Clients></Clients>
         <Application></Application>

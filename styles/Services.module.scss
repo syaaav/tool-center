@@ -1,0 +1,137 @@
+$text-color: #fff;
+$accent-color: #bb3633;
+
+.services {
+  width: 100%;
+  position: relative;
+  // background-image: url(../public/logo-background.png);
+  // background-size: auto;
+  // background-repeat: no-repeat;
+  // background-position: center;
+}
+
+.background {
+  height: fit-content;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  z-index: 0;
+}
+
+.accent_title {
+  text-align: center;
+  font-family: "GoshaSans";
+  font-weight: 700;
+  font-size: calc(45px + 85 * (100vw - 320px) / 1600);
+  line-height: 1;
+  color: $accent-color;
+  text-transform: uppercase;
+}
+
+.content {
+  gap: 80px;
+}
+
+.title {
+  text-align: center;
+  font-family: "GoshaSans";
+  font-weight: 700;
+  line-height: 1;
+  font-size: calc(35px + 40 * (100vw - 320px) / 1600);
+  color: $text-color;
+  text-transform: uppercase;
+}
+
+.accordion {
+  padding: 0px 3%;
+  position: relative;
+}
+
+.summary {
+  margin: 0px;
+  padding: 0px 10px 10px;
+  font-family: "GoshaSans";
+  font-size: calc(20px + 15 * (100vw - 320px) / 1600);
+  color: $text-color;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.details {
+  padding: 10px 20px 0px;
+  font-family: "HelveticaNeueCyr";
+  font-size: calc(15px + 5 * (100vw - 320px) / 1600);
+}
+
+.extra_number {
+  position: absolute;
+  top: 220px;
+  right: 5%;
+  max-width: 610px;
+  text-align: left;
+
+  &_text {
+    font-family: "GoshaSans";
+    color: $text-color;
+    font-size: calc(15px + 20 * (100vw - 320px) / 1600);
+    font-weight: 700;
+  }
+
+  &_number {
+    font-family: "GoshaSans";
+    font-size: calc(65px + 100 * (100vw - 320px) / 1600);
+    color: $text-color;
+    font-style: normal;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: 3.5px $text-color;
+    text-stroke: 3.5px $text-color;
+    line-height: 0.7;
+  }
+
+  &_bigText {
+    padding-top: 20px;
+    font-family: "GoshaSans";
+    font-size: calc(20px + 15 * (100vw - 320px) / 1600);
+    color: $text-color;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+
+.titles_field {
+  width: 60%;
+}
+
+.system_title {
+  width: max-content;
+  padding: 0px 150px 0px 0px;
+  margin-left: calc(6.15% + 40px);
+  font-family: "Montserrat";
+  font-size: calc(20px + 35 * (100vw - 320px) / 1600);
+  color: $text-color;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.content_field {
+  width: auto;
+}
+
+.divider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  color: $text-color;
+
+  &_circle {
+    width: 13px;
+    height: 13px;
+    background-color: $text-color;
+    border-radius: 50%;
+  }
+}
