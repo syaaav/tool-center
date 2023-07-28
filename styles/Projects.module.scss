@@ -72,6 +72,7 @@ $accent-color: #bb3633;
 
   &_number {
     margin: 0px;
+    width: max-content;
     text-align: left;
     font-family: "GoshaSans";
     color: $accent-color;
@@ -84,7 +85,7 @@ $accent-color: #bb3633;
     text-align: right;
     font-family: "GoshaSans";
     color: $text-color;
-    font-size: 25px;
+    font-size: calc(20px + 15 * (100vw - 320px) / 1600);
     font-weight: 700;
   }
 
