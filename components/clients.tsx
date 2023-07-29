@@ -18,50 +18,104 @@ function srcset(image: string, size: number, rows = 1, cols = 1) {
 
 const itemData = [
   {
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+    img: "/Huawei.jpg",
     title: "Breakfast",
     rows: 4,
     cols: 3,
   },
   {
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+    img: "/ББДО.png",
     title: "Burger",
     rows: 2,
     cols: 4,
   },
   {
-    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
+    img: "/ДОК5.png",
     title: "Camera",
     rows: 2,
     cols: 2,
   },
   {
-    img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
+    img: "/Инэк.png",
     title: "Coffee",
     rows: 2,
     cols: 2,
   },
   {
-    img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
+    img: "/Инком.png",
     title: "Hats",
     rows: 2,
     cols: 4,
   },
   {
-    img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
+    img: "/Минобороны.png",
+    img2: "/ПочтаБанк.png",
     title: "Honey",
     author: "@arwinneil",
     rows: 4,
     cols: 3,
   },
   {
-    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
+    img: "/КОЛЕСО.png",
+    img2: "/Новатэк.png",
     title: "Basketball",
     rows: 2,
     cols: 2,
   },
   {
-    img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
+    img: "/МСХ.png",
+    title: "Fern",
+    rows: 2,
+    cols: 2,
+  },
+];
+const itemData2 = [
+  {
+    img: "/Медси.png",
+    img2: "/ЕМГ.png",
+    title: "Breakfast",
+    rows: 4,
+    cols: 3,
+  },
+  {
+    img: "/Перекресток.png",
+    title: "Burger",
+    rows: 2,
+    cols: 4,
+  },
+  {
+    img: "/ОЗ31.png",
+    title: "Camera",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: "/псн.png",
+    title: "Coffee",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: "/РВМКапитал.png",
+    title: "Hats",
+    rows: 2,
+    cols: 4,
+  },
+  {
+    img: "/ПСБ.png",
+    title: "Honey",
+    author: "@arwinneil",
+    rows: 4,
+    cols: 3,
+  },
+  {
+    img: "/Туламаш.png",
+    title: "Basketball",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: "/УКZeppelin.png",
     title: "Fern",
     rows: 2,
     cols: 2,
@@ -97,6 +151,8 @@ export default function Clients() {
               rows={item.rows || 1}
             >
               <img
+                style={{ objectFit: "contain" }}
+                className={styles.img}
                 {...srcset(item.img, 52, item.rows, item.cols)}
                 alt={item.title}
                 loading="lazy"
@@ -112,7 +168,7 @@ export default function Clients() {
           rowHeight={52}
           gap={40}
         >
-          {itemData.map((item) => (
+          {itemData2.map((item) => (
             <ImageListItem
               className={styles.item}
               key={item.img}
@@ -120,6 +176,7 @@ export default function Clients() {
               rows={item.rows || 1}
             >
               <img
+                style={{ objectFit: "contain" }}
                 {...srcset(item.img, 52, item.rows, item.cols)}
                 alt={item.title}
                 loading="lazy"
