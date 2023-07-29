@@ -4,20 +4,20 @@ $accent-color: #bb3633;
 .services {
   width: 100%;
   position: relative;
-  // background-image: url(../public/logo-background.png);
-  // background-size: auto;
-  // background-repeat: no-repeat;
-  // background-position: center;
+  background-image: url("../public/logo-background.svg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .background {
-  height: fit-content;
+  height: auto;
+  width: 100%;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  margin: auto;
   z-index: 0;
 }
 
@@ -52,25 +52,27 @@ $accent-color: #bb3633;
 
 .summary {
   margin: 0px;
-  padding: 0px 10px 10px;
+  padding: 0px 10px;
   font-family: "GoshaSans";
   font-size: calc(20px + 15 * (100vw - 320px) / 1600);
   color: $text-color;
-  font-weight: 600;
+  font-weight: 400;
   text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .details {
   padding: 10px 20px 0px;
+  color: $text-color;
   font-family: "HelveticaNeueCyr";
   font-size: calc(15px + 5 * (100vw - 320px) / 1600);
 }
 
 .extra_number {
+  max-width: min-content;
   position: absolute;
   top: 220px;
-  right: 5%;
-  max-width: 610px;
+  right: 20px;
   text-align: left;
 
   &_text {
@@ -78,6 +80,7 @@ $accent-color: #bb3633;
     color: $text-color;
     font-size: calc(15px + 20 * (100vw - 320px) / 1600);
     font-weight: 700;
+    letter-spacing: 0.02em;
   }
 
   &_number {
@@ -87,9 +90,10 @@ $accent-color: #bb3633;
     font-style: normal;
     font-weight: 700;
     color: transparent;
-    -webkit-text-stroke: 3.5px $text-color;
-    text-stroke: 3.5px $text-color;
-    line-height: 0.7;
+    -webkit-text-stroke: 0.05px $text-color;
+    text-stroke: 0.05px $text-color;
+    line-height: 0.8;
+    white-space: nowrap;
   }
 
   &_bigText {
@@ -99,6 +103,7 @@ $accent-color: #bb3633;
     color: $text-color;
     font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 0.02em;
   }
 }
 
@@ -109,16 +114,28 @@ $accent-color: #bb3633;
 .system_title {
   width: max-content;
   padding: 0px 150px 0px 0px;
-  margin-left: calc(6.15% + 40px);
+  margin-left: 60px;
   font-family: "Montserrat";
-  font-size: calc(20px + 35 * (100vw - 320px) / 1600);
+  font-size: calc(20px + 15 * (100vw - 320px) / 1600);
   color: $text-color;
   font-weight: 600;
   text-transform: uppercase;
 }
 
+.system_title_inactive {
+  cursor: pointer;
+  width: max-content;
+  padding: 0px 150px 0px 0px;
+  margin-left: 60px;
+  font-family: "Montserrat";
+  font-size: calc(20px + 15 * (100vw - 320px) / 1600);
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 .content_field {
-  width: auto;
+  width: calc(40% - 50px);
 }
 
 .divider {
@@ -134,4 +151,25 @@ $accent-color: #bb3633;
     background-color: $text-color;
     border-radius: 50%;
   }
+}
+
+.measure {
+  font-family: "GoshaSans";
+  font-size: calc(45px + 30 * (100vw - 320px) / 1600);
+  color: $text-color;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.text {
+  padding: 10px 20px 20px 0px;
+  color: $text-color;
+  font-family: "HelveticaNeueCyr";
+  font-size: calc(15px + 5 * (100vw - 320px) / 1600);
+}
+
+.collapse {
+  // width: inherit !important;
+  // transition-duration: 800ms !important;
 }

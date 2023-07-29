@@ -8,7 +8,7 @@ export default function Principles() {
     <div className={styles.principles}>
       <Box
         sx={{
-          padding: "100px 0px",
+          paddingTop: "100px",
           display: "flex",
           flexDirection: "column",
           flexWrap: "wrap",

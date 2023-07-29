@@ -2,13 +2,14 @@ import * as React from "react";
 import { styled } from "@mui/material/styles";
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
-import { Box, Typography, Stack, Divider, Button } from "@mui/material";
+import { Box, Typography, Stack, Divider, Collapse } from "@mui/material";
 import MuiAccordion, { AccordionProps } from "@mui/material/Accordion";
 import MuiAccordionSummary, {
   AccordionSummaryProps,
 } from "@mui/material/AccordionSummary";
 import styles from "../styles/Services.module.scss";
 import Triangle from "../public/triangle";
+import mySvg from "../public/background-red-line.svg";
 
 const directions = [
   {
@@ -67,7 +68,7 @@ const systems = [
     text: "Собираем оборудование гарантия прохождения проверок до 35 кВ на своем производстве, и успешного устранения замечаний проводим испытания в собственной электролаборатории",
   },
   {
-    title: "Пожарная безопасность",
+    title: "ПОЖАРНАЯ БЕЗОПАСНОСТЬ",
     list: [
       "система автоматической пожарной сигнализации и система оповещения и управления эвакуацией людей при пожаре",
       "все виды систем пожаротушения",
@@ -81,12 +82,21 @@ const systems = [
   },
   {
     title: "СЛАБОТОЧНЫЕ СИСТЕМЫ",
-    list: ["кfghjk", "fghjk"],
+    list: [
+      "контроль и управление доступом, шлагбаумы",
+      "охранное телевидение и охранная сигнализация",
+      "интернет, телефония, телевидение, видеодомофоны",
+      "навигация и автоматизация паркингов и стоянок",
+      "системы связи для маломобильных граждан",
+      "структурированные кабельные сети",
+      "локальные вычислительные сети",
+      "система единого времени",
+    ],
     number: "24/7",
     text: "Единый центр управления и удаленные серверы для хранения данных работают 24/7 и обеспечивают постоянный контроль за слаботочными системами",
   },
   {
-    title: "ОВиК и ВК",
+    title: "ОВИК И ВК",
     list: [
       "вентиляция и кондиционирование",
       "автоматизация вентиляции",
@@ -110,6 +120,7 @@ const Accordion = styled((props: AccordionProps) => (
   backgroundColor: "transparent",
   color: "#fff",
   border: "none",
+  paddingBottom: "20px",
   "&:not(:last-child)": {
     border: "none",
   },
@@ -144,20 +155,34 @@ const DividerLine = styled(Divider)({
 });
 
 export default function Services() {
-  const checked = true;
   const [expanded, setExpanded] = React.useState<string | false>("panel1");
+  const [systemContent, setSystemContent] = React.useState<object | null>(
+    systems[0]
+  );
+  const [widthDivider, setWidthDivider] = React.useState<number | null>(null);
 
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
       setExpanded(newExpanded ? panel : false);
     };
 
+  const handleChangeSystem = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
+    setSystemContent(
+      systems.find((system) => system.title === event.target.innerText)
+    );
+    setWidthDivider(event.currentTarget.offsetWidth);
+  };
+
+  React.useEffect(() => {
+    const box = document.getElementById("active");
+    setWidthDivider(box.offsetWidth);
+  }, [systemContent]);
+
   return (
-    <div
-      className={styles.services}
-      // style={{ backgroundImage: `url(${mySvg})` }}
-    >
-      {/* <svg
+    <div className={styles.services}>
+      <svg
         className={styles.background}
         width="1720"
         height="2157"
@@ -170,9 +195,17 @@ export default function Services() {
           fill="#BB3633"
           stroke="#BB3633"
         />
-      </svg> */}
+      </svg>
 
-      <Stack sx={{ width: "100%", gap: "80px" }}>
+      <Stack
+        sx={{
+          width: "100%",
+          gap: "80px",
+          position: "relative",
+          zIndex: 2,
+          paddingTop: "100px",
+        }}
+      >
         <Typography className={styles.accent_title}>Услуги</Typography>
 
         <Stack className={styles.content}>
@@ -189,6 +222,9 @@ export default function Services() {
                   aria-controls={`${direction.title}`}
                   id={`panel${index + 1}d-header`}
                   sx={{
+                    "& .MuiAccordionSummary-content": {
+                      margin: "0px",
+                    },
                     "& .MuiAccordionSummary-expandIconWrapper": {
                       visibility: !direction.list && "hidden",
                     },
@@ -240,19 +276,36 @@ export default function Services() {
 
         <Stack className={styles.content}>
           <Typography className={styles.title}>системы</Typography>
-          <Stack direction="row" spacing={5}>
-            <Stack spacing={22} className={styles.titles_field}>
+          <Stack direction="row">
+            <Stack spacing={18} className={styles.titles_field}>
               {systems.map((system) => (
                 <Box key={system.title} sx={{ width: "max-content" }}>
-                  <Button variant="text" className={styles.system_title}>
-                    {system.title}
-                  </Button>
                   <Box
-                    className={styles.divider}
-                    sx={{ width: "100%", marginRight: "auto" }}
+                    className={
+                      systemContent.title === system.title
+                        ? styles.system_title
+                        : styles.system_title_inactive
+                    }
+                    id={systemContent.title === system.title && "active"}
+                    onClick={handleChangeSystem}
                   >
-                    <DividerLine />
-                    <p className={styles.divider_circle}></p>
+                    {system.title}
+                  </Box>
+                  <Box sx={{ width: "100%", marginRight: "auto" }}>
+                    <Collapse
+                      className={styles.collapse}
+                      orientation="horizontal"
+                      in={systemContent.title === system.title}
+                      timeout={500}
+                    >
+                      <Box
+                        className={styles.divider}
+                        sx={{ width: widthDivider }}
+                      >
+                        <DividerLine />
+                        <p className={styles.divider_circle}></p>
+                      </Box>
+                    </Collapse>
                   </Box>
                 </Box>
               ))}
@@ -261,11 +314,35 @@ export default function Services() {
               justifyContent={"space-between"}
               className={styles.content_field}
             >
-              <Box>list</Box>
+              <Box>
+                {systemContent &&
+                  systemContent.list.map((point) => (
+                    <Stack
+                      className={styles.details}
+                      key={point}
+                      direction="row"
+                      spacing={1}
+                      alignItems="flex-start"
+                      gap={1}
+                    >
+                      <span>— </span>
+                      <p>{point}</p>
+                    </Stack>
+                  ))}
+              </Box>
 
-              <Stack direction="row" spacing={2}>
-                <Typography>number</Typography>
-                <Typography>measure</Typography>
+              <Stack>
+                <Stack direction="row" spacing={2} alignItems={"flex-end"}>
+                  <Typography className={styles.extra_number_number}>
+                    {systemContent && systemContent.number}
+                  </Typography>
+                  <Typography className={styles.measure}>
+                    {systemContent.measure && systemContent.measure}
+                  </Typography>
+                </Stack>
+                <Typography className={styles.text}>
+                  {systemContent.text}
+                </Typography>
               </Stack>
             </Stack>
           </Stack>
