@@ -87,6 +87,12 @@ export default function Why() {
             </Typography>
           </Grid>
         </Grid>
+        <Stack alignItems={"center"} sx={{ paddingTop: "70px" }}>
+          <Typography className={styles.number}>130+</Typography>
+          <Typography className={styles.number_title}>
+            КЛИЕНТОВ НА ПОСТОЯННОМ ОБСЛУЖИВАНИИ
+          </Typography>
+        </Stack>
       </Box>
     </div>
   );

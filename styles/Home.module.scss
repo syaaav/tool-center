@@ -6,7 +6,8 @@
 
 .wrapper {
   height: max-content;
-  width: 100%;
+  width: calc(100% - 10%);
   max-width: 1720px;
+  // margin: 0px 5%;
   background-color: #0e143c;
 }

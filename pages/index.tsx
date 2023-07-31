@@ -13,6 +13,7 @@ import Projects from "../components/projects";
 import Clients from "../components/clients";
 import Why from "../components/why";
 import Services from "../components/services";
+import Main from "../components/main";
 
 export default function Home() {
   return (
@@ -23,8 +24,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Nav></Nav>
+      <Main></Main>
       <div className={styles.wrapper}>
-        <Nav></Nav>
+        {/* <Nav></Nav>
+        <Main></Main> */}
         <About></About>
         <Why></Why>
         <Principles></Principles>

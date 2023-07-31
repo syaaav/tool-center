@@ -1,5 +1,5 @@
 import styles from "../styles/Header.module.scss";
-import { Box, Typography, Divider, styled } from "@mui/material";
+import { Box, Typography, Divider, styled, Stack } from "@mui/material";
 
 const DividerLine = styled(Divider)({
   width: "calc(100% - 13px)",
@@ -11,7 +11,7 @@ export default function About() {
     <div className={styles.header}>
       <Box
         sx={{
-          padding: "100px 0px",
+          padding: "50px 0px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -33,26 +33,39 @@ export default function About() {
           <p className={styles.divider_circle}></p>
           <DividerLine />
         </Box>
-        <Box sx={{ width: "55%" }}>
-          <Typography sx={{ padding: "0px 15px" }} className={styles.text}>
-            «ИНСТРУМЕНТ ЦЕНТР» С 2012 года осуществляет полный комплекс услуг по
-            проектированию, монтажу и техническому обслуживанию инженерных
-            систем на объектах коммерческой и жилой недвижимости.
-          </Typography>
-          <Box className={styles.divider}>
-            <DividerLine />
-            <p className={styles.divider_circle}></p>
+        <Stack
+          direction="row"
+          spacing={3}
+          justifyContent={"space-between"}
+          sx={{ width: "100%" }}
+        >
+          <Box sx={{ width: "55%" }}>
+            <Typography sx={{ padding: "0px 15px" }} className={styles.text}>
+              «ИНСТРУМЕНТ ЦЕНТР» С 2012 года осуществляет полный комплекс услуг
+              по проектированию, монтажу и техническому обслуживанию инженерных
+              систем на объектах коммерческой и жилой недвижимости.
+            </Typography>
+            <Box className={styles.divider}>
+              <DividerLine />
+              <p className={styles.divider_circle}></p>
+            </Box>
+            <Typography sx={{ padding: "0px 15px" }} className={styles.text}>
+              <span className={styles.text_big}>Миссия нашей компании</span> -
+              обеспечить клиентам комфорт и безопасность с помощью применения
+              новейших технологий и современный инженерных решений.
+            </Typography>
+            <Box className={styles.divider} sx={{ width: "95%" }}>
+              <DividerLine />
+              <p className={styles.divider_circle}></p>
+            </Box>
           </Box>
-          <Typography sx={{ padding: "0px 15px" }} className={styles.text}>
-            <span className={styles.text_big}>Миссия нашей компании</span> -
-            обеспечить клиентам комфорт и безопасность с помощью применения
-            новейших технологий и современный инженерных решений.
-          </Typography>
-          <Box className={styles.divider} sx={{ width: "95%" }}>
-            <DividerLine />
-            <p className={styles.divider_circle}></p>
-          </Box>
-        </Box>
+          <Stack sx={{ width: "35%" }}>
+            <Typography className={styles.extra_number}>70+</Typography>
+            <Typography className={styles.extra_number_text}>
+              СПЕЦИАЛИСТОВ ДЛЯ РЕАЛИЗАЦИИ ПРОЕКТОВ
+            </Typography>
+          </Stack>
+        </Stack>
       </Box>
     </div>
   );

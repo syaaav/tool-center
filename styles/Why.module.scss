@@ -32,3 +32,21 @@ $accent-color: #bb3633;
   font-size: calc(15px + 5 * (100vw - 320px) / 1600);
   color: $text-color;
 }
+
+.number {
+  margin: 0;
+  color: $text-color;
+  font-family: "GoshaSans";
+  font-size: calc(100px + 100 * (100vw - 320px) / 1600);
+  font-weight: 400;
+  line-height: 0.8;
+
+  &_title {
+    color: $text-color;
+    font-family: "GoshaSans";
+    font-size: calc(35px + 20 * (100vw - 320px) / 1600);
+    font-weight: 400;
+    // line-height: 0.8;
+    text-transform: uppercase;
+  }
+}

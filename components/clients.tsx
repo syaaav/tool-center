@@ -18,7 +18,7 @@ function srcset(image: string, size: number, rows = 1, cols = 1) {
 
 const itemData = [
   {
-    img: "/Huawei.jpg",
+    img: "/Huawei.png",
     title: "Breakfast",
     rows: 4,
     cols: 3,
