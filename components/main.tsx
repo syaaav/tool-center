@@ -75,8 +75,9 @@ function Main() {
 
   return (
     <Box
+      id="main-page"
       sx={{
-        width: "100%",
+        width: "100vw",
         height: "100vh",
         //  paddingTop: "79px"
       }}

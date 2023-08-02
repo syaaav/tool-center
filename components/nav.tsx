@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Box, Tabs, Tab, styled } from "@mui/material";
 import styles from "../styles/Nav.module.scss";
 import Logo from "../public/logo";
@@ -8,7 +8,6 @@ const NavTabs = styled(Tabs)({
   borderBottom: "1px solid #fff",
   backgroundColor: "transparent",
   color: "#fff",
-
   "& .MuiTabs-flexContainer": {
     gap: "50px",
   },
@@ -31,12 +30,38 @@ const NavTabs = styled(Tabs)({
 export default function Nav() {
   const [value, setValue] = useState("mainPage");
 
+  useEffect(() => {
+    let header = document.querySelector("#header");
+    const trimHeight =
+      document.querySelector("#main-page").clientHeight - header.clientHeight;
+    window.onscroll = function () {
+      if (window.scrollY > 1 && window.scrollY < trimHeight) {
+        header.style.width = "100%";
+        header.style.justifyContent = "flex-start";
+        header.style.padding = "30px 15px 0px 5%";
+        header.style.background = "transparent";
+        header.style.backdropFilter = "blur(7.5px)";
+      } else if (window.scrollY >= trimHeight) {
+        header.style.width = "90%";
+        header.style.justifyContent = "center";
+        header.style.padding = "30px 15px 0px";
+        header.style.background = "#0e143c";
+      } else {
+        header.style.width = "100%";
+        header.style.justifyContent = "flex-start";
+        header.style.padding = "30px 15px 0px 5%";
+        header.style.background = "transparent";
+        header.style.backdropFilter = "";
+      }
+    };
+  }, []);
+
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
 
   return (
-    <div className={styles.navigation}>
+    <div className={styles.navigation} id="header">
       <Logo></Logo>
 
       <Box
