@@ -48,11 +48,16 @@ $text-color: #fff;
   backdrop-filter: blur(10px);
   color: #fff;
   font-family: "Helvetica Neue";
-  font-size: 25px;
+  font-size: calc(15px + 10 * (100vw - 320px) / 1600);
   font-weight: 700;
   padding: 30px 60px;
 }
 
 .input {
   color: #fff;
+}
+
+.svg_wrapper {
+  width: 60%;
+  padding-left: 10%;
 }
