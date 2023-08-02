@@ -188,7 +188,9 @@ function Main() {
           1000 довольных{" "}
           <span className={styles.title_stroke_withoutBlur}>клиентов</span>
         </Typography>
-        <Button className={styles.button}>Оставить заявку</Button>
+        <Button className={styles.button} href="#application">
+          Оставить заявку
+        </Button>
       </Box>
     </Box>
   );

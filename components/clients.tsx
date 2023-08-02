@@ -125,6 +125,7 @@ const itemData2 = [
 export default function Clients() {
   return (
     <Box
+      id="clients"
       className={styles.clients}
       sx={{
         display: "flex",

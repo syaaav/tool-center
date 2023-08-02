@@ -80,12 +80,12 @@ export default function Nav() {
             onChange={handleChange}
             aria-label="navigation"
           >
-            <Tab value="mainPage" label="Главная" />
-            <Tab value="about" label="О компании" />
-            <Tab value="services" label="Услуги" />
-            <Tab value="projects" label="Проекты" />
-            <Tab value="clients" label="Заказчики" />
-            <Tab value="contacts" label="Контакты" />
+            <Tab value="mainPage" label="Главная" href="#main-page" />
+            <Tab value="about" label="О компании" href="#about" />
+            <Tab value="services" label="Услуги" href="#services" />
+            <Tab value="projects" label="Проекты" href="#projects" />
+            <Tab value="clients" label="Заказчики" href="#clients" />
+            <Tab value="contacts" label="Контакты" href="#contacts" />
           </NavTabs>
         </Box>
       </Box>

@@ -101,7 +101,7 @@ const Application = () => {
     console.log(JSON.stringify(data, null, 2));
   };
   return (
-    <Box className={styles.application}>
+    <Box className={styles.application} id="application">
       <Typography variant="h1" className={styles.title}>
         <span className={styles.title_transparent}>ОСТАВЬТЕ</span> ЗАЯВКУ <br />
         <span className={styles.title_transparent}>И МЫ С ВАМИ СВЯЖЕМСЯ</span>

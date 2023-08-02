@@ -181,7 +181,7 @@ export default function Services() {
   }, [systemContent]);
 
   return (
-    <div className={styles.services}>
+    <div className={styles.services} id="services">
       <svg
         className={styles.background}
         width="1720"

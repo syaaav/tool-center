@@ -8,7 +8,7 @@ const DividerLine = styled(Divider)({
 
 export default function About() {
   return (
-    <div className={styles.header}>
+    <div className={styles.header} id="about">
       <Box
         sx={{
           padding: "50px 0px",
