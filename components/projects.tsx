@@ -264,7 +264,8 @@ export default function Projects() {
                     <div
                       style={{
                         height: "555px",
-                        width: "885px",
+                        // width: "885px",
+                        width: "100%",
                         position: "relative",
                       }}
                     >

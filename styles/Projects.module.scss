@@ -36,6 +36,7 @@ $accent-color: #bb3633;
 }
 
 .object {
+  width: 65%;
   padding-top: 30px;
   justify-content: flex-start;
 
@@ -77,9 +78,9 @@ $accent-color: #bb3633;
     text-align: left;
     font-family: "GoshaSans";
     color: $accent-color;
-    font-size: calc(100px + 100 * (100vw - 320px) / 1600);
+    font-size: calc(90px + 100 * (100vw - 320px) / 1600);
     font-weight: 700;
-    line-height: 0.55;
+    line-height: 0.85;
   }
 
   &_measure {
