@@ -212,3 +212,105 @@ export const projects = [
     ],
   },
 ];
+
+export const clients = [
+  {
+    img: { front: "/Huawei.png", back: null },
+    title: "Breakfast",
+    rows: 4,
+    cols: 3,
+  },
+  {
+    img: { front: "/ББДО.png", back: "/Сбербанк.png" },
+    title: "Burger",
+    rows: 2,
+    cols: 4,
+  },
+  {
+    img: { front: "/ДОК5.png", back: "/Новатэк.png" },
+    title: "Camera",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: { front: "/Инэк.png", back: "/Ренессанс.png" },
+    title: "Coffee",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: { front: "/Инком.png", back: "/Сенеж.png" },
+    title: "Hats",
+    rows: 2,
+    cols: 4,
+  },
+  {
+    img: { front: "/Минобороны.png", back: "/ПочтаБанк.png" },
+    title: "Honey",
+    rows: 4,
+    cols: 3,
+  },
+  {
+    img: { front: "/КОЛЕСО.png", back: "/СССР.png" },
+    title: "Basketball",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: { front: "/МСХ.png", back: null },
+    title: "Fern",
+    rows: 2,
+    cols: 2,
+  },
+];
+
+export const clients2 = [
+  {
+    img: { front: "/Медси.png", back: "/ЕМГ.png" },
+    title: "Breakfast",
+    rows: 4,
+    cols: 3,
+  },
+  {
+    img: { front: "/Перекресток.png", back: "/СМКлиника.png" },
+    title: "Burger",
+    rows: 2,
+    cols: 4,
+  },
+  {
+    img: { front: "/ОЗ31.png", back: "/XFit.png" },
+    title: "Camera",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: { front: "/псн.png", back: null },
+    title: "Coffee",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: { front: "/РВМКапитал.png", back: "/ЭЛМА.png" },
+    title: "Hats",
+    rows: 2,
+    cols: 4,
+  },
+  {
+    img: { front: "/ПСБ.png", back: null },
+    title: "Honey",
+    rows: 4,
+    cols: 3,
+  },
+  {
+    img: { front: "/Туламаш.png", back: null },
+    title: "Basketball",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: { front: "/УКZeppelin.png", back: null },
+    title: "Fern",
+    rows: 2,
+    cols: 2,
+  },
+];

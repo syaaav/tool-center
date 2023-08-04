@@ -14,6 +14,7 @@ import Clients from "../components/clients";
 import Why from "../components/why";
 import Services from "../components/services";
 import Main from "../components/main";
+// import CardGame from "../components/cards";
 
 export default function Home() {
   return (
@@ -35,6 +36,8 @@ export default function Home() {
         <Services></Services>
         <Projects></Projects>
         <Clients></Clients>
+        {/* <CardGame></CardGame> */}
+
         <Application></Application>
         <Footer></Footer>
       </div>

@@ -21,8 +21,60 @@ $text-color: #fff;
   font-size: calc(35px + 65 * (100vw - 320px) / 1600);
   color: $text-color;
 }
-.item {
+
+@keyframes flipped {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes unflipped {
+  0% {
+    transform: rotateY(360deg);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+.cardList {
+  width: 50%;
+  overflow: hidden;
+}
+
+.card {
   padding: 10px;
   border-radius: 20px;
   background-color: #fff;
+  position: relative;
+}
+
+.front,
+.back {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backface-visibility: hidden;
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.flipped {
+  animation: flipped 0.8s ease-out;
+}
+
+.unflipped {
+  animation: unflipped 0.8s ease-out;
 }
