@@ -1,244 +1,39 @@
 import styles from "../styles/Projects.module.scss";
-import { Box, Typography, Stack } from "@mui/material";
 import React, { useState } from "react";
-import { useTheme } from "@mui/material/styles";
-import MobileStepper from "@mui/material/MobileStepper";
-import Button from "@mui/material/Button";
-import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import { projects } from "./data";
+import { Box, Typography, Stack, styled } from "@mui/material";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import Image from "next/image";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-const images = [
-  {
-    label: "бизнес-центр “новоспасский двор”",
-    name: "офисное ЗДАНИЕ КЛАССА «B+»",
-    time: "На обслуживании с 2019г.",
-    address: "Дербеневская набережная, д. 7",
-    imgPath: "/project1.jpg",
-    number: "110 000",
-    measure: "площадь м²",
-    title: "Обслуживаемые системы:",
-    list: [
-      "автоматическая пожарная сигнализация",
-      "оповещение и управление эвакуацией людей при пожаре",
-      "автоматическое водяное пожаротушение",
-      "внутренний противопожарный водопровод",
-    ],
-    extra: "орагнизация диспетчерской службы на объекте",
+const StepsContainer = styled(Stack)(() => ({
+  backgroundColor: "transparent",
+  flexDirection: "row",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "20px",
+}));
+
+const Step = styled("button")(({ active }) => ({
+  height: active ? "15px" : "8px",
+  width: active ? "15px" : "8px",
+  padding: "0px",
+  border: "none",
+  borderRadius: "50%",
+  backgroundColor: active ? "#fff" : "rgba(255, 255, 255, 0.5)",
+  cursor: "pointer",
+  "&:hover": {
+    height: "10px",
+    width: "10px",
+    backgroundColor: "#fff",
   },
-  {
-    label: "жк “sreda”",
-    name: "ЖИЛОЙ КОМПЛЕКС КОМФОРТ-КЛАССА",
-    time: "На обслуживании с 2019г.",
-    address: "Рязанский проспект, д. 2",
-    imgPath: "/project2.jpg",
-    number: "2 651",
-    measure: "количество квартир в жилом комплексе",
-    title: "Обслуживаемые системы:",
-    list: [
-      "внутренний противопожарный водопровод",
-      "автоматическая пожарная сигнализация",
-      "автоматическое водяное пожаротушение",
-      "оповещение и управление эвакуацией людей при пожаре",
-    ],
-    extra: "орагнизация диспетчерской службы на объекте",
-  },
-  {
-    label: "БИЗНЕС-ЦЕНТР «ДОМНИКОВ»",
-    name: "ОФИСНОЕ ЗДАНИЕ КЛАССА «A»",
-    time: "На обслуживании с 2019г.",
-    address: "ул. Маши Порываевой, д. 34",
-    imgPath: "/project3.jpg",
-    number: "80 000",
-    measure: "площадь м²",
-    title: "Обслуживаемые системы:",
-    list: [
-      "автоматическое водяное пожаротушение",
-      "внутренний противопожарный водопровод",
-      "дымоудаление и противопожарная автоматика",
-      "автоматическая пожарная сигнализация",
-      "оповещение и управление эвакуацией людей при пожаре",
-      "порошковое пожаротушение",
-      "аэродинамические испытания системы дымоудаления",
-    ],
-    extra: "орагнизация диспетчерской службы на объекте",
-  },
-  {
-    label: "ЖК «ПОЛЯНКА/44»",
-    name: "ЭЛИТНЫЙ ЖИЛОЙ КОМПЛЕКС",
-    time: "На обслуживании с 2019г.",
-    address: "ул. Большая Полянка, д. 44",
-    imgPath: "/project4.jpeg",
-    number: "52 500",
-    measure: "площадь м²",
-    title: "Обслуживаемые системы:",
-    list: [
-      "оповещение и управление эвакуацией людей при пожаре",
-      "автоматическое водяное пожаротушение",
-      "внутренний противопожарный водопровод",
-      "дымоудаление и противопожарная автоматика",
-      "автоматическая пожарная сигнализация",
-    ],
-  },
-  {
-    label: "БИЗНЕС-ЦЕНТР «НОВОCЛОБОДСКИЙ»",
-    name: "БИЗНЕС-ЦЕНТР КЛАССА «А»",
-    time: "На обслуживании с 2019г.",
-    address: "ул. Краснопролетарская, д. 16",
-    imgPath: "/project5.jpg",
-    number: "25 670",
-    measure: "площадь м²",
-    title: "Обслуживаемые системы:",
-    list: [
-      "дымоудаление и противопожарная автоматика",
-      "пожарная насосная станция",
-      "автоматическая пожарная сигнализация",
-      "оповещение и управление эвакуацией людей при пожаре",
-      "контроль и управление доступом",
-      "видеонаблюдение",
-    ],
-  },
-  {
-    label: "ХЦ «ЛЕЙПЦИГ»",
-    name: "МНОГОФУНКЦИОНАЛЬНЫЙ ОФИСНО-ТОРГОВЫЙ ЦЕНТР",
-    time: "На обслуживании с 2018г.",
-    address: "ул. Академика Варги, вл. 8, к. 1",
-    imgPath: "/project6.jpeg",
-    number: "54 500",
-    measure: "площадь м²",
-    title: "Обслуживаемые системы:",
-    list: [
-      "вентиляция и кондиционирование воздуха",
-      "противодымная вентиляция",
-      "автоматическое водяное пожаротушение",
-      "внутренний противопожарный водопровод",
-      "автоматическое порошковое пожаротушение",
-      "пожарные насосные станции",
-    ],
-  },
-  {
-    label: "HOLIDAY INN MOSCOW SELIGERSKAYA И VINOGRADOVO",
-    name: "СЕТЬ МЕЖДУНАРОДНЫХ 4* отелей",
-    time: "На обслуживании с 2019г.",
-    address: "Коровинское шоссе, д. 10",
-    imgPath: "/project7.jpg",
-    number: "365",
-    measure: "количество номеров",
-    title: ["Обслуживаем:", "монтажные работы"],
-    list: [
-      ["электроустановки РУ 0,4 кВ", "ВРУ", "щитовое оборудование"],
-      [
-        "реконструкция РП 0,4 кВ",
-        "реконструкция РУ 0,4 кВ трансформаторной подстанции и восстановление вводной группы ГРЩ",
-        "монтаж линий заземления ГРЩ и ДГУ",
-      ],
-    ],
-  },
-  {
-    label: "ИБХ РАН",
-    name: "ИНСТИТУТ БИООРГАНИЧЕСКОЙ ХИМИИ КОМПЛЕКС ЗДАНИЙ ИНСТИТУТА",
-    time: "На обслуживании с 2019г.",
-    address: "ул. Миклухо-Маклая, д. 16/10",
-    imgPath: "/project8.jpg",
-    number: "115 636",
-    measure: "площадь м²",
-    title: "Обслуживаемые системы:",
-    list: [
-      "контроль и управление доступом",
-      "охранная сигнализация",
-      "видеонаблюдение",
-      "автоматическая пожарная сигнализация",
-      "оповещение и управление эвакуацией людей при пожаре",
-      "шлагбаумы",
-      "телефонная связь",
-      "часофикация",
-    ],
-  },
-  {
-    label: "МИНИСТЕРСТВО СЕЛЬСКОГО ХОЗЯЙСТВА РФ",
-    name: "",
-    time: "Реализация 2020-2021 гг.",
-    address: "Орликов переулок, д. 1/11",
-    imgPath: "/project9.jpg",
-    number: "36 972",
-    measure: "площадь м²",
-    title: "Комплекс работ по:",
-    list: [
-      "интеграции противопожарных систем защиты",
-      "программированию противопожарной автоматики",
-      "дооснащению системы АПС",
-      "модернизации ПНС",
-    ],
-  },
-  {
-    label: "ГБУ «ГОРОДСКАЯ ПОЛИКЛИНИКА No46»",
-    name: "",
-    time: "Реализация: 2020–2021 гг.",
-    address: "ул. Иерусалимская, д. 4, стр. 1",
-    imgPath: "/project10.jpeg",
-    number: "3 268",
-    measure: "площадь м²",
-    title: "Комплексный монтаж инженерных систем:",
-    list: [
-      "электроснабжение, электроосвещение, молниезащита",
-      "структурированная кабельная сеть",
-      "системы противопожарной защиты (АПС, СОУЭ, АУГПТ, ППА)",
-      "охранно-защитная дератизационная система",
-      "слаботочные системы (СКУД, СОТ, СКПТ, ЧС, ОС, САПС, РТ)",
-      "комплексная автоматизация и диспетчеризация (ИТП, ОВиК, лифтовое оборудование)",
-    ],
-  },
-  {
-    label: "ФИЛИАЛ ИНСТИТУТА БИООРГАНИЧЕСКОЙ ХИМИИ РАН",
-    name: "",
-    time: "Реализация: 2019–2020 гг.",
-    address: "г. Пущино, пр. Науки, д. 6",
-    imgPath: "/project11.jpg",
-    number: "10 кВ",
-    measure: "капитальный ремонт распределительного устройства",
-    title: "Капитальный ремонт и модернизация:",
-    list: [
-      "распределительного устройства (10 кВ) и силовых трансформаторов на  ррТП-339",
-      "силовых трансформаторов общей мощностью 630 кВА, номинальной ччччастотой 50 Гц",
-      "вираспределительного устройства РУ-10 кВдеонаблюдение",
-      "ячеек КСО и автоматических выключателей на низковольтной стороне ТП яя(тип К-42-630 м4)",
-    ],
-  },
-  {
-    label: "ФГУП ОрВД",
-    name: "ГОСКОРПОРАЦИЯ ПО ОРГАНИЗАЦИИ ВОЗДУШНОГО ДВИЖЕНИЯ АДМИНИСТРАТИВНОЕ ЗДАНИЕ КЛАССА «B»",
-    time: "На обслуживании с 2018г.",
-    address: "Ленинградский пр-т, д. 37, к. 7",
-    imgPath: "/project12.jpg",
-    number: "18 463",
-    measure: "площадь м²",
-    title:
-      "Комплексная реконструкция систем с последующим техническим обслуживанием и организацией диспетчерской службы:",
-    list: [
-      "автоматическая пожарная сигнализация",
-      "оповещение и управление эвакуацией людей при пожаре",
-      "противодымная вентиляция",
-      "автоматическая установка газового пожаротушения",
-    ],
-  },
-];
+}));
 
 export default function Projects() {
-  const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
-  const maxSteps = images.length;
-
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
+  const maxSteps = projects.length;
 
   const handleStepChange = (step: number) => {
     setActiveStep(step);
@@ -250,15 +45,15 @@ export default function Projects() {
       <Box sx={{ width: "inherit" }}>
         <AutoPlaySwipeableViews
           className={styles.container}
-          axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+          axis={"x"}
           index={activeStep}
           onChangeIndex={handleStepChange}
           enableMouseEvents
           interval={10000}
         >
-          {images.map((step, index) => (
+          {projects.map((step, index) => (
             <div key={step.imgPath}>
-              {Math.abs(activeStep - index) <= images.length - 2 ? (
+              {Math.abs(activeStep - index) <= projects.length - 2 ? (
                 <Box className={styles.wrapper}>
                   <Stack className={styles.object}>
                     <div
@@ -282,10 +77,10 @@ export default function Projects() {
                       />
                     </div>
                     <Typography className={styles.object_name}>
-                      {images[activeStep].label}
+                      {projects[activeStep].label}
                     </Typography>
                     <Typography className={styles.object_name_full}>
-                      {images[activeStep].name}
+                      {projects[activeStep].name}
                     </Typography>
                     <Stack direction="row" spacing={4} paddingLeft="15px">
                       <Stack direction="row" spacing={1.5} alignItems="center">
@@ -299,7 +94,7 @@ export default function Projects() {
                           <circle cx="11" cy="11" r="11" fill="#BB3633" />
                         </svg>
                         <Typography className={styles.object_address}>
-                          {images[activeStep].time}
+                          {projects[activeStep].time}
                         </Typography>
                       </Stack>
                       <Stack direction="row" spacing={1} alignItems="center">
@@ -359,7 +154,7 @@ export default function Projects() {
                         </svg>
 
                         <Typography className={styles.object_address}>
-                          {images[activeStep].address}
+                          {projects[activeStep].address}
                         </Typography>
                       </Stack>
                     </Stack>
@@ -367,21 +162,21 @@ export default function Projects() {
                   <Stack className={styles.info}>
                     <Box className={styles.info_number_field}>
                       <Typography className={styles.info_number}>
-                        {images[activeStep].number}
+                        {projects[activeStep].number}
                       </Typography>
                       <Typography className={styles.info_measure}>
-                        {images[activeStep].measure}
+                        {projects[activeStep].measure}
                       </Typography>
                     </Box>
 
-                    {Array.isArray(images[activeStep].title) ? (
-                      images[activeStep].title.map((title, index) => (
+                    {Array.isArray(projects[activeStep].title) ? (
+                      projects[activeStep].title.map((title, index) => (
                         <Stack key={title}>
                           <Typography className={styles.info_title}>
-                            {images[activeStep].title[index]}
+                            {projects[activeStep].title[index]}
                           </Typography>
                           <ul className={styles.info_list}>
-                            {images[activeStep].list[index].map((item) => (
+                            {projects[activeStep].list[index].map((item) => (
                               <Stack
                                 key={item}
                                 direction="row"
@@ -398,10 +193,10 @@ export default function Projects() {
                     ) : (
                       <Stack>
                         <Typography className={styles.info_title}>
-                          {images[activeStep].title}
+                          {projects[activeStep].title}
                         </Typography>
                         <ul className={styles.info_list}>
-                          {images[activeStep].list.map((item) => (
+                          {projects[activeStep].list.map((item) => (
                             <Stack
                               direction="row"
                               spacing={1}
@@ -415,7 +210,7 @@ export default function Projects() {
                       </Stack>
                     )}
 
-                    {images[activeStep].extra && (
+                    {projects[activeStep].extra && (
                       <Stack
                         direction="row"
                         spacing={1.5}
@@ -432,7 +227,7 @@ export default function Projects() {
                           <circle cx="11" cy="11" r="11" fill="#BB3633" />
                         </svg>
                         <Typography className={styles.object_address}>
-                          {images[activeStep].extra}
+                          {projects[activeStep].extra}
                         </Typography>
                       </Stack>
                     )}
@@ -443,54 +238,15 @@ export default function Projects() {
           ))}
         </AutoPlaySwipeableViews>
 
-        <MobileStepper
-          className={styles.stepper}
-          sx={{
-            ".MuiMobileStepper-dots": {
-              alignItems: "center",
-              gap: "20px",
-            },
-            ".MuiMobileStepper-dot": {
-              backgroundColor: "rgba(255, 255, 255, 0.5)",
-            },
-            ".MuiMobileStepper-dotActive": {
-              width: "15px",
-              height: "15px",
-              backgroundColor: "#fff",
-            },
-          }}
-          steps={maxSteps}
-          position="static"
-          activeStep={activeStep}
-          nextButton={
-            <Button
-              size="small"
-              onClick={handleNext}
-              disabled={activeStep === maxSteps - 1}
-            >
-              Вперед
-              {theme.direction === "rtl" ? (
-                <KeyboardArrowLeft />
-              ) : (
-                <KeyboardArrowRight />
-              )}
-            </Button>
-          }
-          backButton={
-            <Button
-              size="small"
-              onClick={handleBack}
-              disabled={activeStep === 0}
-            >
-              {theme.direction === "rtl" ? (
-                <KeyboardArrowRight />
-              ) : (
-                <KeyboardArrowLeft />
-              )}
-              Назад
-            </Button>
-          }
-        />
+        <StepsContainer>
+          {Array.from(Array(maxSteps).keys()).map((step) => (
+            <Step
+              key={step}
+              onClick={() => setActiveStep(step)}
+              active={activeStep === step}
+            />
+          ))}
+        </StepsContainer>
       </Box>
     </Box>
   );
