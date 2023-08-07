@@ -169,7 +169,7 @@ const Application = () => {
             </Box>
           </Stack>
 
-          <Box>
+          <Box className={styles.button}>
             <CssButton
               variant="contained"
               color="primary"

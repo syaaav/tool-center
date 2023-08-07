@@ -22,12 +22,12 @@ export default function Why() {
         <Grid
           container
           rowSpacing={9}
-          columnSpacing={{ xs: 1, sm: 4, md: 10 }}
           sx={{ color: "white" }}
+          className={styles.grid}
         >
-          <Grid item xs={6}>
+          <Grid item className={styles.grid_item}>
             <Stack direction="row" spacing={2}>
-              <Box style={{ marginTop: "13px" }}>
+              <Box className={styles.triangle}>
                 <Triangle></Triangle>
               </Box>
               <Typography className={styles.summary}>
@@ -42,9 +42,9 @@ export default function Why() {
               доходы клиента.
             </Typography>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item className={styles.grid_item}>
             <Stack direction="row" spacing={2}>
-              <Box style={{ marginTop: "13px" }}>
+              <Box className={styles.triangle}>
                 <Triangle></Triangle>
               </Box>
               <Typography className={styles.summary}>
@@ -58,9 +58,9 @@ export default function Why() {
               оперативно устранить их.
             </Typography>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item className={styles.grid_item}>
             <Stack direction="row" spacing={2}>
-              <Box style={{ marginTop: "13px" }}>
+              <Box className={styles.triangle}>
                 <Triangle></Triangle>
               </Box>
               <Typography className={styles.summary}>
@@ -73,9 +73,9 @@ export default function Why() {
               электронных архивах.
             </Typography>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item className={styles.grid_item}>
             <Stack direction="row" spacing={2}>
-              <Box style={{ marginTop: "13px" }}>
+              <Box className={styles.triangle}>
                 <Triangle></Triangle>
               </Box>
               <Typography className={styles.summary}>
@@ -87,7 +87,7 @@ export default function Why() {
             </Typography>
           </Grid>
         </Grid>
-        <Stack alignItems={"center"} sx={{ paddingTop: "70px" }}>
+        <Stack alignItems={"center"} sx={{ paddingTop: "70px" }} spacing={1}>
           <Typography className={styles.number}>130+</Typography>
           <Typography className={styles.number_title}>
             КЛИЕНТОВ НА ПОСТОЯННОМ ОБСЛУЖИВАНИИ

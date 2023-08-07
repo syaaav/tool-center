@@ -197,15 +197,7 @@ export default function Services() {
         />
       </svg>
 
-      <Stack
-        sx={{
-          width: "100%",
-          gap: "80px",
-          position: "relative",
-          zIndex: 2,
-          paddingTop: "100px",
-        }}
-      >
+      <Stack className={styles.wrapper}>
         <Typography className={styles.accent_title}>Услуги</Typography>
 
         <Stack className={styles.content}>
@@ -219,6 +211,7 @@ export default function Services() {
                 onChange={direction.list && handleChange(`panel${index + 1}`)}
               >
                 <AccordionSummary
+                  className={styles.accordion_summary}
                   aria-controls={`${direction.title}`}
                   id={`panel${index + 1}d-header`}
                   sx={{
@@ -274,10 +267,10 @@ export default function Services() {
           </Box>
         </Stack>
 
-        <Stack className={styles.content}>
+        <Stack className={`${styles.content} ${styles.content_system}`}>
           <Typography className={styles.title}>системы</Typography>
-          <Stack direction="row">
-            <Stack spacing={18} className={styles.titles_field}>
+          <Stack className={styles.systems}>
+            <Stack className={styles.titles_field}>
               {systems.map((system) => (
                 <Box key={system.title} sx={{ width: "max-content" }}>
                   <Box
@@ -331,7 +324,7 @@ export default function Services() {
                   ))}
               </Box>
 
-              <Stack>
+              <Stack className={styles.extra_number_wrapper}>
                 <Stack direction="row" spacing={2} alignItems={"flex-end"}>
                   <Typography className={styles.extra_number_number}>
                     {systemContent && systemContent.number}

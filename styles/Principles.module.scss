@@ -31,12 +31,13 @@ $accent-color: #bb3633;
 }
 
 .summary {
-  padding: 0px 20px 10px;
+  padding: 0px 10px 10px;
   font-family: "Montserrat";
-  font-size: calc(20px + 15 * (100vw - 320px) / 1600);
+  font-size: calc(16px + 15 * (100vw - 320px) / 1600);
   color: $text-color;
   font-weight: 600;
   text-transform: uppercase;
+  text-wrap: nowrap;
 }
 
 .circle {
@@ -46,6 +47,12 @@ $accent-color: #bb3633;
   height: 13px;
   background-color: $text-color;
   border-radius: 50%;
+}
+
+.img_wrapper {
+  width: 303px;
+  height: 249px;
+  position: relative;
 }
 
 .details {
@@ -58,7 +65,73 @@ $accent-color: #bb3633;
   &_text {
     padding: 10px 20px 0px;
     font-family: "HelveticaNeueCyr";
-    font-size: calc(15px + 5 * (100vw - 320px) / 1600);
+    font-size: calc(14px + 6 * (100vw - 320px) / 1600);
     color: $text-color;
+  }
+}
+
+.divider {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .principles {
+    background-size: contain;
+  }
+
+  .grid {
+    flex-direction: column;
+  }
+
+  .grid_item {
+    width: 100%;
+    max-width: 100%;
+    padding-top: 20px !important;
+  }
+
+  .summary {
+    text-align: center;
+    padding: 0px 5px 10px;
+  }
+
+  .img_wrapper {
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  .details {
+    position: initial;
+    width: 100%;
+    flex-direction: column;
+    border: none;
+
+    &_text {
+      padding: 0px 10px;
+      text-align: left;
+    }
+
+    &_reverse {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .circle {
+    display: "none";
+  }
+
+  .divider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    color: $text-color;
+
+    &_circle {
+      margin: 15px 0px;
+      width: 13px;
+      height: 13px;
+      background-color: $text-color;
+      border-radius: 50%;
+    }
   }
 }

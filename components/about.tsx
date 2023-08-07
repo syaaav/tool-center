@@ -1,7 +1,7 @@
 import styles from "../styles/Header.module.scss";
 import { Box, Typography, Divider, styled, Stack } from "@mui/material";
 
-const DividerLine = styled(Divider)({
+export const DividerLine = styled(Divider)({
   width: "calc(100% - 13px)",
   border: "0.5px solid #ffffff",
 });
@@ -33,13 +33,8 @@ export default function About() {
           <p className={styles.divider_circle}></p>
           <DividerLine />
         </Box>
-        <Stack
-          direction="row"
-          spacing={3}
-          justifyContent={"space-between"}
-          sx={{ width: "100%" }}
-        >
-          <Box sx={{ width: "55%" }}>
+        <Stack className={styles.wrapper} spacing={3}>
+          <Box className={styles.wrapper_text}>
             <Typography sx={{ padding: "0px 15px" }} className={styles.text}>
               «ИНСТРУМЕНТ ЦЕНТР» С 2012 года осуществляет полный комплекс услуг
               по проектированию, монтажу и техническому обслуживанию инженерных
@@ -59,7 +54,7 @@ export default function About() {
               <p className={styles.divider_circle}></p>
             </Box>
           </Box>
-          <Stack sx={{ width: "35%" }}>
+          <Stack className={styles.wrapper_number}>
             <Typography className={styles.extra_number}>70+</Typography>
             <Typography className={styles.extra_number_text}>
               СПЕЦИАЛИСТОВ ДЛЯ РЕАЛИЗАЦИИ ПРОЕКТОВ

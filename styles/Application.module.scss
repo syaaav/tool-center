@@ -61,3 +61,22 @@ $text-color: #fff;
   width: 60%;
   padding-left: 10%;
 }
+
+@media (max-width: 767px) {
+  .wrapper {
+    padding-bottom: 35px;
+  }
+
+  .form {
+    width: calc(100% - 30px);
+  }
+
+  .svg_wrapper {
+    display: none;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}

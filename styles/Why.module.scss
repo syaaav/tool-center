@@ -6,13 +6,17 @@ $accent-color: #bb3633;
   font-family: "GoshaSans";
   margin-bottom: 6px;
   font-weight: 800;
-  font-size: calc(24px + 51 * (100vw - 320px) / 1600);
+  font-size: calc(30px + 51 * (100vw - 320px) / 1600);
   color: $text-color;
   text-transform: uppercase;
 }
 
 .accent {
   color: $accent-color;
+}
+
+.triangle {
+  margin-top: 13px;
 }
 
 .summary {
@@ -46,7 +50,32 @@ $accent-color: #bb3633;
     font-family: "GoshaSans";
     font-size: calc(35px + 20 * (100vw - 320px) / 1600);
     font-weight: 400;
-    // line-height: 0.8;
     text-transform: uppercase;
+  }
+}
+
+@media (max-width: 767px) {
+  .grid {
+    flex-direction: column;
+    padding-top: 20px;
+  }
+
+  .grid_item {
+    max-width: 100% !important;
+    padding-top: 40px !important;
+  }
+
+  .triangle {
+    margin-top: 2px;
+
+    svg {
+      width: 20px;
+    }
+  }
+
+  .number {
+    &_title {
+      text-align: center;
+    }
   }
 }

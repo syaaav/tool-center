@@ -32,8 +32,8 @@ const Card = ({ isFlipped, frontImgSrc, backImgSrc, cols, rows }) => {
       className={`${styles.card} ${
         backImgSrc && (isFront ? styles.flipped : styles.unflipped)
       }`}
-      cols={cols || 1}
-      rows={rows || 1}
+      cols={cols}
+      rows={rows}
     >
       <img
         src={frontImgSrc}
@@ -92,13 +92,13 @@ export default function Clients() {
       }}
     >
       <Typography className={styles.title}>ЗАКАЗЧИКИ</Typography>
-      <Stack direction="row" sx={{ width: "100%", gap: "40px" }}>
+      <Stack className={styles.wrapper}>
         <ImageList
           className={styles.cardList}
           variant="quilted"
           cols={7}
-          // rowHeight={52}
-          gap={40}
+          // rows={7}
+          sx={{ height: "calc(50vh - 152px)" }}
         >
           {cards.map((card, index) => (
             <Card
@@ -114,11 +114,9 @@ export default function Clients() {
 
         <ImageList
           className={styles.cardList}
-          sx={{ height: "calc(100vh - 352px)" }}
+          sx={{ height: "calc(50vh - 152px)" }}
           variant="quilted"
           cols={7}
-          // rowHeight={52}
-          gap={40}
         >
           {cards2.map((card, index) => (
             <Card

@@ -40,6 +40,16 @@ $accent-color: #bb3633;
   padding-top: 30px;
   justify-content: flex-start;
 
+  &_wrapper {
+    gap: 32px;
+  }
+
+  &_img {
+    height: 555px;
+    width: 100%;
+    position: relative;
+  }
+
   &_name {
     max-width: 870px;
     padding: 25px 0px 10px 15px;
@@ -61,6 +71,7 @@ $accent-color: #bb3633;
   }
 
   &_address {
+    padding-left: 10px;
     font-family: "HelveticaNeueCyr";
     font-size: calc(15px + 5 * (100vw - 320px) / 1600);
     font-weight: 300;
@@ -114,6 +125,13 @@ $accent-color: #bb3633;
       margin: 0;
     }
   }
+
+  &_extra {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+  }
 }
 
 .stepper {
@@ -128,5 +146,69 @@ $accent-color: #bb3633;
   button:disabled,
   button[disabled] {
     color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+@media (max-width: 767px) {
+  .projects {
+    margin-top: 80px;
+    gap: 20px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .object {
+    width: 100%;
+    padding-top: 50px;
+
+    &_wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    &_img {
+      height: 244px;
+    }
+
+    &_name {
+      max-width: 100%;
+      padding: 15px 0px 10px 15px;
+    }
+
+    svg {
+      width: 10px;
+    }
+  }
+
+  .svg_address {
+    svg {
+      width: 13px;
+    }
+  }
+
+  .info_number_field {
+    position: absolute;
+    top: 0;
+    width: 90%;
+  }
+
+  .info {
+    padding: 0px 20px;
+
+    svg {
+      width: 10px;
+    }
+
+    &_title {
+      padding: 40px 20px 20px 0px;
+    }
+
+    &_extra {
+      gap: 5px;
+      margin-top: 10px;
+    }
   }
 }

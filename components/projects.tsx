@@ -56,14 +56,7 @@ export default function Projects() {
               {Math.abs(activeStep - index) <= projects.length - 2 ? (
                 <Box className={styles.wrapper}>
                   <Stack className={styles.object}>
-                    <div
-                      style={{
-                        height: "555px",
-                        // width: "885px",
-                        width: "100%",
-                        position: "relative",
-                      }}
-                    >
+                    <div className={styles.object_img}>
                       <Image
                         src={step.imgPath}
                         alt={`Picture of ${step.label}`}
@@ -82,8 +75,12 @@ export default function Projects() {
                     <Typography className={styles.object_name_full}>
                       {projects[activeStep].name}
                     </Typography>
-                    <Stack direction="row" spacing={4} paddingLeft="15px">
-                      <Stack direction="row" spacing={1.5} alignItems="center">
+                    <Stack
+                      direction="row"
+                      paddingLeft="15px"
+                      className={styles.object_wrapper}
+                    >
+                      <Stack direction="row" alignItems="center">
                         <svg
                           width="22"
                           height="22"
@@ -97,7 +94,11 @@ export default function Projects() {
                           {projects[activeStep].time}
                         </Typography>
                       </Stack>
-                      <Stack direction="row" spacing={1} alignItems="center">
+                      <Stack
+                        direction="row"
+                        alignItems="center"
+                        className={styles.svg_address}
+                      >
                         <svg
                           width="28"
                           height="34"
@@ -105,24 +106,24 @@ export default function Projects() {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <g filter="url(#filter0_d_1_429)">
+                          <g filter="url(#filter0_d_154_4174)">
                             <path
-                              d="M14 13.0002C14.6875 13.0002 15.2762 12.747 15.7663 12.2407C16.2563 11.7343 16.5008 11.1264 16.5 10.4168C16.5 9.70641 16.255 9.09804 15.765 8.5917C15.275 8.08537 14.6867 7.83263 14 7.8335C13.3125 7.8335 12.7238 8.08666 12.2337 8.593C11.7438 9.09933 11.4992 9.70727 11.5 10.4168C11.5 11.1272 11.745 11.7356 12.235 12.242C12.725 12.7483 13.3133 13.001 14 13.0002ZM14 25.9168C10.6458 22.9675 8.14083 20.2283 6.485 17.6992C4.82917 15.1702 4.00083 12.8288 4 10.6752C4 7.446 5.00542 4.87343 7.01625 2.95745C9.02708 1.04148 11.355 0.0834961 14 0.0834961C16.6458 0.0834961 18.9742 1.04148 20.985 2.95745C22.9958 4.87343 24.0008 7.446 24 10.6752C24 12.8279 23.1717 15.1693 21.515 17.6992C19.8583 20.2292 17.3533 22.9684 14 25.9168Z"
+                              d="M14 13C14.6875 13 15.2762 12.7469 15.7663 12.2405C16.2563 11.7342 16.5008 11.1263 16.5 10.4167C16.5 9.70629 16.255 9.09792 15.765 8.59158C15.275 8.08525 14.6867 7.83251 14 7.83337C13.3125 7.83337 12.7238 8.08654 12.2337 8.59287C11.7438 9.09921 11.4992 9.70715 11.5 10.4167C11.5 11.1271 11.745 11.7355 12.235 12.2418C12.725 12.7482 13.3133 13.0009 14 13ZM14 25.9167C10.6458 22.9674 8.14083 20.2282 6.485 17.6991C4.82917 15.17 4.00083 12.8287 4 10.675C4 7.44587 5.00542 4.8733 7.01625 2.95733C9.02708 1.04136 11.355 0.083374 14 0.083374C16.6458 0.083374 18.9742 1.04136 20.985 2.95733C22.9958 4.8733 24.0008 7.44587 24 10.675C24 12.8278 23.1717 15.1692 21.515 17.6991C19.8583 20.2291 17.3533 22.9683 14 25.9167Z"
                               fill="#BB3633"
                             />
                           </g>
                           <defs>
                             <filter
-                              id="filter0_d_1_429"
+                              id="filter0_d_154_4174"
                               x="0"
-                              y="0.0834961"
+                              y="0.083374"
                               width="28"
-                              height="33.8335"
+                              height="33.8334"
                               filterUnits="userSpaceOnUse"
-                              colorInterpolationFilters="sRGB"
+                              color-interpolation-filters="sRGB"
                             >
                               <feFlood
-                                floodOpacity="0"
+                                flood-opacity="0"
                                 result="BackgroundImageFix"
                               />
                               <feColorMatrix
@@ -141,12 +142,12 @@ export default function Projects() {
                               <feBlend
                                 mode="normal"
                                 in2="BackgroundImageFix"
-                                result="effect1_dropShadow_1_429"
+                                result="effect1_dropShadow_154_4174"
                               />
                               <feBlend
                                 mode="normal"
                                 in="SourceGraphic"
-                                in2="effect1_dropShadow_1_429"
+                                in2="effect1_dropShadow_154_4174"
                                 result="shape"
                               />
                             </filter>
@@ -211,12 +212,7 @@ export default function Projects() {
                     )}
 
                     {projects[activeStep].extra && (
-                      <Stack
-                        direction="row"
-                        spacing={1.5}
-                        alignItems="center"
-                        sx={{ marginTop: "20px" }}
-                      >
+                      <Stack className={styles.info_extra}>
                         <svg
                           width="22"
                           height="22"

@@ -217,13 +217,13 @@ export const clients = [
   {
     img: { front: "/Huawei.png", back: null },
     title: "Breakfast",
-    rows: 4,
+    rows: 3,
     cols: 3,
   },
   {
     img: { front: "/ББДО.png", back: "/Сбербанк.png" },
     title: "Burger",
-    rows: 2,
+    rows: 1,
     cols: 4,
   },
   {
@@ -241,13 +241,13 @@ export const clients = [
   {
     img: { front: "/Инком.png", back: "/Сенеж.png" },
     title: "Hats",
-    rows: 2,
+    rows: 1,
     cols: 4,
   },
   {
     img: { front: "/Минобороны.png", back: "/ПочтаБанк.png" },
     title: "Honey",
-    rows: 4,
+    rows: 3,
     cols: 3,
   },
   {

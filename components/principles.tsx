@@ -1,6 +1,6 @@
 import { Box, Grid, Typography, Stack, Collapse } from "@mui/material";
 import styles from "../styles/Principles.module.scss";
-import Image from "next/image";
+import { DividerLine } from "./about";
 
 export default function Principles() {
   const checked = true;
@@ -22,43 +22,52 @@ export default function Principles() {
           <Typography className={styles.title}>нашей работы</Typography>
         </Stack>
 
-        <Grid container rowSpacing={5} columnSpacing={{ xs: 1, sm: 5, md: 10 }}>
-          <Grid item xs={6}>
+        <Grid container rowSpacing={5} className={styles.grid}>
+          <Grid item className={styles.grid_item}>
             <Typography className={styles.summary}>
               ДОЛГОСРОЧНОЕ СОТРУДНИЧЕСТВО
             </Typography>
-            <Collapse in={checked}>
-              <Box>
-                <Stack
-                  className={styles.details}
-                  sx={{
-                    left: "-100px",
-                  }}
-                >
-                  <div
-                    className={styles.circle}
-                    style={{ right: "-6px" }}
-                  ></div>
-                  <Image
+            <Box>
+              <Stack
+                className={styles.details}
+                sx={{
+                  left: "-100px",
+                }}
+              >
+                <div className={styles.circle} style={{ right: "-6px" }}></div>
+                <div className={styles.img_wrapper}>
+                  <img
                     src="/cooperation.jpg"
                     alt="ДОЛГОСРОЧНОЕ СОТРУДНИЧЕСТВО"
-                    width="303"
-                    height="249"
+                    style={{
+                      width: "100%",
+                      objectFit: "contain",
+                      objectPosition: "center",
+                    }}
+                    loading="lazy"
                   />
-                  <Typography className={styles.details_text}>
-                    Доверие в работе строится не только на честности,
-                    порядочности и взаимной ответственности, но и на желании
-                    длительного и перспективного сотрудничества, которым мы
-                    очень дорожим. Мы делаем все, чтобы наше сотрудничество не
-                    прекращалось.
-                  </Typography>
-                </Stack>
-              </Box>
-            </Collapse>
+                </div>
+                <Typography className={styles.details_text}>
+                  Доверие в работе строится не только на честности, порядочности
+                  и взаимной ответственности, но и на желании длительного и
+                  перспективного сотрудничества, которым мы очень дорожим. Мы
+                  делаем все, чтобы наше сотрудничество не прекращалось.
+                </Typography>
+              </Stack>
+            </Box>
           </Grid>
-          <Grid item xs={6}>
+
+          <Box
+            className={styles.divider}
+            sx={{ width: "80%", marginRight: "auto" }}
+          >
+            <DividerLine />
+            <p className={styles.divider_circle}></p>
+          </Box>
+
+          <Grid item className={styles.grid_item}>
             <Typography className={styles.summary}>Профессионализм</Typography>
-            <Stack className={styles.details}>
+            <Stack className={`${styles.details} ${styles.details_reverse}`}>
               <div className={styles.circle} style={{ left: "-6px" }}></div>
               <Typography
                 className={styles.details_text}
@@ -69,16 +78,36 @@ export default function Principles() {
                 Профессионализм работников — основа стабильности и благополучия
                 компании, а также причина повторных обращений наших клиентов.
               </Typography>
-              <Image
-                src="/professionalism.jpg"
-                alt="Профессионализм"
-                width="303"
-                height="249"
-              />
+              <div className={styles.img_wrapper}>
+                <img
+                  src="/professionalism.jpg"
+                  alt="Профессионализм"
+                  style={{
+                    width: "100%",
+                    objectFit: "contain",
+                    objectPosition: "center",
+                  }}
+                  loading="lazy"
+                />
+              </div>
             </Stack>
           </Grid>
-          <Grid item xs={6}>
-            <Typography className={styles.summary}>
+
+          <Box
+            className={styles.divider}
+            sx={{ width: "80%", marginRight: "auto" }}
+          >
+            <DividerLine />
+            <p className={styles.divider_circle}></p>
+          </Box>
+
+          <Grid item className={styles.grid_item}>
+            <Typography
+              className={styles.summary}
+              sx={{
+                textAlign: "end",
+              }}
+            >
               КОМПЛЕКСНЫЙ ПОДХОД
             </Typography>
 
@@ -89,12 +118,18 @@ export default function Principles() {
               }}
             >
               <div className={styles.circle} style={{ right: "-6px" }}></div>
-              <Image
-                src="/approach.jpg"
-                alt="КОМПЛЕКСНЫЙ ПОДХОД"
-                width="303"
-                height="249"
-              />
+              <div className={styles.img_wrapper}>
+                <img
+                  src="/approach.jpg"
+                  alt="КОМПЛЕКСНЫЙ ПОДХОД"
+                  style={{
+                    width: "100%",
+                    objectFit: "contain",
+                    objectPosition: "center",
+                  }}
+                  loading="lazy"
+                />
+              </div>
               <Typography className={styles.details_text}>
                 Все системы жизнеобеспечения здания связаны между собой,
                 вмешиваясь в одну из них, важно понимать, как это отразится на
@@ -103,11 +138,20 @@ export default function Principles() {
               </Typography>
             </Stack>
           </Grid>
-          <Grid item xs={6}>
+
+          <Box
+            className={styles.divider}
+            sx={{ width: "80%", marginRight: "auto" }}
+          >
+            <DividerLine />
+            <p className={styles.divider_circle}></p>
+          </Box>
+
+          <Grid item className={styles.grid_item}>
             <Typography className={styles.summary}>
               ПРОЗРАЧНОЕ ПАРТНЕРСТВО
             </Typography>
-            <Stack className={styles.details}>
+            <Stack className={`${styles.details} ${styles.details_reverse}`}>
               <div className={styles.circle} style={{ left: "-6px" }}></div>
               <Typography
                 className={styles.details_text}
@@ -118,14 +162,28 @@ export default function Principles() {
                 увеличивается. Мы не занижаем объемы работ, чтобы показать
                 «привлекательные» низкие цены.
               </Typography>
-              <Image
-                src="/partnership.jpg"
-                alt="ПРОЗРАЧНОЕ ПАРТНЕРСТВО"
-                width="303"
-                height="249"
-              />
+              <div className={styles.img_wrapper}>
+                <img
+                  src="/partnership.jpg"
+                  alt="ПРОЗРАЧНОЕ ПАРТНЕРСТВО"
+                  style={{
+                    width: "100%",
+                    objectFit: "contain",
+                    objectPosition: "center",
+                  }}
+                  loading="lazy"
+                />
+              </div>
             </Stack>
           </Grid>
+
+          <Box
+            className={styles.divider}
+            sx={{ width: "80%", marginRight: "auto" }}
+          >
+            <DividerLine />
+            <p className={styles.divider_circle}></p>
+          </Box>
         </Grid>
       </Box>
     </div>

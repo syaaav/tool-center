@@ -22,6 +22,12 @@ $text-color: #fff;
   color: $text-color;
 }
 
+.wrapper {
+  width: 100%;
+  flex-direction: row;
+  gap: 40px;
+}
+
 @keyframes flipped {
   0% {
     transform: rotateY(0deg);
@@ -45,6 +51,7 @@ $text-color: #fff;
 .cardList {
   width: 50%;
   overflow: hidden;
+  gap: 40px !important;
 }
 
 .card {
@@ -77,4 +84,20 @@ $text-color: #fff;
 
 .unflipped {
   animation: unflipped 0.8s ease-out;
+}
+
+@media (max-width: 767px) {
+  .clients {
+    padding: 20px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  .cardList {
+    width: 100%;
+    gap: 15px !important;
+  }
 }
