@@ -14,17 +14,23 @@ $text-color: #fff;
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
+  line-height: 1;
+
+  &_number {
+    font-size: calc(70px + 55 * (100vw - 320px) / 1600);
+  }
 
   &_stroke {
     text-shadow: none;
-    filter: blur(7.5px);
-
-    &_withoutBlur {
-      text-shadow: rgba(0, 0, 0, 0.5) 0px 6px 10px;
-      color: transparent;
-      -webkit-text-stroke: 3.5px $text-color;
-      text-stroke: 3.5px $text-color;
-    }
+    color: transparent; /* прозрачный цвет текста */
+    -webkit-background-clip: text; /* указываем, что фон должен быть виден только внутри текста */
+    background-clip: text;
+    background-image: url(/blur.png); /* фоновое изображение */
+    -webkit-text-fill-color: transparent; /* прозрачный цвет текста */
+    backdrop-filter: blur(50px); /* размытие фона */
+    -webkit-text-stroke: 1.5px $text-color;
+    text-stroke: 1.5px $text-color;
+    text-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -45,13 +51,18 @@ $text-color: #fff;
 }
 
 .title_field {
+  width: 100%;
   position: absolute;
   top: 25%;
   padding: 0px 10%;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
 }
 
 .button {
-  float: right;
+  width: max-content;
+  margin-left: auto;
   border: 0.5px solid #0e143c;
   border-radius: 0px;
   background: rgba(192, 197, 228, 0.3);
@@ -81,5 +92,10 @@ $text-color: #fff;
   .title_rigth {
     display: block;
     text-align: right;
+  }
+
+  .button {
+    margin: 0 auto;
+    padding: 20px 50px;
   }
 }

@@ -172,29 +172,20 @@ function Main() {
       </AutoPlaySwipeableViews>
       <Box className={styles.title_field}>
         <Typography className={styles.title}>
-          <span className={styles.title_stroke}>800+</span>{" "}
-          <span className={styles.title_rigth}>объектов</span>
+          <span className={`${styles.title_number} ${styles.title_stroke}`}>
+            800+
+          </span>{" "}
+          <span className={styles.title_rigth}>объектов</span>{" "}
         </Typography>
         <Typography className={styles.title} textAlign={"right"}>
-          1000{" "}
+          <span className={styles.title_number}>1000</span>{" "}
           <span className={styles.title_rigth}>
-            довольных <span className={styles.title_stroke}>клиентов</span>
+            довольных <br />
+            <span className={styles.title_stroke}>клиентов</span>
           </span>
         </Typography>
         <Button className={styles.button}>Оставить заявку</Button>
       </Box>
-      {/* <Box className={styles.title_field}>
-        <Typography className={styles.title}>
-          <span className={styles.title_stroke_withoutBlur}>800+</span> объектов
-        </Typography>
-        <Typography className={styles.title} textAlign={"right"}>
-          1000 довольных{" "}
-          <span className={styles.title_stroke_withoutBlur}>клиентов</span>
-        </Typography>
-        <Button className={styles.button} href="#application">
-          Оставить заявку
-        </Button>
-      </Box> */}
     </Box>
   );
 }
