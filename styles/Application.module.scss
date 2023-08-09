@@ -26,8 +26,8 @@ $text-color: #fff;
 
   &_transparent {
     color: transparent;
-    -webkit-text-stroke: 3.5px $text-color;
-    text-stroke: 3.5px $text-color;
+    -webkit-text-stroke: 1.5px $text-color;
+    text-stroke: 1.5px $text-color;
   }
 }
 

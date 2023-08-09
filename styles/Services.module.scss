@@ -100,8 +100,8 @@ $accent-color: #bb3633;
     font-style: normal;
     font-weight: 700;
     color: transparent;
-    -webkit-text-stroke: 0.05px $text-color;
-    text-stroke: 0.05px $text-color;
+    -webkit-text-stroke: 1.5px $text-color;
+    text-stroke: 1.5px $text-color;
     line-height: 0.8;
     white-space: nowrap;
   }

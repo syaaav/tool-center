@@ -90,7 +90,7 @@ export default function Why() {
         <Stack alignItems={"center"} sx={{ paddingTop: "70px" }} spacing={1}>
           <Typography className={styles.number}>130+</Typography>
           <Typography className={styles.number_title}>
-            КЛИЕНТОВ НА ПОСТОЯННОМ ОБСЛУЖИВАНИИ
+            КЛИЕНТОВ НА&nbsp;ПОСТОЯННОМ ОБСЛУЖИВАНИИ
           </Typography>
         </Stack>
       </Box>
