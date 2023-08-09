@@ -14,6 +14,7 @@ import {
   Stack,
   Button,
 } from "@mui/material";
+import Footer from "./footer";
 
 const CssTextField = styled(TextField)({
   width: "100%",
@@ -250,6 +251,7 @@ const Application = () => {
           </svg>
         </Box>
       </Stack>
+      <Footer></Footer>
     </Box>
   );
 };

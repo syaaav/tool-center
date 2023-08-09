@@ -87,7 +87,11 @@ export default function Why() {
             </Typography>
           </Grid>
         </Grid>
-        <Stack alignItems={"center"} sx={{ paddingTop: "70px" }} spacing={1}>
+        <Stack
+          alignItems={"center"}
+          sx={{ paddingTop: "70px", textAlign: "center" }}
+          spacing={1}
+        >
           <Typography className={styles.number}>130+</Typography>
           <Typography className={styles.number_title}>
             КЛИЕНТОВ НА&nbsp;ПОСТОЯННОМ ОБСЛУЖИВАНИИ

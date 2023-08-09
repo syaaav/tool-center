@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Box, Tabs, Tab, Collapse, styled } from "@mui/material";
+import { Box, Tabs, Tab, Stack, styled } from "@mui/material";
 import styles from "../styles/Nav.module.scss";
 import Logo from "../public/logo";
 
@@ -30,12 +30,11 @@ const NavTabs = styled(Tabs)({
 export default function Nav() {
   const [value, setValue] = useState("mainPage");
 
-  const [styleHeader, setStyleHeader] = useState(null);
+  const [styleHeader, setStyleHeader] = useState(styles.navigation_initial);
   const [isBurgerMenu, setIsBurgerMenu] = useState(false);
 
   useEffect(() => {
     let header = document.querySelector("#header");
-    let burger = document.querySelector("#burger_menu");
     const trimHeight =
       document.querySelector("#main-page").clientHeight - header.clientHeight;
     window.onscroll = function () {
@@ -54,6 +53,7 @@ export default function Nav() {
   };
 
   const handleOpenNav = (event: React.SyntheticEvent) => {
+    // let burger = document.querySelector("#burger_menu");
     setIsBurgerMenu(!isBurgerMenu);
   };
 
@@ -77,30 +77,18 @@ export default function Nav() {
           </NavTabs>
         </Box>
       </Box>
-      <Box
-        className={styles.burger_logo}
+      <Stack
+        className={`${styles.burger_logo} ${
+          isBurgerMenu && styles.burger_logo_animation
+        }`}
         id="burger_menu"
         onClick={handleOpenNav}
+        spacing={"5px"}
       >
-        <svg
-          width="32"
-          height="19"
-          viewBox="0 0 32 19"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g clip-path="url(#clip0_286_43)">
-            <rect y="16" width="32" height="3" fill="white" />
-            <rect width="32" height="3" fill="white" />
-            <rect y="8" width="32" height="3" fill="white" />
-          </g>
-          <defs>
-            <clipPath id="clip0_286_43">
-              <rect width="32" height="19" fill="white" />
-            </clipPath>
-          </defs>
-        </svg>
-      </Box>
+        <span></span>
+        <span></span>
+        <span></span>
+      </Stack>
 
       {isBurgerMenu && (
         <Box
@@ -109,9 +97,16 @@ export default function Nav() {
           <Box sx={{ padding: "20%" }} className={styles.burger_menu}>
             <NavTabs
               value={value}
+              orientation="vertical"
               onChange={handleChange}
               aria-label="navigation"
-              sx={{ ".MuiTabs-flexContainer": { flexDirection: "column" } }}
+              sx={{
+                border: "none",
+                ".MuiTabs-indicator": {
+                  left: "0",
+                  right: "auto",
+                },
+              }}
             >
               <Tab value="mainPage" label="Главная" href="#main-page" />
               <Tab value="about" label="О компании" href="#about" />

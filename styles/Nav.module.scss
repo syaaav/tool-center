@@ -50,6 +50,7 @@
 
   &_moving {
     width: 90%;
+    max-width: 1720px;
     justify-content: center;
     padding: 30px 15px 0px;
     background: #0e143c;
@@ -113,7 +114,45 @@
   }
 
   .burger_logo {
-    display: block;
     z-index: 2;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .burger_logo span {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+  }
+
+  .burger_logo span:first-child {
+    transform-origin: left;
+    transform: rotate(0deg);
+    transition: transform 0.5s ease;
+  }
+
+  .burger_logo span:last-child {
+    transform-origin: left;
+    transform: rotate(0deg);
+    transition: transform 0.5s ease;
+  }
+
+  .burger_logo_animation span:first-child {
+    width: 20px;
+    transform-origin: left;
+    transform: rotate(45deg);
+  }
+
+  .burger_logo_animation span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger_logo_animation span:last-child {
+    width: 20px;
+    transform-origin: left;
+    transform: rotate(-45deg);
   }
 }

@@ -24,7 +24,7 @@ export default function Principles() {
 
         <Grid container rowSpacing={5} className={styles.grid}>
           <Grid item className={styles.grid_item}>
-            <Typography className={styles.summary}>
+            <Typography className={styles.summary} sx={{ textAlign: "right" }}>
               ДОЛГОСРОЧНОЕ СОТРУДНИЧЕСТВО
             </Typography>
             <Box>

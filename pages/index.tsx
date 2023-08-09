@@ -33,8 +33,10 @@ export default function Home() {
         <Projects></Projects>
         <Clients></Clients>
 
+        {/* <div style={{ maxHeight: "100vh" }}> */}
         <Application></Application>
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
+        {/* </div> */}
       </div>
     </div>
   );

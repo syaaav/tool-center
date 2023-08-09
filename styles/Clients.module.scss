@@ -4,7 +4,7 @@ $text-color: #fff;
   height: auto;
   width: 100%;
   max-width: 1720px;
-  padding: 100px;
+  padding: 100px 100px 0px 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,7 +88,7 @@ $text-color: #fff;
 
 @media (max-width: 767px) {
   .clients {
-    padding: 20px;
+    padding: 100px 20px 20px;
   }
 
   .wrapper {
