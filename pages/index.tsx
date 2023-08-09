@@ -36,13 +36,6 @@ export default function Home() {
         <Application></Application>
         <Footer></Footer>
       </div>
-
-      {/* <Header></Header>
-      <Benefits></Benefits>
-      <Features></Features>
-      <Planned></Planned>
-      <Demo></Demo>
-      <Footer></Footer> */}
     </div>
   );
 }

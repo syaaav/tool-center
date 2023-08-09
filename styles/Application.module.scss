@@ -63,12 +63,17 @@ $text-color: #fff;
 }
 
 @media (max-width: 767px) {
+  .application {
+    max-width: 100%;
+    padding: 0px 15px;
+  }
+
   .wrapper {
     padding-bottom: 35px;
   }
 
   .form {
-    width: calc(100% - 30px);
+    width: 100%;
   }
 
   .svg_wrapper {

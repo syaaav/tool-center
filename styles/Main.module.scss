@@ -9,7 +9,7 @@ $text-color: #fff;
   color: $text-color;
   text-shadow: rgba(0, 0, 0, 0.5) 0px 6px 10px;
   font-family: "GoshaSans";
-  font-size: calc(45px + 55 * (100vw - 320px) / 1600);
+  font-size: calc(40px + 55 * (100vw - 320px) / 1600);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -64,4 +64,22 @@ $text-color: #fff;
   font-weight: 700;
   line-height: 1.2rem;
   text-transform: none;
+}
+
+@media (max-width: 767px) {
+  .title_field {
+    max-width: 100vw;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+  }
+  .title {
+    display: block;
+    text-align: left;
+  }
+
+  .title_rigth {
+    display: block;
+    text-align: right;
+  }
 }

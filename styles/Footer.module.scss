@@ -46,6 +46,11 @@ $text-color: #fff;
   }
 }
 
+.inst_field {
+  justify-content: space-between;
+  gap: 8px;
+}
+
 .author {
   color: rgba(255, 255, 255, 0.6);
   font-family: "Helvetica Neue";
@@ -70,10 +75,20 @@ $text-color: #fff;
 @media (max-width: 767px) {
   .footer {
     padding: 30px 50px;
+    gap: 20px;
   }
 
   .wrapper {
     justify-content: center;
     gap: 30px;
+  }
+
+  .info {
+    gap: 30px;
+  }
+
+  .inst_field {
+    flex-direction: row;
+    gap: 10px;
   }
 }

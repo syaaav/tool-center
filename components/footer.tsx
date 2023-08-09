@@ -120,7 +120,7 @@ export default function Footer() {
         </Box>
       </Box>
 
-      <Stack justifyContent="space-between" gap={1}>
+      <Stack className={styles.inst_field}>
         <Stack>
           <Typography className={styles.author}>design by</Typography>
           <Box className={styles.inst}>

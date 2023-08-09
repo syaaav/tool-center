@@ -34,7 +34,9 @@ export default function Principles() {
                   left: "-100px",
                 }}
               >
-                <div className={styles.circle} style={{ right: "-6px" }}></div>
+                <div
+                  className={`${styles.circle} ${styles.circle_rigth}`}
+                ></div>
                 <div className={styles.img_wrapper}>
                   <img
                     src="/cooperation.jpg"
@@ -68,7 +70,7 @@ export default function Principles() {
           <Grid item className={styles.grid_item}>
             <Typography className={styles.summary}>Профессионализм</Typography>
             <Stack className={`${styles.details} ${styles.details_reverse}`}>
-              <div className={styles.circle} style={{ left: "-6px" }}></div>
+              <div className={`${styles.circle} ${styles.circle_left}`}></div>
               <Typography
                 className={styles.details_text}
                 sx={{ textAlign: "right" }}
@@ -117,7 +119,7 @@ export default function Principles() {
                 left: "-100px",
               }}
             >
-              <div className={styles.circle} style={{ right: "-6px" }}></div>
+              <div className={`${styles.circle} ${styles.circle_rigth}`}></div>
               <div className={styles.img_wrapper}>
                 <img
                   src="/approach.jpg"
@@ -152,7 +154,7 @@ export default function Principles() {
               ПРОЗРАЧНОЕ ПАРТНЕРСТВО
             </Typography>
             <Stack className={`${styles.details} ${styles.details_reverse}`}>
-              <div className={styles.circle} style={{ left: "-6px" }}></div>
+              <div className={`${styles.circle} ${styles.circle_left}`}></div>
               <Typography
                 className={styles.details_text}
                 sx={{ textAlign: "right" }}
