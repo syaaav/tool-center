@@ -68,6 +68,11 @@ $text-color: #fff;
   left: 50%;
   transform: translate(-50%, -50%);
   backface-visibility: hidden;
+  width: 80%;
+  object-fit: contain !important;
+  padding: 20px;
+
+  background-image: none;
 }
 
 .front {
@@ -93,11 +98,21 @@ $text-color: #fff;
 
   .wrapper {
     flex-direction: column;
-    gap: 0px;
+    gap: 15px;
   }
 
   .cardList {
     width: 100%;
     gap: 15px !important;
+    margin: 0px;
+  }
+
+  .card {
+    border-radius: 15px;
+  }
+
+  .front,
+  .back {
+    padding: 5px;
   }
 }

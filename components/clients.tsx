@@ -13,6 +13,7 @@ const Card = ({ isFlipped, frontImgSrc, backImgSrc, cols, rows }) => {
   const [isFront, setIsFront] = useState(true);
 
   useEffect(() => {
+    console.log("backImgSrc - ", backImgSrc);
     if (isFlipped && backImgSrc) {
       const intervalId = setInterval(() => {
         setIsFront(!isFront);
@@ -20,7 +21,7 @@ const Card = ({ isFlipped, frontImgSrc, backImgSrc, cols, rows }) => {
 
       return () => clearInterval(intervalId);
     }
-  }, [isFlipped, backImgSrc, isFront]);
+  }, [isFront]);
 
   const handleClick = () => {
     setIsFront(!isFront);
@@ -36,9 +37,8 @@ const Card = ({ isFlipped, frontImgSrc, backImgSrc, cols, rows }) => {
       rows={rows}
     >
       <img
-        src={frontImgSrc}
+        src={backImgSrc && isFront ? backImgSrc : frontImgSrc}
         alt={frontImgSrc}
-        style={{ width: "80%", objectFit: "contain", padding: "20px" }}
         className={styles.front}
         loading="lazy"
       />
@@ -46,7 +46,6 @@ const Card = ({ isFlipped, frontImgSrc, backImgSrc, cols, rows }) => {
         <img
           src={backImgSrc}
           alt={backImgSrc}
-          style={{ width: "80%", objectFit: "contain", padding: "20px" }}
           className={styles.back}
           loading="lazy"
         />
@@ -61,7 +60,7 @@ export default function Clients() {
       return {
         frontImgSrc: item.img.front,
         backImgSrc: item.img.back,
-        isFlipped: !!item.img.back,
+        isFlipped: item.img.back,
         cols: item.cols,
         rows: item.rows,
       };
@@ -72,7 +71,7 @@ export default function Clients() {
       return {
         frontImgSrc: item.img.front,
         backImgSrc: item.img.back,
-        isFlipped: !!item.img.back,
+        isFlipped: item.img.back,
         cols: item.cols,
         rows: item.rows,
       };
@@ -81,7 +80,7 @@ export default function Clients() {
 
   return (
     <Box
-      id="clients"
+      id="sectionClients"
       className={styles.clients}
       sx={{
         display: "flex",
@@ -97,7 +96,6 @@ export default function Clients() {
           className={styles.cardList}
           variant="quilted"
           cols={7}
-          // rows={7}
           sx={{ height: "calc(50vh - 152px)" }}
         >
           {cards.map((card, index) => (
