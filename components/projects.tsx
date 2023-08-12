@@ -40,7 +40,7 @@ export default function Projects() {
   };
 
   return (
-    <Box className={styles.projects} id="projects">
+    <Box className={styles.projects} id="divProjects">
       <Typography className={styles.title}>НАШИ ПРОЕКТЫ</Typography>
       <Box sx={{ width: "inherit" }}>
         <AutoPlaySwipeableViews

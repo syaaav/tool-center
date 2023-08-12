@@ -6,7 +6,7 @@ import styles from "../styles/Footer.module.scss";
 
 export default function Footer() {
   return (
-    <div className={styles.footer} id="contacts">
+    <div className={styles.footer} id="divContacts">
       <Box className={styles.wrapper}>
         <svg
           width="201"

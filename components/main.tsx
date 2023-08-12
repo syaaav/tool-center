@@ -1,16 +1,8 @@
 import * as React from "react";
 import styles from "../styles/Main.module.scss";
-import { useTheme } from "@mui/material/styles";
-import { Box, Stack } from "@mui/material";
-import MobileStepper from "@mui/material/MobileStepper";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import { Box, Stack, Button, Typography } from "@mui/material";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
-import Image from "next/image";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -75,7 +67,7 @@ function Main() {
 
   return (
     <Box
-      id="main-page"
+      id="divMain-page"
       sx={{
         width: "100vw",
         height: "100vh",
@@ -83,7 +75,6 @@ function Main() {
     >
       <AutoPlaySwipeableViews
         className={styles.background}
-        // axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
@@ -184,7 +175,9 @@ function Main() {
             <span className={styles.title_stroke}>клиентов</span>
           </span>
         </Typography>
-        <Button className={styles.button}>Оставить заявку</Button>
+        <Button className={styles.button} href="#application">
+          Оставить заявку
+        </Button>
       </Box>
     </Box>
   );

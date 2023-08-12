@@ -29,14 +29,33 @@ const NavTabs = styled(Tabs)({
 
 export default function Nav() {
   const [value, setValue] = useState("mainPage");
-
   const [styleHeader, setStyleHeader] = useState(styles.navigation_initial);
   const [isBurgerMenu, setIsBurgerMenu] = useState(false);
 
   useEffect(() => {
     let header = document.querySelector("#header");
+    const divs = document.querySelectorAll('div[id^="div"]');
+    const navLinks = document.querySelectorAll("div div div a");
+    function updateNav() {
+      const currentPos = window.scrollY;
+      divs.forEach((div) => {
+        const divElement = div as HTMLElement;
+        const divTop = divElement.offsetTop;
+        const divHeight = divElement.clientHeight;
+        if (currentPos >= divTop && currentPos < divTop + divHeight) {
+          const currentLink = document.querySelector(
+            `div div div a[href="#${div.id}"]`
+          );
+          const linkElement = currentLink as HTMLElement;
+          setValue(linkElement?.dataset.value);
+        }
+      });
+    }
+
     const trimHeight =
-      document.querySelector("#main-page").clientHeight - header.clientHeight;
+      document.querySelector("#divMain-page").clientHeight -
+      header.clientHeight;
+
     window.onscroll = function () {
       if (window.scrollY > 1 && window.scrollY < trimHeight) {
         setStyleHeader(styles.navigation_start);
@@ -45,15 +64,17 @@ export default function Nav() {
       } else {
         setStyleHeader(styles.navigation_initial);
       }
+      updateNav();
     };
   }, []);
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    console.log("newValue ---", newValue);
+
     setValue(newValue);
   };
 
   const handleOpenNav = (event: React.SyntheticEvent) => {
-    // let burger = document.querySelector("#burger_menu");
     setIsBurgerMenu(!isBurgerMenu);
   };
 
@@ -68,12 +89,42 @@ export default function Nav() {
             onChange={handleChange}
             aria-label="navigation"
           >
-            <Tab value="mainPage" label="Главная" href="#main-page" />
-            <Tab value="about" label="О компании" href="#about" />
-            <Tab value="services" label="Услуги" href="#services" />
-            <Tab value="projects" label="Проекты" href="#projects" />
-            <Tab value="clients" label="Заказчики" href="#clients" />
-            <Tab value="contacts" label="Контакты" href="#contacts" />
+            <Tab
+              data-value="mainPage"
+              value="mainPage"
+              label="Главная"
+              href="#divMain-page"
+            />
+            <Tab
+              data-value="about"
+              value="about"
+              label="О компании"
+              href="#divAbout"
+            />
+            <Tab
+              data-value="services"
+              value="services"
+              label="Услуги"
+              href="#divServices"
+            />
+            <Tab
+              data-value="projects"
+              value="projects"
+              label="Проекты"
+              href="#divProjects"
+            />
+            <Tab
+              data-value="clients"
+              value="clients"
+              label="Заказчики"
+              href="#divClients"
+            />
+            <Tab
+              data-value="contacts"
+              value="contacts"
+              label="Контакты"
+              href="#divContacts"
+            />
           </NavTabs>
         </Box>
       </Box>
@@ -108,12 +159,42 @@ export default function Nav() {
                 },
               }}
             >
-              <Tab value="mainPage" label="Главная" href="#main-page" />
-              <Tab value="about" label="О компании" href="#about" />
-              <Tab value="services" label="Услуги" href="#services" />
-              <Tab value="projects" label="Проекты" href="#projects" />
-              <Tab value="clients" label="Заказчики" href="#clients" />
-              <Tab value="contacts" label="Контакты" href="#contacts" />
+              <Tab
+                data-value="mainPage"
+                value="mainPage"
+                label="Главная"
+                href="#divMain-page"
+              />
+              <Tab
+                data-value="about"
+                value="about"
+                label="О компании"
+                href="#divAbout"
+              />
+              <Tab
+                data-value="services"
+                value="services"
+                label="Услуги"
+                href="#divServices"
+              />
+              <Tab
+                data-value="projects"
+                value="projects"
+                label="Проекты"
+                href="#divProjects"
+              />
+              <Tab
+                data-value="clients"
+                value="clients"
+                label="Заказчики"
+                href="#divClients"
+              />
+              <Tab
+                data-value="contacts"
+                value="contacts"
+                label="Контакты"
+                href="#divContacts"
+              />
             </NavTabs>
           </Box>
         </Box>

@@ -13,7 +13,6 @@ const Card = ({ isFlipped, frontImgSrc, backImgSrc, cols, rows }) => {
   const [isFront, setIsFront] = useState(true);
 
   useEffect(() => {
-    console.log("backImgSrc - ", backImgSrc);
     if (isFlipped && backImgSrc) {
       const intervalId = setInterval(() => {
         setIsFront(!isFront);
@@ -80,7 +79,7 @@ export default function Clients() {
 
   return (
     <Box
-      id="sectionClients"
+      id="divClients"
       className={styles.clients}
       sx={{
         display: "flex",
