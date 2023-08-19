@@ -3,8 +3,8 @@
 <rect width="403" height="387" transform="translate(-177)" fill="white" fill-opacity="0.15"/>
 </g>
 <defs>
-<filter id="filter0_b_339_2" x="-227" y="-50" width="503" height="487" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<filter id="filter0_b_339_2" x="-227" y="-50" width="503" height="487" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+<feFlood floodOpacity="0" result="BackgroundImageFix"/>
 <feGaussianBlur in="BackgroundImageFix" stdDeviation="25"/>
 <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_339_2"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_339_2" result="shape"/>
