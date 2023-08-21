@@ -1,0 +1,133 @@
+$text-color: #fff;
+
+.background {
+  height: 100vh;
+}
+
+.title {
+  color: $text-color;
+  text-shadow: rgba(0, 0, 0, 0.5) 0px 6px 10px;
+  font-family: "GoshaSans";
+  font-size: calc(40px + 55 * (100vw - 320px) / 1600);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  line-height: 1;
+
+  &_number {
+    font-size: calc(70px + 55 * (100vw - 320px) / 1600);
+  }
+
+  &_stroke {
+    text-shadow: none;
+    color: transparent; /* прозрачный цвет текста */
+    -webkit-background-clip: text; /* указываем, что фон должен быть виден только внутри текста */
+    background-clip: text;
+    background-image: url(/blur.png); /* фоновое изображение */
+    -webkit-text-fill-color: transparent; /* прозрачный цвет текста */
+    backdrop-filter: blur(50px); /* размытие фона */
+    -webkit-text-stroke: 1.5px $text-color;
+    text-stroke: 1.5px $text-color;
+    text-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.address {
+  height: 100vh;
+  margin-top: auto;
+  padding: 0px 5% 30px;
+
+  &_text {
+    padding-bottom: 5px;
+    color: $text-color;
+    font-family: "HelveticaNeueCyr";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.6rem;
+  }
+}
+
+.title_field {
+  width: 100%;
+  position: absolute;
+  top: 25%;
+  padding: 0px 10%;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.button {
+  width: max-content;
+  margin-left: auto;
+  border: 0.5px solid #0e143c;
+  border-radius: 0px;
+  background: rgba(192, 197, 228, 0.3);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 31.5px 78px;
+  color: $text-color;
+  font-family: "HelveticaNeueCyr";
+  font-size: calc(15px + 10 * (100vw - 320px) / 1600);
+  font-weight: 700;
+  line-height: 1.2rem;
+  text-transform: none;
+}
+@media (max-width: 1024px) {
+  .title_field {
+    max-width: 100vw;
+    padding: 0px 20%;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+  }
+
+  .title {
+    display: block;
+    text-align: left;
+  }
+
+  .title_rigth {
+    display: block;
+    text-align: right;
+  }
+
+  .button {
+    margin: 0 auto;
+    padding: 20px 50px;
+  }
+
+  .address {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .title_field {
+    max-width: 100vw;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+  }
+
+  .title {
+    display: block;
+    text-align: left;
+  }
+
+  .title_rigth {
+    display: block;
+    text-align: right;
+  }
+
+  .button {
+    margin: 0 auto;
+    padding: 20px 50px;
+  }
+
+  .address {
+    display: none;
+  }
+}

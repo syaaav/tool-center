@@ -1,0 +1,279 @@
+$text-color: #fff;
+$accent-color: #bb3633;
+
+.projects {
+  width: 100%;
+  max-width: 1720px;
+  margin-top: 165px;
+  padding-top: 75px;
+  background-image: url(../public/background-lines.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  width: 100%;
+}
+
+.title {
+  font-family: "GoshaSans";
+  font-size: calc(35px + 65 * (100vw - 320px) / 1600);
+  color: transparent;
+  -webkit-text-stroke: 1.5px $text-color;
+  text-stroke: 1.5px $text-color;
+  line-height: 1;
+}
+
+.wrapper {
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.object {
+  width: 65%;
+  padding-top: 30px;
+  justify-content: flex-start;
+
+  &_wrapper {
+    gap: 32px;
+  }
+
+  &_img {
+    height: 555px;
+    width: 100%;
+    position: relative;
+  }
+
+  &_name {
+    max-width: 870px;
+    padding: 25px 0px 10px 15px;
+    font-family: "Montserrat";
+    font-size: calc(20px + 15 * (100vw - 320px) / 1600);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $text-color;
+
+    &_full {
+      max-width: 870px;
+      padding: 0px 0px 25px 15px;
+      font-family: "Montserrat";
+      font-size: calc(15px + 10 * (100vw - 320px) / 1600);
+      font-weight: 300;
+      text-transform: uppercase;
+      color: $text-color;
+    }
+  }
+
+  &_address {
+    padding-left: 10px;
+    font-family: "HelveticaNeueCyr";
+    font-size: calc(15px + 5 * (100vw - 320px) / 1600);
+    font-weight: 300;
+    color: $text-color;
+  }
+}
+
+.info {
+  justify-content: flex-start;
+  padding: 0px 30px;
+
+  &_number {
+    margin: 0px;
+    width: max-content;
+    text-align: left;
+    font-family: "GoshaSans";
+    color: $accent-color;
+    font-size: calc(90px + 100 * (100vw - 320px) / 1600);
+    font-weight: 700;
+    line-height: 0.85;
+  }
+
+  &_measure {
+    text-align: right;
+    font-family: "GoshaSans";
+    color: $text-color;
+    font-size: calc(20px + 15 * (100vw - 320px) / 1600);
+    font-weight: 700;
+  }
+
+  &_title {
+    max-width: 760px;
+    padding: 40px 20px 25px 0px;
+    font-family: "Montserrat";
+    font-size: calc(15px + 10 * (100vw - 320px) / 1600);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $text-color;
+  }
+
+  &_list {
+    margin: 0px;
+    padding: 0px 20px 0px 0px;
+    font-family: "HelveticaNeueCyr";
+    font-size: calc(15px + 5 * (100vw - 320px) / 1600);
+    font-weight: 400;
+    line-height: 1.5;
+    color: $text-color;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &_extra {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+  }
+}
+
+.stepper {
+  width: inherit;
+  background-color: transparent;
+  color: $text-color;
+
+  button {
+    color: $text-color;
+  }
+
+  button:disabled,
+  button[disabled] {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+@media (max-width: 1024px) {
+  .projects {
+    margin-top: 5px;
+    gap: 20px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .object {
+    width: 100%;
+    padding-top: 50px;
+
+    &_wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    &_img {
+      height: 244px;
+    }
+
+    &_name {
+      max-width: 100%;
+      padding: 15px 0px 10px 15px;
+    }
+
+    svg {
+      width: 10px;
+    }
+  }
+
+  .svg_address {
+    svg {
+      width: 13px;
+    }
+  }
+
+  .info_number_field {
+    position: absolute;
+    top: 0;
+    width: 70%;
+  }
+
+  .info {
+    padding: 0px 20px;
+
+    svg {
+      width: 10px;
+    }
+
+    &_title {
+      padding: 40px 20px 20px 0px;
+    }
+
+    &_extra {
+      gap: 5px;
+      margin-top: 10px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .projects {
+    margin-top: 5px;
+    gap: 20px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .object {
+    width: 100%;
+    padding-top: 50px;
+
+    &_wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    &_img {
+      height: 244px;
+    }
+
+    &_name {
+      max-width: 100%;
+      padding: 15px 0px 10px 15px;
+    }
+
+    svg {
+      width: 10px;
+    }
+  }
+
+  .svg_address {
+    svg {
+      width: 13px;
+    }
+  }
+
+  .info_number_field {
+    position: absolute;
+    top: 0;
+    width: 90%;
+  }
+
+  .info {
+    padding: 0px 20px;
+
+    svg {
+      width: 10px;
+    }
+
+    &_title {
+      padding: 40px 20px 20px 0px;
+    }
+
+    &_extra {
+      gap: 5px;
+      margin-top: 10px;
+    }
+  }
+}

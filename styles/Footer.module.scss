@@ -1,21 +1,111 @@
 $text-color: #fff;
-$accent-color: #007fff;
 
 .footer {
+  z-index: 2;
   width: 100%;
-  background-color: #0e1621;
-  padding: 58px 0;
+  height: max-content;
+  background-color: #bb3633;
+  padding: 15px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 50px;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 50px;
+
+  &_title {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: "Helvetica Neue";
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 32px;
+  }
+
+  &_text {
+    max-width: 270px;
+    color: #fff;
+    font-family: "Helvetica Neue";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+  }
+}
+
+.inst_field {
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.author {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Helvetica Neue";
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+.inst {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 30px;
+  justify-content: flex-start;
+  gap: 5px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Helvetica Neue";
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 20px;
 }
 
-.text {
-  font-family: "Gilroy-Regular";
-  font-weight: 500;
-  font-size: calc(16px + 4 * (100vw / 1920));
-  color: $text-color;
-  text-decoration-color: $text-color;
+@media (max-width: 1024px) {
+  .footer {
+    gap: 10px;
+  }
+
+  .wrapper {
+    gap: 20px;
+  }
+
+  .inst_field {
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding: 30px 30px;
+    gap: 20px;
+  }
+
+  .wrapper {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .info {
+    gap: 30px;
+  }
+
+  .inst_field {
+    flex-direction: row;
+    gap: 10px;
+  }
 }

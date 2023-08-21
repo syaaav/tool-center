@@ -1,0 +1,82 @@
+$text-color: #fff;
+$accent-color: #bb3633;
+
+.title {
+  text-align: center;
+  font-family: "GoshaSans";
+  margin-bottom: 6px;
+  font-weight: 800;
+  font-size: calc(30px + 51 * (100vw - 320px) / 1600);
+  color: $text-color;
+  text-transform: uppercase;
+}
+
+.accent {
+  color: $accent-color;
+}
+
+.triangle {
+  margin-top: 13px;
+}
+
+.summary {
+  font-family: "Montserrat";
+  text-align: left;
+  font-weight: 600;
+  font-size: calc(20px + 15 * (100vw - 320px) / 1600);
+  color: $text-color;
+  text-transform: uppercase;
+}
+
+.details {
+  padding: 16px 0px 0px 43px;
+  text-align: left;
+  font-family: "HelveticaNeueCyr";
+  font-weight: 400;
+  font-size: calc(15px + 5 * (100vw - 320px) / 1600);
+  color: $text-color;
+}
+
+.number {
+  margin: 0;
+  color: $text-color;
+  font-family: "GoshaSans";
+  font-size: calc(100px + 100 * (100vw - 320px) / 1600);
+  font-weight: 400;
+  line-height: 0.8;
+
+  &_title {
+    color: $text-color;
+    font-family: "GoshaSans";
+    font-size: calc(35px + 20 * (100vw - 320px) / 1600);
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 767px) {
+  .grid {
+    flex-direction: column;
+    padding-top: 20px;
+  }
+
+  .grid_item {
+    max-width: 100% !important;
+    padding-top: 40px !important;
+  }
+
+  .triangle {
+    margin-top: 2px;
+
+    svg {
+      width: 20px;
+    }
+  }
+
+  .number {
+    &_title {
+      text-align: center;
+      line-height: 1.25;
+    }
+  }
+}
