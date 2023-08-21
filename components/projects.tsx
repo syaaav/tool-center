@@ -1,10 +1,17 @@
 import styles from "../styles/Projects.module.scss";
+import { StyledComponentProps } from "@material-ui/core/styles";
 import React, { useState } from "react";
 import { projects } from "./data";
 import { Box, Typography, Stack, styled } from "@mui/material";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import Image from "next/image";
+
+type StepClassKey = "root" | "active";
+
+interface StepProps extends StyledComponentProps<StepClassKey> {
+  active?: boolean;
+}
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -16,7 +23,7 @@ const StepsContainer = styled(Stack)(() => ({
   gap: "20px",
 }));
 
-const Step = styled("button")(({ active }) => ({
+const Step = styled("div")<StepProps>(({ active }) => ({
   height: active ? "15px" : "8px",
   width: active ? "15px" : "8px",
   padding: "0px",
@@ -31,8 +38,8 @@ const Step = styled("button")(({ active }) => ({
   },
 }));
 
-export default function Projects() {
-  const [activeStep, setActiveStep] = useState(0);
+export default function Projects(): JSX.Element {
+  const [activeStep, setActiveStep] = useState<number>(0);
   const maxSteps = projects.length;
 
   const handleStepChange = (step: number) => {
@@ -177,17 +184,18 @@ export default function Projects() {
                             {projects[activeStep].title[index]}
                           </Typography>
                           <ul className={styles.info_list}>
-                            {projects[activeStep].list[index].map((item) => (
-                              <Stack
-                                key={item}
-                                direction="row"
-                                spacing={1}
-                                alignItems="flex-start"
-                              >
-                                <p>— </p>
-                                <p>{item}</p>
-                              </Stack>
-                            ))}
+                            {Array.isArray(projects[activeStep].list[index]) &&
+                              projects[activeStep].list[index].map((item) => (
+                                <Stack
+                                  key={item}
+                                  direction="row"
+                                  spacing={1}
+                                  alignItems="flex-start"
+                                >
+                                  <p>— </p>
+                                  <p>{item}</p>
+                                </Stack>
+                              ))}
                           </ul>
                         </Stack>
                       ))
@@ -197,17 +205,18 @@ export default function Projects() {
                           {projects[activeStep].title}
                         </Typography>
                         <ul className={styles.info_list}>
-                          {projects[activeStep].list.map((item) => (
-                            <Stack
-                              key={item}
-                              direction="row"
-                              spacing={1}
-                              alignItems="center"
-                            >
-                              <p>— </p>
-                              <p key={item}>{item}</p>
-                            </Stack>
-                          ))}
+                          {Array.isArray(projects[activeStep].list) &&
+                            projects[activeStep].list.map((item, index) => (
+                              <Stack
+                                key={index}
+                                direction="row"
+                                spacing={1}
+                                alignItems="center"
+                              >
+                                <p>— </p>
+                                <p key={index}>{item}</p>
+                              </Stack>
+                            ))}
                         </ul>
                       </Stack>
                     )}

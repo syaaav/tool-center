@@ -21,7 +21,8 @@
     "./declaration.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/email.jsx"
+    "components/email.jsx",
+    "components/services.jsx"
   ],
   "exclude": ["node_modules"]
 }

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import { Box, Typography, Stack, Divider, Collapse } from "@mui/material";
@@ -112,7 +112,7 @@ const systems = [
   },
 ];
 
-const Accordion = styled((props: AccordionProps) => (
+const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
   backgroundColor: "transparent",
@@ -127,7 +127,7 @@ const Accordion = styled((props: AccordionProps) => (
   },
 }));
 
-const AccordionSummary = styled((props: AccordionSummaryProps) => (
+const AccordionSummary = styled((props) => (
   <MuiAccordionSummary expandIcon={<Triangle />} {...props} />
 ))(({ theme }) => ({
   flexDirection: "row-reverse",
@@ -153,44 +153,26 @@ const DividerLine = styled(Divider)({
 });
 
 export default function Services() {
-  interface systemContent {
-    title: string;
-    number: string;
-    text: string;
-    list: string[];
-    // Добавьте другие свойства, если они есть
-  }
+  const [expanded, setExpanded] = useState("panel1");
+  const [systemContent, setSystemContent] = useState(systems[0]);
+  const [widthDivider, setWidthDivider] = useState(null);
 
-  const [expanded, setExpanded] = React.useState<string | false>("panel1");
-  const [systemContent, setSystemContent] =
-    React.useState<systemContent | null>(systems[0]);
-  const [widthDivider, setWidthDivider] = React.useState<number | null>(null);
+  const handleChange = (panel) => {
+    setExpanded(panel);
+  };
 
-  interface systemContent {
-    title: string;
-    // Добавьте другие свойства, если они есть
-  }
-
-  const handleChange =
-    (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
-      setExpanded(newExpanded ? panel : false);
-    };
-
-  const handleChangeSystem = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
+  const handleChangeSystem = (event) => {
     setSystemContent(
-      systems.find(
-        (system: { title: string }) =>
-          system.title === (event.target as HTMLElement).innerText
-      )
+      systems.find((system) => {
+        return system.title === event.innerText;
+      })
     );
-    setWidthDivider(event.currentTarget.offsetWidth);
+    setWidthDivider(event?.offsetWidth);
   };
 
   React.useEffect(() => {
     const box = document.getElementById("active");
-    setWidthDivider(box.offsetWidth);
+    setWidthDivider(box?.offsetWidth);
   }, [systemContent]);
 
   return (
@@ -222,7 +204,11 @@ export default function Services() {
               <Accordion
                 key={direction.title}
                 expanded={expanded === `panel${index + 1}`}
-                onChange={direction.list && handleChange(`panel${index + 1}`)}
+                onChange={() => {
+                  if (direction.list) {
+                    handleChange(`panel${index + 1}`);
+                  }
+                }}
               >
                 <AccordionSummary
                   className={styles.accordion_summary}
@@ -289,23 +275,25 @@ export default function Services() {
                 <Box key={system.title} sx={{ width: "max-content" }}>
                   <Box
                     className={
-                      systemContent.title === system.title
+                      systemContent?.title === system.title
                         ? styles.system_title
                         : styles.system_title_inactive
                     }
                     id={
-                      systemContent.title === system.title
+                      systemContent?.title === system.title
                         ? "active"
                         : undefined
                     }
-                    onClick={handleChangeSystem}
+                    onClick={(event) => {
+                      handleChangeSystem(event.target);
+                    }}
                   >
                     {system.title}
                   </Box>
                   <Box sx={{ width: "100%", marginRight: "auto" }}>
                     <Collapse
                       orientation="horizontal"
-                      in={systemContent.title === system.title}
+                      in={systemContent?.title === system.title}
                       timeout={500}
                     >
                       <Box
@@ -326,7 +314,7 @@ export default function Services() {
             >
               <Box>
                 {systemContent &&
-                  systemContent.list.map((point) => (
+                  systemContent?.list.map((point) => (
                     <Stack
                       className={styles.details}
                       key={point}
@@ -344,14 +332,14 @@ export default function Services() {
               <Stack className={styles.extra_number_wrapper}>
                 <Stack direction="row" spacing={2} alignItems={"flex-end"}>
                   <Typography className={styles.extra_number_number}>
-                    {systemContent && systemContent.number}
+                    {systemContent && systemContent?.number}
                   </Typography>
                   <Typography className={styles.measure}>
-                    {systemContent.measure && systemContent.measure}
+                    {systemContent?.measure && systemContent?.measure}
                   </Typography>
                 </Stack>
                 <Typography className={styles.text}>
-                  {systemContent.text}
+                  {systemContent?.text}
                 </Typography>
               </Stack>
             </Stack>
