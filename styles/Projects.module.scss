@@ -150,11 +150,73 @@ $accent-color: #bb3633;
   }
 }
 
+@media (max-width: 1024px) {
+  .projects {
+    margin-top: 5px;
+    gap: 20px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .object {
+    width: 100%;
+    padding-top: 50px;
+
+    &_wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    &_img {
+      height: 244px;
+    }
+
+    &_name {
+      max-width: 100%;
+      padding: 15px 0px 10px 15px;
+    }
+
+    svg {
+      width: 10px;
+    }
+  }
+
+  .svg_address {
+    svg {
+      width: 13px;
+    }
+  }
+
+  .info_number_field {
+    position: absolute;
+    top: 0;
+    width: 70%;
+  }
+
+  .info {
+    padding: 0px 20px;
+
+    svg {
+      width: 10px;
+    }
+
+    &_title {
+      padding: 40px 20px 20px 0px;
+    }
+
+    &_extra {
+      gap: 5px;
+      margin-top: 10px;
+    }
+  }
+}
+
 @media (max-width: 767px) {
   .projects {
-    // margin-top: 80px;
     margin-top: 5px;
-    // padding-top: 75px;
     gap: 20px;
   }
 

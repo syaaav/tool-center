@@ -1,6 +1,5 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
-import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import { Box, Typography, Stack, Divider, Collapse } from "@mui/material";
 import MuiAccordion, { AccordionProps } from "@mui/material/Accordion";
@@ -9,7 +8,6 @@ import MuiAccordionSummary, {
 } from "@mui/material/AccordionSummary";
 import styles from "../styles/Services.module.scss";
 import Triangle from "../public/triangle";
-import mySvg from "../public/background-red-line.svg";
 
 const directions = [
   {
@@ -155,11 +153,23 @@ const DividerLine = styled(Divider)({
 });
 
 export default function Services() {
+  interface systemContent {
+    title: string;
+    number: string;
+    text: string;
+    list: string[];
+    // Добавьте другие свойства, если они есть
+  }
+
   const [expanded, setExpanded] = React.useState<string | false>("panel1");
-  const [systemContent, setSystemContent] = React.useState<object | null>(
-    systems[0]
-  );
+  const [systemContent, setSystemContent] =
+    React.useState<systemContent | null>(systems[0]);
   const [widthDivider, setWidthDivider] = React.useState<number | null>(null);
+
+  interface systemContent {
+    title: string;
+    // Добавьте другие свойства, если они есть
+  }
 
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
@@ -170,7 +180,10 @@ export default function Services() {
     event: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
     setSystemContent(
-      systems.find((system) => system.title === event.target.innerText)
+      systems.find(
+        (system: { title: string }) =>
+          system.title === (event.target as HTMLElement).innerText
+      )
     );
     setWidthDivider(event.currentTarget.offsetWidth);
   };
@@ -207,6 +220,7 @@ export default function Services() {
           <Box className={styles.accordion}>
             {directions.map((direction, index) => (
               <Accordion
+                key={direction.title}
                 expanded={expanded === `panel${index + 1}`}
                 onChange={direction.list && handleChange(`panel${index + 1}`)}
               >
@@ -279,14 +293,17 @@ export default function Services() {
                         ? styles.system_title
                         : styles.system_title_inactive
                     }
-                    id={systemContent.title === system.title && "active"}
+                    id={
+                      systemContent.title === system.title
+                        ? "active"
+                        : undefined
+                    }
                     onClick={handleChangeSystem}
                   >
                     {system.title}
                   </Box>
                   <Box sx={{ width: "100%", marginRight: "auto" }}>
                     <Collapse
-                      className={styles.collapse}
                       orientation="horizontal"
                       in={systemContent.title === system.title}
                       timeout={500}

@@ -4,6 +4,7 @@ import { Box, Collapse, Paper } from "@mui/material";
 
 const icon = (
   <Paper
+    className={styles.anim}
     elevation={4}
     sx={{
       height: "100vh",
@@ -52,7 +53,9 @@ export default function Loading() {
           />
         </svg>
         <p className={styles.name}>Инструмент Центр</p>
-        <p className={styles.title}>более 10 лет в строительном бизнесе</p>
+        <p className={styles.title}>
+          более 10&nbsp;лет в&nbsp;строительном бизнесе
+        </p>
       </Box>
     </Box>
   );

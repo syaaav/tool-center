@@ -75,6 +75,34 @@ $text-color: #fff;
   line-height: 1.2rem;
   text-transform: none;
 }
+@media (max-width: 1024px) {
+  .title_field {
+    max-width: 100vw;
+    padding: 0px 20%;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+  }
+
+  .title {
+    display: block;
+    text-align: left;
+  }
+
+  .title_rigth {
+    display: block;
+    text-align: right;
+  }
+
+  .button {
+    margin: 0 auto;
+    padding: 20px 50px;
+  }
+
+  .address {
+    display: none;
+  }
+}
 
 @media (max-width: 767px) {
   .title_field {

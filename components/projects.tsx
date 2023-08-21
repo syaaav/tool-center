@@ -199,6 +199,7 @@ export default function Projects() {
                         <ul className={styles.info_list}>
                           {projects[activeStep].list.map((item) => (
                             <Stack
+                              key={item}
                               direction="row"
                               spacing={1}
                               alignItems="center"
@@ -239,7 +240,7 @@ export default function Projects() {
             <Step
               key={step}
               onClick={() => setActiveStep(step)}
-              active={activeStep === step}
+              active={activeStep === step ? true : false}
             />
           ))}
         </StepsContainer>

@@ -41,3 +41,29 @@
   font-size: calc(16px + 4 * (100vw - 320px) / 1600);
   color: #fff;
 }
+
+@media (max-width: 1024px) {
+  .anim {
+    background-position: right;
+  }
+  .name {
+    text-align: center;
+  }
+
+  .title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .anim {
+    background-position: right;
+  }
+  .name {
+    text-align: center;
+  }
+
+  .title {
+    text-align: center;
+  }
+}

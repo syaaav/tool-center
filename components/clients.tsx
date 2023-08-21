@@ -95,7 +95,7 @@ export default function Clients() {
           className={styles.cardList}
           variant="quilted"
           cols={7}
-          sx={{ height: "calc(50vh - 152px)" }}
+          // sx={{ height: "calc(50vh - 152px)" }}
         >
           {cards.map((card, index) => (
             <Card
@@ -111,7 +111,7 @@ export default function Clients() {
 
         <ImageList
           className={styles.cardList}
-          sx={{ height: "calc(50vh - 152px)" }}
+          // sx={{ height: "calc(50vh - 152px)" }}
           variant="quilted"
           cols={7}
         >

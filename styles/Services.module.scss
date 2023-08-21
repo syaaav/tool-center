@@ -81,7 +81,7 @@ $accent-color: #bb3633;
 .extra_number {
   max-width: min-content;
   position: absolute;
-  top: 50%;
+  top: 60%;
   right: 20px;
   text-align: left;
 
@@ -95,21 +95,22 @@ $accent-color: #bb3633;
 
   &_number {
     font-family: "GoshaSans";
-    font-size: calc(65px + 100 * (100vw - 320px) / 1600);
+    font-size: calc(40px + 85 * (100vw - 320px) / 1600);
     color: $text-color;
     font-style: normal;
     font-weight: 700;
     color: transparent;
-    -webkit-text-stroke: 1.5px $text-color;
-    text-stroke: 1.5px $text-color;
     line-height: 0.8;
+    -webkit-text-stroke: 3px $text-color;
+    text-stroke: 3px $text-color;
+    letter-spacing: 3px;
     white-space: nowrap;
   }
 
   &_bigText {
     padding-top: 20px;
     font-family: "GoshaSans";
-    font-size: calc(20px + 15 * (100vw - 320px) / 1600);
+    font-size: calc(15px + 15 * (100vw - 320px) / 1600);
     color: $text-color;
     font-weight: 600;
     text-transform: uppercase;
@@ -184,14 +185,89 @@ $accent-color: #bb3633;
   font-size: calc(15px + 5 * (100vw - 320px) / 1600);
 }
 
-.collapse {
-  // width: inherit !important;
-  // transition-duration: 800ms !important;
+@media (max-width: 1024px) {
+  .background {
+    top: 600px;
+  }
+
+  .wrapper {
+    gap: 30px;
+  }
+
+  .content {
+    gap: 30px;
+  }
+
+  .accordion {
+    padding-bottom: 160px;
+  }
+
+  .accordion_summary {
+    padding: 0px;
+    align-items: flex-start;
+
+    svg {
+      width: 20px;
+    }
+  }
+
+  .summary {
+    padding: 0px 0px 0px 10px;
+  }
+
+  .extra_number {
+    top: auto;
+    bottom: 0;
+    padding: 0px 30px;
+
+    &_number {
+      -webkit-text-stroke: 2px $text-color;
+      text-stroke: 2px $text-color;
+    }
+  }
+
+  .content_system {
+    padding-top: 40px;
+  }
+
+  .systems {
+    flex-direction: column;
+  }
+
+  .titles_field {
+    width: 100%;
+    gap: 0px;
+  }
+
+  .system_title {
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+    margin-left: 30px;
+  }
+
+  .system_title_inactive {
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+    margin-left: 30px;
+  }
+
+  .divider_circle {
+    margin: 5px 0px;
+  }
+
+  .content_field {
+    width: 100%;
+    gap: 30px;
+  }
+
+  .extra_number_wrapper {
+    padding: 0px 20px;
+  }
 }
 
 @media (max-width: 767px) {
   .background {
-    top: 500px;
+    top: 600px;
   }
 
   .wrapper {

@@ -67,16 +67,14 @@ $accent-color: #bb3633;
 }
 
 .extra_number {
-  font-family: "GoshaSans";
-  font-size: calc(65px + 100 * (100vw - 320px) / 1600);
-  color: $text-color;
-  font-style: normal;
-  font-weight: 700;
-  color: transparent;
-  -webkit-text-stroke: 1.5px $text-color;
-  text-stroke: 1.5px $text-color;
   line-height: 0.8;
   white-space: nowrap;
+  font-family: "GoshaSans";
+  font-size: calc(65px + 100 * (100vw - 320px) / 1600);
+  color: transparent;
+  -webkit-text-stroke: 4.5px $text-color;
+  text-stroke: 4.5px $text-color;
+  letter-spacing: 3px;
 
   &_text {
     color: $text-color;
@@ -86,6 +84,28 @@ $accent-color: #bb3633;
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
+  }
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    flex-direction: column;
+
+    &_text {
+      width: 100%;
+      padding-right: 20px;
+    }
+
+    &_number {
+      width: 100%;
+      flex-direction: column;
+      gap: 10px;
+      padding: 0px 20px;
+
+      p {
+        text-align: center;
+      }
+    }
   }
 }
 

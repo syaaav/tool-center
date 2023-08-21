@@ -69,8 +69,6 @@ export default function Nav() {
   }, []);
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    console.log("newValue ---", newValue);
-
     setValue(newValue);
   };
 

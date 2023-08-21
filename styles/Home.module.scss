@@ -10,7 +10,13 @@
   width: calc(100% - 10%);
   max-width: 1720px;
   background-color: #0e143c;
-  // overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    width: 100%;
+    max-width: auto;
+  }
 }
 
 @media (max-width: 767px) {

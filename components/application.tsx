@@ -1,6 +1,6 @@
 import styles from "../styles/Application.module.scss";
 import { styled } from "@mui/material";
-import React,from "react";
+import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
@@ -59,13 +59,13 @@ const CssTextField = styled(TextField)({
 });
 
 const CssButton = styled(Button)({
-  padding: '15px 35px',
-  border: '0.5px solid #0E143C',
-  borderRadius: '0px',
-  background: 'rgba(192, 197, 228, 0.30)',
-  boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
-  backdropFilter: 'blur(10px)',
-  textTransform: 'none',
+  padding: "15px 35px",
+  border: "0.5px solid #0E143C",
+  borderRadius: "0px",
+  background: "rgba(192, 197, 228, 0.30)",
+  boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+  backdropFilter: "blur(10px)",
+  textTransform: "none",
   "&:hover": {
     background: "rgba(255, 255, 255, 0.60)",
   },
@@ -98,9 +98,11 @@ const Application = () => {
   } = useForm({
     resolver: yupResolver(validationSchema),
   });
+
   const onSubmit = (data) => {
     console.log(JSON.stringify(data, null, 2));
   };
+
   return (
     <Box className={styles.application} id="application">
       <Typography variant="h1" className={styles.title}>
@@ -109,7 +111,7 @@ const Application = () => {
       </Typography>
       <Stack direction="row" className={styles.wrapper}>
         <Box className={styles.form}>
-          <Stack sx={{width: '100%'}}>
+          <Stack sx={{ width: "100%" }}>
             <Box>
               <CssTextField
                 required
@@ -122,10 +124,7 @@ const Application = () => {
                 {...register("fullname")}
                 error={errors.fullname ? true : false}
               />
-              <Typography
-                fontSize="12px"
-                color="rgba(255, 255, 255, 1)"
-              >
+              <Typography fontSize="12px" color="rgba(255, 255, 255, 1)">
                 {errors.fullname?.message}
               </Typography>
             </Box>
@@ -141,10 +140,7 @@ const Application = () => {
                 {...register("email")}
                 error={errors.email ? true : false}
               />
-              <Typography
-                fontSize="12px"
-                color="rgba(255, 255, 255, 1)"
-              >
+              <Typography fontSize="12px" color="rgba(255, 255, 255, 1)">
                 {errors.email?.message}
               </Typography>
             </Box>
@@ -161,10 +157,7 @@ const Application = () => {
                 {...register("number")}
                 error={errors.number ? true : false}
               />
-              <Typography
-                fontSize="12px"
-                color="rgba(255, 255, 255, 1)"
-              >
+              <Typography fontSize="12px" color="rgba(255, 255, 255, 1)">
                 {errors.number?.message}
               </Typography>
             </Box>
