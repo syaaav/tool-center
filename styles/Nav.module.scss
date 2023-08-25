@@ -36,23 +36,23 @@
   &_initial {
     width: 100%;
     justify-content: flex-start;
-    padding: 30px 15px 0px 5%;
+    padding: 30px 15px 0px calc(5% + 20px);
     background: transparent;
   }
 
   &_start {
     width: 100%;
     justify-content: flex-start;
-    padding: 30px 15px 0px 5%;
+    padding: 30px 15px 0px calc(5% + 20px);
     background: transparent;
     backdrop-filter: blur(7.5px);
   }
 
   &_moving {
     width: 90%;
+    padding: 30px 15px 0px 20px;
+    justify-content: flex-start;
     max-width: 1720px;
-    justify-content: center;
-    padding: 30px 15px 0px;
     background: #0e143c;
   }
 }
