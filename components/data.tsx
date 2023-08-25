@@ -240,13 +240,13 @@ export const clients = [
   {
     img: { front: "/Huawei.png", back: null },
     title: "Breakfast",
-    rows: 3,
+    rows: 4,
     cols: 3,
   },
   {
     img: { front: "/ББДО.png", back: "/Сбербанк.png" },
     title: "Burger",
-    rows: 1,
+    rows: 2,
     cols: 4,
   },
   {
@@ -264,13 +264,13 @@ export const clients = [
   {
     img: { front: "/Инком.png", back: "/Сенеж.png" },
     title: "Hats",
-    rows: 1,
+    rows: 2,
     cols: 4,
   },
   {
     img: { front: "/Минобороны.png", back: "/ПочтаБанк.png" },
     title: "Honey",
-    rows: 3,
+    rows: 4,
     cols: 3,
   },
   {

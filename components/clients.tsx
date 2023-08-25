@@ -91,12 +91,7 @@ export default function Clients() {
     >
       <Typography className={styles.title}>ЗАКАЗЧИКИ</Typography>
       <Stack className={styles.wrapper}>
-        <ImageList
-          className={styles.cardList}
-          variant="quilted"
-          cols={7}
-          // sx={{ height: "calc(50vh - 152px)" }}
-        >
+        <ImageList className={styles.cardList} variant="quilted" cols={7}>
           {cards.map((card, index) => (
             <Card
               key={index}
@@ -109,12 +104,7 @@ export default function Clients() {
           ))}
         </ImageList>
 
-        <ImageList
-          className={styles.cardList}
-          // sx={{ height: "calc(50vh - 152px)" }}
-          variant="quilted"
-          cols={7}
-        >
+        <ImageList className={styles.cardList} variant="quilted" cols={7}>
           {cards2.map((card, index) => (
             <Card
               key={index}
