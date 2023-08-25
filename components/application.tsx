@@ -95,7 +95,7 @@ const Application = () => {
   };
 
   return (
-    <Box className={styles.application} id="application">
+    <Box className={styles.application} id="divApplication">
       <Typography variant="h1" className={styles.title}>
         <span className={styles.title_transparent}>ОСТАВЬТЕ</span> ЗАЯВКУ <br />
         <span className={styles.title_transparent}>И МЫ С ВАМИ СВЯЖЕМСЯ</span>

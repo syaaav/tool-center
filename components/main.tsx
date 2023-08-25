@@ -175,7 +175,7 @@ function Main() {
             <span className={styles.title_stroke}>клиентов</span>
           </span>
         </Typography>
-        <Button className={styles.button} href="#application">
+        <Button className={styles.button} href="#divApplication">
           Оставить заявку
         </Button>
       </Box>

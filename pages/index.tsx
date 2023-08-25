@@ -36,9 +36,12 @@ export default function Home() {
           <Nav></Nav>
           <Main></Main>
           <div className={styles.wrapper}>
-            <About></About>
-            <Why></Why>
-            <Principles></Principles>
+            <div id="divAbout">
+              <About></About>
+              <Why></Why>
+              <Principles></Principles>
+            </div>
+
             <Services></Services>
             <Projects></Projects>
             <Clients></Clients>

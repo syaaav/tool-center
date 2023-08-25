@@ -42,7 +42,10 @@ export default function Nav() {
         const divElement = div as HTMLElement;
         const divTop = divElement.offsetTop;
         const divHeight = divElement.clientHeight;
-        if (currentPos >= divTop && currentPos < divTop + divHeight) {
+        if (
+          currentPos >= divTop - header.clientHeight &&
+          currentPos < divTop + divHeight
+        ) {
           const currentLink = document.querySelector(
             `div div div a[href="#${div.id}"]`
           );
@@ -118,10 +121,10 @@ export default function Nav() {
               href="#divClients"
             />
             <Tab
-              data-value="contacts"
-              value="contacts"
+              data-value="application"
+              value="application"
               label="Контакты"
-              href="#divContacts"
+              href="#divApplication"
             />
           </NavTabs>
         </Box>
@@ -188,10 +191,10 @@ export default function Nav() {
                 href="#divClients"
               />
               <Tab
-                data-value="contacts"
-                value="contacts"
+                data-value="application"
+                value="application"
                 label="Контакты"
-                href="#divContacts"
+                href="#divApplication"
               />
             </NavTabs>
           </Box>
