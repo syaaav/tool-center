@@ -92,7 +92,10 @@ const Application = () => {
   });
 
   const onSubmit = async (data) => {
-    await sendForm(data);
+    await sendForm(data)
+      .then(() => {
+        console.log('Надо очищать форму после отправки, и в момент запроса - хотя бы дизейблить кнопку или вешать лоадер')
+      });
     // console.log(JSON.stringify(data, null, 2));
   };
 

@@ -10,13 +10,13 @@ const handler = async (req, res) => {
     }
 
     try {
-      const i = await transporter.sendMail({
+      await transporter.sendMail({
         ...mailOptions,
-        subject: data,
+        subject: 'From form',
         text: 'Test string',
-        html: '<h1>Test mail<h1><p>Body mail<p>'
+        html: `<p>Name: ${data?.fullname}<p><p>Email: ${data?.email}</p><p>Phone: ${data?.number}</p>`
       });
-      console.log(i)
+
       return res.status(200).json({ success: true })
     } catch (err) {
       console.log(err);
