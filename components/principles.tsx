@@ -1,11 +1,47 @@
+import { useRef, useEffect } from "react";
 import { Box, Grid, Typography, Stack, Collapse } from "@mui/material";
 import styles from "../styles/Principles.module.scss";
 import { DividerLine } from "./about";
+import dynamic from "next/dynamic";
+import { Controller, Scene } from "scrollmagic";
 
-export default function Principles() {
-  const checked = true;
+interface MyComponentProps {}
+
+const ScrollMagic = dynamic(
+  () => import("scrollmagic/scrollmagic/uncompressed/ScrollMagic"),
+  { ssr: false }
+);
+
+const Principles: React.FC<MyComponentProps> = () => {
+  const principlesRef = useRef<HTMLDivElement>(null);
+  const leftPrinciple1Ref = useRef<HTMLDivElement>(null);
+  const leftPrinciple2Ref = useRef<HTMLDivElement>(null);
+  const rightPrinciple1Ref = useRef<HTMLDivElement>(null);
+  const rightPrinciple2Ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      typeof ScrollMagic !== "undefined" &&
+      principlesRef.current
+    ) {
+      const controller = new Controller();
+      new Scene({
+        triggerElement: principlesRef.current,
+        triggerHook: 0.5,
+      })
+        .on("enter", () => {
+          leftPrinciple1Ref.current?.classList.add("square-transition");
+          leftPrinciple2Ref.current?.classList.add("square-transition");
+          rightPrinciple1Ref.current?.classList.add("square-transition-right");
+          rightPrinciple2Ref.current?.classList.add("square-transition-right");
+        })
+        .addTo(controller);
+    }
+  }, [principlesRef]);
+
   return (
-    <div className={styles.principles}>
+    <div id="principles" className={styles.principles} ref={principlesRef}>
       <Box
         sx={{
           paddingTop: "100px",
@@ -23,7 +59,7 @@ export default function Principles() {
         </Stack>
 
         <Grid container rowSpacing={5} className={styles.grid}>
-          <Grid item className={styles.grid_item}>
+          <Grid item className={styles.grid_item} ref={leftPrinciple1Ref}>
             <Typography className={styles.summary} sx={{ textAlign: "right" }}>
               ДОЛГОСРОЧНОЕ СОТРУДНИЧЕСТВО
             </Typography>
@@ -67,7 +103,7 @@ export default function Principles() {
             <p className={styles.divider_circle}></p>
           </Box>
 
-          <Grid item className={styles.grid_item}>
+          <Grid item className={styles.grid_item} ref={rightPrinciple1Ref}>
             <Typography className={styles.summary}>Профессионализм</Typography>
             <Stack className={`${styles.details} ${styles.details_reverse}`}>
               <div className={`${styles.circle} ${styles.circle_left}`}></div>
@@ -103,7 +139,7 @@ export default function Principles() {
             <p className={styles.divider_circle}></p>
           </Box>
 
-          <Grid item className={styles.grid_item}>
+          <Grid item className={styles.grid_item} ref={leftPrinciple2Ref}>
             <Typography
               className={styles.summary}
               sx={{
@@ -149,7 +185,7 @@ export default function Principles() {
             <p className={styles.divider_circle}></p>
           </Box>
 
-          <Grid item className={styles.grid_item}>
+          <Grid item className={styles.grid_item} ref={rightPrinciple2Ref}>
             <Typography className={styles.summary}>
               ПРОЗРАЧНОЕ ПАРТНЕРСТВО
             </Typography>
@@ -190,4 +226,6 @@ export default function Principles() {
       </Box>
     </div>
   );
-}
+};
+
+export default Principles;

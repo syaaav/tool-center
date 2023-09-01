@@ -85,6 +85,48 @@ a {
   }
 }
 
+@keyframes fadeInLeft {
+  0% {
+    left: 100%; /* Начальная позиция */
+    opacity: 0;
+  }
+  100% {
+    left: 0; /* Конечная позиция */
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    right: 100%; /* Начальная позиция */
+    opacity: 0;
+  }
+  100% {
+    right: 0; /* Конечная позиция */
+    opacity: 1;
+  }
+}
+
+.square-transition-right {
+  position: relative;
+  left: 100%;
+  opacity: 0;
+  animation: fadeInLeft 3s ease-out forwards;
+}
+
+.square-transition {
+  position: relative;
+  right: 100%;
+  opacity: 0;
+  animation: fadeInRight 3s ease-out forwards;
+}
+
+.grid_item_active {
+  width: 100%;
+  max-width: 100%;
+  background-color: red;
+}
+
 @media (max-width: 1024px) {
   .anim {
     background-position: right;

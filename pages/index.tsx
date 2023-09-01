@@ -5,7 +5,11 @@ import Nav from "../components/nav";
 import Application from "../components/application";
 import styles from "../styles/Home.module.scss";
 import About from "../components/about";
-import Principles from "../components/principles";
+import dynamic from "next/dynamic";
+// import Principles from "../components/principles";
+const Principles = dynamic(() => import("../components/principles"), {
+  ssr: false,
+});
 import Projects from "../components/projects";
 import Clients from "../components/clients";
 import Why from "../components/why";

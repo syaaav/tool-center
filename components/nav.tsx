@@ -35,9 +35,11 @@ export default function Nav() {
   useEffect(() => {
     let header = document.querySelector("#header");
     const divs = document.querySelectorAll('div[id^="div"]');
-    const navLinks = document.querySelectorAll("div div div a");
+    const dividersLeft = document.querySelectorAll("#headerDivider");
+
     function updateNav() {
       const currentPos = window.scrollY;
+
       divs.forEach((div) => {
         const divElement = div as HTMLElement;
         const divTop = divElement.offsetTop;
@@ -51,6 +53,20 @@ export default function Nav() {
           );
           const linkElement = currentLink as HTMLElement;
           setValue(linkElement?.dataset.value);
+
+          if (
+            linkElement?.dataset.value === "about" &&
+            !document
+              .querySelector("#headerDividerRight")
+              .classList.contains("square-transition-right")
+          ) {
+            document
+              .querySelector("#headerDividerRight")
+              .classList.add("square-transition-right");
+            dividersLeft.forEach((divider) => {
+              divider.classList.add("square-transition");
+            });
+          }
         }
       });
     }

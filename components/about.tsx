@@ -1,5 +1,14 @@
+import { useState, useEffect } from "react";
 import styles from "../styles/Header.module.scss";
-import { Box, Typography, Divider, styled, Stack } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Divider,
+  styled,
+  Stack,
+  Collapse,
+  Paper,
+} from "@mui/material";
 
 export const DividerLine = styled(Divider)({
   width: "calc(100% - 13px)",
@@ -7,8 +16,15 @@ export const DividerLine = styled(Divider)({
 });
 
 export default function About() {
+  const [checked, setChecked] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setChecked(true);
+    }, 1500);
+  }, []);
+
   return (
-    // id="divAbout"
     <div className={styles.header}>
       <Box
         sx={{
@@ -27,13 +43,16 @@ export default function About() {
           </span>{" "}
           НА РЫНКЕ
         </Typography>
+
         <Box
+          id="headerDividerRight"
           className={styles.divider}
           sx={{ width: "75%", marginLeft: "auto" }}
         >
           <p className={styles.divider_circle}></p>
           <DividerLine />
         </Box>
+
         <Stack className={styles.wrapper} spacing={3}>
           <Box className={styles.wrapper_text}>
             <Typography sx={{ padding: "0px 15px" }} className={styles.text}>
@@ -41,16 +60,23 @@ export default function About() {
               по проектированию, монтажу и техническому обслуживанию инженерных
               систем на объектах коммерческой и жилой недвижимости.
             </Typography>
-            <Box className={styles.divider}>
+
+            <Box id="headerDivider" className={styles.divider}>
               <DividerLine />
               <p className={styles.divider_circle}></p>
             </Box>
+
             <Typography sx={{ padding: "0px 15px" }} className={styles.text}>
               <span className={styles.text_big}>Миссия нашей компании</span> -
               обеспечить клиентам комфорт и безопасность с помощью применения
               новейших технологий и современный инженерных решений.
             </Typography>
-            <Box className={styles.divider} sx={{ width: "95%" }}>
+
+            <Box
+              id="headerDivider"
+              className={styles.divider}
+              sx={{ width: "95%" }}
+            >
               <DividerLine />
               <p className={styles.divider_circle}></p>
             </Box>
