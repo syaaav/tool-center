@@ -14,7 +14,8 @@
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "types": ["scrollmagic"]
   },
   "include": [
     "next-env.d.ts",
