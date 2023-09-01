@@ -6,6 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { Box, TextField, Typography, Stack, Button } from "@mui/material";
 import Footer from "./footer";
+import { sendForm } from "../lib/sendForm";
 
 const CssTextField = styled(TextField)({
   width: "100%",
@@ -90,8 +91,12 @@ const Application = () => {
     resolver: yupResolver(validationSchema),
   });
 
-  const onSubmit = (data) => {
-    console.log(JSON.stringify(data, null, 2));
+  const onSubmit = async (data) => {
+    await sendForm(data)
+      .then(() => {
+        console.log('Надо очищать форму после отправки, и в момент запроса - хотя бы дизейблить кнопку или вешать лоадер')
+      });
+    // console.log(JSON.stringify(data, null, 2));
   };
 
   return (
