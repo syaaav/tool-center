@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 
 // const EMAIL = 'mail@inscenter.ru';
 
-const EMAIL = 'tank.card.battle@gmail.com'
+const EMAIL = 'email@gmail.com'
 
 // export const transporter = nodemailer.createTransport({
 //   host: 'mail.hosting.reg.ru',
@@ -10,7 +10,7 @@ const EMAIL = 'tank.card.battle@gmail.com'
 //   secure: false,
 //   auth: {
 //     user: EMAIL,
-//     pass: 'vF5cO2uO4ejV4sL4',
+//     pass: 'pass',
 //   }
 // })
 
