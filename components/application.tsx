@@ -107,9 +107,18 @@ const Application = () => {
           document.querySelector('input[name="number"]') &&
           submitButton.current
         ) {
-          document.querySelector('input[name="fullname"]').value = "";
-          document.querySelector('input[name="email"]').value = "";
-          document.querySelector('input[name="number"]').value = "";
+          const fullnameElement = document.querySelector(
+            'input[name="fullname"]'
+          ) as HTMLInputElement;
+          const emailElement = document.querySelector(
+            'input[name="email"]'
+          ) as HTMLInputElement;
+          const numberElement = document.querySelector(
+            'input[name="number"]'
+          ) as HTMLInputElement;
+          fullnameElement.value = "";
+          emailElement.value = "";
+          numberElement.value = "";
 
           submitButton.current.disabled = false;
           submitButton.current.innerHTML = "Оставить заявку";
