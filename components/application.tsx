@@ -1,6 +1,6 @@
 import styles from "../styles/Application.module.scss";
 import { styled } from "@mui/material";
-import React from "react";
+import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
@@ -90,13 +90,32 @@ const Application = () => {
   } = useForm({
     resolver: yupResolver(validationSchema),
   });
+  const submitButton = useRef(null);
 
   const onSubmit = async (data) => {
-    await sendForm(data)
-      .then(() => {
-        console.log('Надо очищать форму после отправки, и в момент запроса - хотя бы дизейблить кнопку или вешать лоадер')
-      });
-    // console.log(JSON.stringify(data, null, 2));
+    console.log("data", data);
+    if (submitButton.current) {
+      submitButton.current.disabled = true;
+      submitButton.current.innerHTML = "Спасибо!";
+    }
+
+    await sendForm(data).then(() => {
+      setTimeout(() => {
+        if (
+          document.querySelector('input[name="fullname"]') &&
+          document.querySelector('input[name="email"]') &&
+          document.querySelector('input[name="number"]') &&
+          submitButton.current
+        ) {
+          document.querySelector('input[name="fullname"]').value = "";
+          document.querySelector('input[name="email"]').value = "";
+          document.querySelector('input[name="number"]').value = "";
+
+          submitButton.current.disabled = false;
+          submitButton.current.innerHTML = "Оставить заявку";
+        }
+      }, 3000);
+    });
   };
 
   return (
@@ -161,6 +180,7 @@ const Application = () => {
 
           <Box className={styles.button}>
             <CssButton
+              ref={submitButton}
               variant="contained"
               color="primary"
               onClick={handleSubmit(onSubmit)}
