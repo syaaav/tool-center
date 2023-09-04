@@ -37,6 +37,7 @@ $accent-color: #bb3633;
 .grid_item {
   width: calc(50% - 40px);
   max-width: calc(50% - 40px);
+  opacity: 0;
 }
 
 .summary {

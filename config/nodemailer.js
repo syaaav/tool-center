@@ -1,28 +1,29 @@
-import nodemailer from 'nodemailer';
+// import nodemailer from "nodemailer";
+// import { pass } from "./config";
+// // const EMAIL = 'mail@inscenter.ru';
 
-// const EMAIL = 'mail@inscenter.ru';
+// const EMAIL = "email@gmail.com";
 
-const EMAIL = 'email@gmail.com'
+// // export const transporter = nodemailer.createTransport({
+// //   host: 'mail.hosting.reg.ru',
+// //   port: 587,
+// //   secure: false,
+// //   auth: {
+// //     user: EMAIL,
+// //     pass: 'pass',
+// //   }
+// // })
 
 // export const transporter = nodemailer.createTransport({
-//   host: 'mail.hosting.reg.ru',
-//   port: 587,
-//   secure: false,
+//   service: "gmail",
 //   auth: {
 //     user: EMAIL,
-//     pass: 'pass',
-//   }
-// })
+//     // pass: "ctsmzgbsfatjymsx",
+//     pass: pass,
+//   },
+// });
 
-export const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: EMAIL,
-    pass: 'vaujawkmnhzualoh'
-  }
-})
-
-export const mailOptions = {
-  from: EMAIL,
-  to: EMAIL,
-}
+// export const mailOptions = {
+//   from: EMAIL,
+//   to: EMAIL,
+// };
