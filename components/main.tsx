@@ -8,11 +8,11 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
-    label: "Бизнес-центр “новоспасский двор”",
+    label: "БИЗНЕС-ЦЕНТР «НОВОСПАССКИЙ ДВОР»",
     imgPath: "/project1.jpg",
   },
   {
-    label: "жк “sreda”",
+    label: "ЖК «SREDA»",
     imgPath: "/project2.jpg",
   },
   {
@@ -44,7 +44,7 @@ const images = [
     imgPath: "/project9.jpg",
   },
   {
-    label: "ГБУ «ГОРОДСКАЯ ПОЛИКЛИНИКА No46»",
+    label: "ГБУ «ГОРОДСКАЯ ПОЛИКЛИНИКА №46»",
     imgPath: "/project10.jpeg",
   },
   {
