@@ -190,7 +190,7 @@ export default function Footer() {
                 strokeLinejoin="round"
               />
             </svg>
-            del.it.ful
+            syaaav
           </Box>
         </Stack>
       </Stack>
